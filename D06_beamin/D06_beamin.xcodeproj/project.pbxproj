@@ -14,6 +14,7 @@
 		FD7EE22D270C7864001B0EAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD7EE22C270C7864001B0EAF /* Assets.xcassets */; };
 		FD7EE230270C7864001B0EAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD7EE22E270C7864001B0EAF /* LaunchScreen.storyboard */; };
 		FD7EE238270C91F9001B0EAF /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7EE237270C91F9001B0EAF /* CollectionViewController.swift */; };
+		FDD5EDF6270CB8C400F59652 /* SpecificViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD5EDF5270CB8C400F59652 /* SpecificViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		FD7EE22F270C7864001B0EAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD7EE231270C7864001B0EAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD7EE237270C91F9001B0EAF /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		FDD5EDF5270CB8C400F59652 /* SpecificViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				FD7EE225270C785F001B0EAF /* SceneDelegate.swift */,
 				FD7EE227270C785F001B0EAF /* ViewController.swift */,
 				FD7EE229270C785F001B0EAF /* Main.storyboard */,
+				FDD5EDF5270CB8C400F59652 /* SpecificViewController.swift */,
 				FD7EE22C270C7864001B0EAF /* Assets.xcassets */,
 				FD7EE22E270C7864001B0EAF /* LaunchScreen.storyboard */,
 				FD7EE231270C7864001B0EAF /* Info.plist */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD7EE238270C91F9001B0EAF /* CollectionViewController.swift in Sources */,
+				FDD5EDF6270CB8C400F59652 /* SpecificViewController.swift in Sources */,
 				FD7EE228270C785F001B0EAF /* ViewController.swift in Sources */,
 				FD7EE224270C785F001B0EAF /* AppDelegate.swift in Sources */,
 				FD7EE226270C785F001B0EAF /* SceneDelegate.swift in Sources */,

@@ -24,7 +24,6 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     
     // viewModel에서 count를 가져옴
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(viewModel.countOfImageList)
         return viewModel.countOfImageList
     }
     
@@ -35,7 +34,6 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
                     return UICollectionViewCell()
                 }
         let imageInfo = viewModel.imageInfo(at: indexPath.item)
-        print(imageInfo)
         cell.update(info: imageInfo)
         return cell
     }
@@ -49,12 +47,11 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
 
 
 class Cell: UICollectionViewCell {
-    @IBOutlet weak var imgView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var menuButton: UIButton!
     
     func update(info: ImageInfo) {
-        imgView.image = info.image
-        nameLabel.text = info.name
+        menuButton.setImage(info.image, for: .normal)
+        menuButton.setTitle(info.name, for: .normal)
     }
 }
 
