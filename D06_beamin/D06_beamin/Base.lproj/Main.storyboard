@@ -1,24 +1,188 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yhK-qy-cnI">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="rVa-QW-Lpk">
+            <objects>
+                <tabBarController id="yhK-qy-cnI" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eEl-6c-F96">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="VWI-Zg-eoZ" kind="relationship" relationship="viewControllers" id="mbv-Jc-u9W"/>
+                        <segue destination="29i-c0-dIG" kind="relationship" relationship="viewControllers" id="CTS-7y-ht0"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="llv-va-3C8"/>
+                        <segue destination="k11-TX-tBJ" kind="relationship" relationship="viewControllers" id="XD4-W2-rFK"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XHM-gp-v9w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1788" y="129"/>
+        </scene>
+        <!--찜한가게-->
+        <scene sceneID="G4l-PR-cYj">
+            <objects>
+                <viewController id="29i-c0-dIG" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cbi-w8-KMU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="WNX-rd-vfj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="찜한가게" image="heart" catalog="system" id="9wj-oK-dld"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ibt-9W-sMy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-765" y="129"/>
+        </scene>
+        <!--홈-->
+        <scene sceneID="OQN-MY-ZQa">
+            <objects>
+                <navigationController id="VWI-Zg-eoZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="홈" selectedImage="house" catalog="system" id="7lo-pd-HJ6"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="o8y-Gv-ygJ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="XjQ-sf-hVQ" kind="relationship" relationship="rootViewController" id="9yg-xa-WM3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wyV-c1-Y9u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-765" y="-535"/>
+        </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="7bF-CN-k20">
+            <objects>
+                <viewController id="XjQ-sf-hVQ" customClass="CollectionViewController" customModule="D06_beamin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PUv-JZ-vTv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xe9-Fm-ESY">
+                                <rect key="frame" x="20" y="679" width="374" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="6xV-Ou-ZmD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lrJ-ZY-s5q">
+                                <rect key="frame" x="0.0" y="188" width="414" height="471"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bcH-yO-4fY">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="fQS-Tw-wCi" customClass="Cell" customModule="D06_beamin" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EO2-hI-Cw8">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mono_baedal14" id="yVR-IT-FPl">
+                                                    <rect key="frame" x="33" y="20" width="62" height="61"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="뚝배기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tF5-rY-KtA">
+                                                    <rect key="frame" x="41.5" y="89" width="45" height="19"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tF5-rY-KtA" firstAttribute="top" secondItem="yVR-IT-FPl" secondAttribute="bottom" constant="8" id="CEo-pO-t3B"/>
+                                                <constraint firstItem="tF5-rY-KtA" firstAttribute="centerX" secondItem="EO2-hI-Cw8" secondAttribute="centerX" id="GQ0-G0-uFY"/>
+                                                <constraint firstAttribute="bottom" secondItem="tF5-rY-KtA" secondAttribute="bottom" constant="20" id="mfx-MT-xtZ"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="imgView" destination="yVR-IT-FPl" id="0b0-zb-IUN"/>
+                                            <outlet property="nameLabel" destination="tF5-rY-KtA" id="fgJ-MZ-lGy"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="XjQ-sf-hVQ" id="R06-cQ-s9L"/>
+                                    <outlet property="delegate" destination="XjQ-sf-hVQ" id="kHb-KS-mFQ"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bzG-Ag-IzD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xe9-Fm-ESY" firstAttribute="leading" secondItem="bzG-Ag-IzD" secondAttribute="leading" constant="20" id="1OG-Dw-uu5"/>
+                            <constraint firstItem="lrJ-ZY-s5q" firstAttribute="leading" secondItem="bzG-Ag-IzD" secondAttribute="leading" id="2RQ-1p-7hl"/>
+                            <constraint firstItem="lrJ-ZY-s5q" firstAttribute="top" secondItem="bzG-Ag-IzD" secondAttribute="top" constant="100" id="9br-eY-2MG"/>
+                            <constraint firstItem="xe9-Fm-ESY" firstAttribute="top" secondItem="lrJ-ZY-s5q" secondAttribute="bottom" constant="20" id="ajP-TU-94d"/>
+                            <constraint firstItem="bzG-Ag-IzD" firstAttribute="trailing" secondItem="xe9-Fm-ESY" secondAttribute="trailing" constant="20" id="bLc-oB-TSK"/>
+                            <constraint firstItem="bzG-Ag-IzD" firstAttribute="bottom" secondItem="xe9-Fm-ESY" secondAttribute="bottom" constant="100" id="qod-r1-Xqw"/>
+                            <constraint firstItem="bzG-Ag-IzD" firstAttribute="trailing" secondItem="lrJ-ZY-s5q" secondAttribute="trailing" id="uOq-2R-nU7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ja0-iQ-bms"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vmz-AD-KhM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="40.579710144927539" y="-525"/>
+        </scene>
+        <!--주문내역-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="D06_beamin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="주문내역" image="list.bullet.rectangle.portrait" catalog="system" id="MoY-fq-fHu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-765" y="790"/>
+        </scene>
+        <!--my배민-->
+        <scene sceneID="BoE-hn-cOg">
+            <objects>
+                <viewController id="k11-TX-tBJ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E8g-dV-Hfq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="eEz-k9-rvi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="my배민" image="person" catalog="system" id="2An-MF-d2L"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YTq-SC-V5t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-765" y="1461"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="list.bullet.rectangle.portrait" catalog="system" width="115" height="128"/>
+        <image name="mono_baedal14" width="89" height="83"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
