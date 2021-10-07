@@ -19,3 +19,8 @@ Archive assignment for SeSAC_iOS
   * collectionView programatically 구현 완료
   * collectionViewCell -> childView 연결
     ❗️collectionViewCell의 버튼이름을 childView.navigationItem.title로 설정하려 했으나, 정보를 전달하는 방법을 알지 못해 구현하지 못함.
+  
+### D07_EmotionDiary
+* Assingment
+  * collectionView programatically 구현 완료.
+    * collectionViewCell을 직접 작성해서 연결하는것도 시도해봄.

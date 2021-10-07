@@ -13,6 +13,7 @@
 		FD511223270E5DAB00CE16DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD511221270E5DAB00CE16DC /* Main.storyboard */; };
 		FD511225270E5DAE00CE16DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD511224270E5DAE00CE16DC /* Assets.xcassets */; };
 		FD511228270E5DAE00CE16DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD511226270E5DAE00CE16DC /* LaunchScreen.storyboard */; };
+		FD511230270E944300CE16DC /* DDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD51122F270E944300CE16DC /* DDayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		FD511224270E5DAE00CE16DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD511227270E5DAE00CE16DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD511229270E5DAE00CE16DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD51122F270E944300CE16DC /* DDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				FD51121D270E5DAB00CE16DC /* SceneDelegate.swift */,
 				FD51121F270E5DAB00CE16DC /* ViewController.swift */,
 				FD511221270E5DAB00CE16DC /* Main.storyboard */,
+				FD51122F270E944300CE16DC /* DDayViewController.swift */,
 				FD511224270E5DAE00CE16DC /* Assets.xcassets */,
 				FD511226270E5DAE00CE16DC /* LaunchScreen.storyboard */,
 				FD511229270E5DAE00CE16DC /* Info.plist */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD511230270E944300CE16DC /* DDayViewController.swift in Sources */,
 				FD511220270E5DAB00CE16DC /* ViewController.swift in Sources */,
 				FD51121C270E5DAB00CE16DC /* AppDelegate.swift in Sources */,
 				FD51121E270E5DAB00CE16DC /* SceneDelegate.swift in Sources */,
@@ -289,6 +293,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AVZ9493N69;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = D07_EmotionDiary/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -305,7 +310,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -316,6 +321,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AVZ9493N69;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = D07_EmotionDiary/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -332,7 +338,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
