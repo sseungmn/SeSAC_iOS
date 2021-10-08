@@ -31,7 +31,8 @@ Archive assignment for SeSAC_iOS
 ### D09_DrinkWater
 * Assignment
   - [x] UI 구성, AutoLayout은 Stroyboard로 구현
-  - [ ] UI 속성 Code로 구현
+  - [x] UI 속성 Code로 구현
+    * NavigationBar Shadow Color은 지정하지 못함.
   - [ ] UserDefaults로 사용자가 마신 물의 양 저장
   - [ ] 마신 물의 양에 따른 이미지 변경
   - [ ] 사용자 정보 입력받고 권장량 계산

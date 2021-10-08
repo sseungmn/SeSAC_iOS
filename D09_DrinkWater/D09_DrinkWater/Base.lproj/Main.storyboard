@@ -3,12 +3,11 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--물 마시기-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="D09_DrinkWater" customModuleProvider="target" sceneMemberID="viewController">
@@ -86,7 +85,6 @@
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Cfp-on-w3G"/>
-                        <color key="backgroundColor" name="contentDefault"/>
                         <constraints>
                             <constraint firstItem="BXI-Cd-ETp" firstAttribute="top" secondItem="mFM-tq-dvF" secondAttribute="bottom" constant="30" id="0HH-qd-W9g"/>
                             <constraint firstItem="mFM-tq-dvF" firstAttribute="leading" secondItem="Cfp-on-w3G" secondAttribute="leading" constant="80" id="87L-1n-4z1"/>
@@ -103,26 +101,33 @@
                             <constraint firstItem="EJh-IF-27e" firstAttribute="leading" secondItem="Cfp-on-w3G" secondAttribute="leading" id="zTZ-LR-dVj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="물 마시기" id="JHm-96-cSr">
-                        <barButtonItem key="leftBarButtonItem" image="arrow.clockwise" catalog="system" id="z19-gb-VnU">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </barButtonItem>
+                    <navigationItem key="navigationItem" id="JHm-96-cSr">
+                        <barButtonItem key="leftBarButtonItem" image="arrow.clockwise" catalog="system" id="z19-gb-VnU"/>
                         <barButtonItem key="rightBarButtonItem" image="person.circle" catalog="system" id="IgB-y7-1XD">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="9fi-gB-XbL" kind="show" id="7mg-3v-uIT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="drinkWaterButton" destination="EJh-IF-27e" id="8J0-WL-Pj9"/>
+                        <outlet property="personalWaterDescriptionLabel" destination="Y9M-wT-OzE" id="OrV-mH-FKM"/>
+                        <outlet property="resetTodayWaterButton" destination="z19-gb-VnU" id="jmC-nC-F5a"/>
+                        <outlet property="showProfileViewButton" destination="IgB-y7-1XD" id="DEr-1L-FTn"/>
+                        <outlet property="stageImage" destination="mFM-tq-dvF" id="8Wk-iz-box"/>
+                        <outlet property="todayPercentWaterLabel" destination="s8U-QS-o3X" id="s0x-IC-01z"/>
+                        <outlet property="todayTotalWaterLabel" destination="SYj-IX-Div" id="JL3-om-8ul"/>
+                        <outlet property="userInputWaterLabel" destination="BXI-Cd-ETp" id="hzS-Cl-fwh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="892.75362318840587" y="96.428571428571431"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="Egm-ua-8uM">
             <objects>
-                <viewController id="9fi-gB-XbL" sceneMemberID="viewController">
+                <viewController id="9fi-gB-XbL" customClass="ProfileViewController" customModule="D09_DrinkWater" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sHA-A1-BWV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -210,7 +215,6 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5Na-qP-Iet"/>
-                        <color key="backgroundColor" name="contentDefault"/>
                         <constraints>
                             <constraint firstItem="5Na-qP-Iet" firstAttribute="trailing" secondItem="8J9-jH-qIF" secondAttribute="trailing" constant="40" id="8O5-ww-K2R"/>
                             <constraint firstItem="6KX-ZH-W6c" firstAttribute="top" secondItem="cKs-Po-Dj4" secondAttribute="bottom" constant="50" id="Bpd-jK-l0K"/>
@@ -229,11 +233,15 @@
                     <navigationItem key="navigationItem" id="l9I-za-f8s">
                         <rightBarButtonItems>
                             <barButtonItem id="mwh-2N-exy"/>
-                            <barButtonItem title="저장" id="HTH-Of-scy">
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </barButtonItem>
+                            <barButtonItem title="저장" id="HTH-Of-scy"/>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="heightUserInput" destination="FkD-bA-BfV" id="ef4-El-WxF"/>
+                        <outlet property="nicknameUserInput" destination="xkP-0z-i3j" id="ELJ-H9-8UX"/>
+                        <outlet property="stageImage" destination="cKs-Po-Dj4" id="8Go-AD-eaq"/>
+                        <outlet property="weightUserInput" destination="1L5-ZL-h9n" id="Paj-fA-F6g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xva-pd-qY7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -263,8 +271,5 @@
         <image name="1-3" width="152" height="151"/>
         <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
-        <namedColor name="contentDefault">
-            <color red="0.32156862745098042" green="0.61568627450980395" blue="0.49019607843137253" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>

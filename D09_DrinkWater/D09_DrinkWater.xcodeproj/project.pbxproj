@@ -13,6 +13,7 @@
 		FD3426B2271076EB00C3CCAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD3426B0271076EB00C3CCAD /* Main.storyboard */; };
 		FD3426B4271076EF00C3CCAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD3426B3271076EF00C3CCAD /* Assets.xcassets */; };
 		FD3426B7271076EF00C3CCAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD3426B5271076EF00C3CCAD /* LaunchScreen.storyboard */; };
+		FD3426BF2710A81A00C3CCAD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3426BE2710A81A00C3CCAD /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		FD3426B3271076EF00C3CCAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD3426B6271076EF00C3CCAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD3426B8271076EF00C3CCAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD3426BE2710A81A00C3CCAD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		FD3426A9271076EB00C3CCAD /* D09_DrinkWater */ = {
 			isa = PBXGroup;
 			children = (
+				FD3426BE2710A81A00C3CCAD /* ProfileViewController.swift */,
 				FD3426AA271076EB00C3CCAD /* AppDelegate.swift */,
 				FD3426AC271076EB00C3CCAD /* SceneDelegate.swift */,
 				FD3426AE271076EB00C3CCAD /* ViewController.swift */,
@@ -140,6 +143,7 @@
 			files = (
 				FD3426AF271076EB00C3CCAD /* ViewController.swift in Sources */,
 				FD3426AB271076EB00C3CCAD /* AppDelegate.swift in Sources */,
+				FD3426BF2710A81A00C3CCAD /* ProfileViewController.swift in Sources */,
 				FD3426AD271076EB00C3CCAD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
