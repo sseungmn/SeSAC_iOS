@@ -40,12 +40,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500ml" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="no2-T3-rWv">
-                                <rect key="frame" x="159.5" y="605" width="95" height="39.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1-1" translatesAutoresizingMaskIntoConstraints="NO" id="mFM-tq-dvF">
                                 <rect key="frame" x="80" y="321" width="254" height="254"/>
                                 <constraints>
@@ -81,18 +75,27 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="500ml" textAlignment="center" minimumFontSize="33" translatesAutoresizingMaskIntoConstraints="NO" id="BXI-Cd-ETp">
+                                <rect key="frame" x="147" y="605" width="120" height="37.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="mM1-tI-E5M"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Cfp-on-w3G"/>
                         <color key="backgroundColor" name="contentDefault"/>
                         <constraints>
-                            <constraint firstItem="no2-T3-rWv" firstAttribute="top" secondItem="mFM-tq-dvF" secondAttribute="bottom" constant="30" id="6w0-uN-PX6"/>
+                            <constraint firstItem="BXI-Cd-ETp" firstAttribute="top" secondItem="mFM-tq-dvF" secondAttribute="bottom" constant="30" id="0HH-qd-W9g"/>
                             <constraint firstItem="mFM-tq-dvF" firstAttribute="leading" secondItem="Cfp-on-w3G" secondAttribute="leading" constant="80" id="87L-1n-4z1"/>
-                            <constraint firstItem="no2-T3-rWv" firstAttribute="centerX" secondItem="I2Y-4W-cMK" secondAttribute="centerX" id="8KH-8R-JwW"/>
                             <constraint firstItem="Cfp-on-w3G" firstAttribute="bottom" secondItem="EJh-IF-27e" secondAttribute="bottom" id="B2S-gn-Epa"/>
                             <constraint firstItem="EJh-IF-27e" firstAttribute="top" secondItem="Y9M-wT-OzE" secondAttribute="bottom" constant="5" id="CKK-eR-YQ9"/>
                             <constraint firstItem="Y9M-wT-OzE" firstAttribute="leading" secondItem="Cfp-on-w3G" secondAttribute="leading" id="GMV-PC-fRF"/>
                             <constraint firstItem="Cfp-on-w3G" firstAttribute="trailing" secondItem="mFM-tq-dvF" secondAttribute="trailing" constant="80" id="SFI-CL-58z"/>
                             <constraint firstItem="hz5-kf-DIF" firstAttribute="leading" secondItem="Cfp-on-w3G" secondAttribute="leading" constant="30" id="YhD-M5-1qR"/>
+                            <constraint firstItem="BXI-Cd-ETp" firstAttribute="centerX" secondItem="I2Y-4W-cMK" secondAttribute="centerX" id="d1H-7a-25T"/>
                             <constraint firstItem="mFM-tq-dvF" firstAttribute="centerY" secondItem="I2Y-4W-cMK" secondAttribute="centerY" id="lzP-Ow-wIs"/>
                             <constraint firstItem="Cfp-on-w3G" firstAttribute="trailing" secondItem="Y9M-wT-OzE" secondAttribute="trailing" id="m6a-9a-1PB"/>
                             <constraint firstItem="Cfp-on-w3G" firstAttribute="trailing" secondItem="EJh-IF-27e" secondAttribute="trailing" id="q7Y-tE-QVh"/>
