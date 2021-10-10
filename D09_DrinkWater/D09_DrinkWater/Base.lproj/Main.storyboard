@@ -32,6 +32,9 @@
                                     </attributedString>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="drinkWaterClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q6u-kk-wcO"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하세요님의 하루 물 권장 섭취량은 2.1L 입니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9M-wT-OzE">
                                 <rect key="frame" x="0.0" y="791" width="414" height="16"/>
@@ -82,9 +85,14 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="endEditing:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="DA9-om-TaZ"/>
+                                    <action selector="endEditing:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="oaj-4h-bS8"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Cfp-on-w3G"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="BXI-Cd-ETp" firstAttribute="top" secondItem="mFM-tq-dvF" secondAttribute="bottom" constant="30" id="0HH-qd-W9g"/>
                             <constraint firstItem="mFM-tq-dvF" firstAttribute="leading" secondItem="Cfp-on-w3G" secondAttribute="leading" constant="80" id="87L-1n-4z1"/>
@@ -100,9 +108,16 @@
                             <constraint firstItem="hz5-kf-DIF" firstAttribute="top" secondItem="Cfp-on-w3G" secondAttribute="top" constant="80" id="vMM-7w-Iyk"/>
                             <constraint firstItem="EJh-IF-27e" firstAttribute="leading" secondItem="Cfp-on-w3G" secondAttribute="leading" id="zTZ-LR-dVj"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="rST-as-JGA" appends="YES" id="hMc-SC-gdg"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="JHm-96-cSr">
-                        <barButtonItem key="leftBarButtonItem" image="arrow.clockwise" catalog="system" id="z19-gb-VnU"/>
+                        <barButtonItem key="leftBarButtonItem" image="arrow.clockwise" catalog="system" id="z19-gb-VnU">
+                            <connections>
+                                <action selector="resetButtonClicked:" destination="BYZ-38-t0r" id="r2I-4r-ljb"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="person.circle" catalog="system" id="IgB-y7-1XD">
                             <connections>
                                 <segue destination="9fi-gB-XbL" kind="show" id="7mg-3v-uIT"/>
@@ -110,17 +125,22 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="drinkWaterButton" destination="EJh-IF-27e" id="8J0-WL-Pj9"/>
-                        <outlet property="personalWaterDescriptionLabel" destination="Y9M-wT-OzE" id="OrV-mH-FKM"/>
+                        <outlet property="allowanceLabel" destination="Y9M-wT-OzE" id="IG1-j8-avm"/>
+                        <outlet property="drinkButton" destination="EJh-IF-27e" id="8J0-WL-Pj9"/>
                         <outlet property="resetTodayWaterButton" destination="z19-gb-VnU" id="jmC-nC-F5a"/>
                         <outlet property="showProfileViewButton" destination="IgB-y7-1XD" id="DEr-1L-FTn"/>
                         <outlet property="stageImage" destination="mFM-tq-dvF" id="8Wk-iz-box"/>
-                        <outlet property="todayPercentWaterLabel" destination="s8U-QS-o3X" id="s0x-IC-01z"/>
-                        <outlet property="todayTotalWaterLabel" destination="SYj-IX-Div" id="JL3-om-8ul"/>
-                        <outlet property="userInputWaterLabel" destination="BXI-Cd-ETp" id="hzS-Cl-fwh"/>
+                        <outlet property="todayPercentLabel" destination="s8U-QS-o3X" id="s0x-IC-01z"/>
+                        <outlet property="todayTotalLabel" destination="SYj-IX-Div" id="JL3-om-8ul"/>
+                        <outlet property="userInputWaterLabel" destination="BXI-Cd-ETp" id="gCi-OS-93g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="rST-as-JGA">
+                    <connections>
+                        <action selector="endEditing:" destination="BYZ-38-t0r" id="KNQ-83-QEh"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="892.75362318840587" y="96.428571428571431"/>
         </scene>
@@ -155,6 +175,9 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="endEditing:" destination="9fi-gB-XbL" eventType="editingDidEndOnExit" id="0zc-Jr-TO6"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -181,6 +204,9 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="endEditing:" destination="9fi-gB-XbL" eventType="editingDidEndOnExit" id="lns-mR-s1E"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -207,6 +233,9 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="endEditing:" destination="9fi-gB-XbL" eventType="editingDidEndOnExit" id="Wji-L4-LGN"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -215,6 +244,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="5Na-qP-Iet"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="5Na-qP-Iet" firstAttribute="trailing" secondItem="8J9-jH-qIF" secondAttribute="trailing" constant="40" id="8O5-ww-K2R"/>
                             <constraint firstItem="6KX-ZH-W6c" firstAttribute="top" secondItem="cKs-Po-Dj4" secondAttribute="bottom" constant="50" id="Bpd-jK-l0K"/>
@@ -229,11 +259,18 @@
                             <constraint firstItem="xkj-Sc-Qlr" firstAttribute="top" secondItem="6KX-ZH-W6c" secondAttribute="bottom" constant="20" id="hYm-XH-mj3"/>
                             <constraint firstItem="6KX-ZH-W6c" firstAttribute="leading" secondItem="5Na-qP-Iet" secondAttribute="leading" constant="40" id="z9R-qx-xNT"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="b8K-Hx-1QB" appends="YES" id="csx-1t-dHh"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="l9I-za-f8s">
                         <rightBarButtonItems>
                             <barButtonItem id="mwh-2N-exy"/>
-                            <barButtonItem title="저장" id="HTH-Of-scy"/>
+                            <barButtonItem title="저장" id="HTH-Of-scy">
+                                <connections>
+                                    <action selector="saveButtonClicked:" destination="9fi-gB-XbL" id="HvL-te-cfy"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -244,6 +281,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xva-pd-qY7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="b8K-Hx-1QB">
+                    <connections>
+                        <action selector="endEditing:" destination="9fi-gB-XbL" id="9B5-wE-VGf"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1757.9710144927537" y="95.758928571428569"/>
         </scene>
