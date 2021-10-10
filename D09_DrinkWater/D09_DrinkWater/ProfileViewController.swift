@@ -24,19 +24,12 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationController?.navigationBar.tintColor = .white
-        self.view.backgroundColor = UIColor(named: "contentDefault")
-        
-        nicknameUserInput.text = nickname
-        heightUserInput.text = String(height)
-        weightUserInput.text = String(weight)
+        setUI()
     }
     
     // view가 보여질 때 마다 바뀌어야 할 것은 따로 정의
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         setStageImage()
     }
     
@@ -55,6 +48,21 @@ class ProfileViewController: UIViewController {
         if nicknameUserInput.isEditing || heightUserInput.isEditing || weightUserInput.isEditing {
             view.endEditing(true)
         }
+    }
+}
+
+extension ProfileViewController {
+    func setUI() {
+        self.navigationController?.navigationBar.tintColor = .white
+        self.view.backgroundColor = UIColor(named: "contentDefault")
+        
+        nicknameUserInput.text = nickname
+        heightUserInput.text = String(height)
+        weightUserInput.text = String(weight)
+        
+        nicknameUserInput.keyboardType = .default
+        heightUserInput.keyboardType = .numberPad
+        weightUserInput.keyboardType = .numberPad
     }
     
     func setStageImage() {

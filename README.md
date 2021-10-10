@@ -33,8 +33,13 @@ Archive assignment for SeSAC_iOS
   - [x] UI 구성, AutoLayout은 Stroyboard로 구현
   - [x] UI 속성 Code로 구현
     * NavigationBar Shadow Color은 지정하지 못함.
-  - [ ] UserDefaults로 사용자가 마신 물의 양 저장
-  - [ ] 마신 물의 양에 따른 이미지 변경
-  - [ ] 사용자 정보 입력받고 권장량 계산
-      - [ ] ProfileViewController에 구현하고 Navigation Controller로 연결
-  - [ ] 권장량 < 마신 물의 양일 경우 왼쪽상단 레이블 색상 변경
+  - [x] UserDefaults로 사용자가 마신 물의 양 저장
+  - [x] 마신 물의 양에 따른 이미지 변경
+  - [x] 사용자 정보 입력받고 권장량 계산
+      - [x] ProfileViewController에 구현하고 Navigation Controller로 연결
+  - [x] 권장량 < 마신 물의 양일 경우 왼쪽상단 레이블 색상 변경
+  
+  * Addition
+    - [ ] AlertClass생성 후 각 Controller에 Delegate -> 각 controller마다 원하는 기능 구현가능하게
+    - [ ] userInput 작성시 키보드 높이에 따라 textField위치 조절
+    - [ ] log 저장

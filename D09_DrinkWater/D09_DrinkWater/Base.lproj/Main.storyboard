@@ -127,6 +127,8 @@
                     <connections>
                         <outlet property="allowanceLabel" destination="Y9M-wT-OzE" id="IG1-j8-avm"/>
                         <outlet property="drinkButton" destination="EJh-IF-27e" id="8J0-WL-Pj9"/>
+                        <outlet property="label1" destination="Ur0-Lj-if0" id="whN-dx-wRm"/>
+                        <outlet property="label2" destination="9ta-HA-3G1" id="dSA-ab-1TK"/>
                         <outlet property="resetTodayWaterButton" destination="z19-gb-VnU" id="jmC-nC-F5a"/>
                         <outlet property="showProfileViewButton" destination="IgB-y7-1XD" id="DEr-1L-FTn"/>
                         <outlet property="stageImage" destination="mFM-tq-dvF" id="8Wk-iz-box"/>
@@ -156,7 +158,7 @@
                                 <rect key="frame" x="100" y="148" width="214" height="151"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="6KX-ZH-W6c">
-                                <rect key="frame" x="40" y="349" width="334" height="51"/>
+                                <rect key="frame" x="40" y="349" width="334" height="52.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임을 설정해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1a-gm-l2t">
                                         <rect key="frame" x="0.0" y="0.0" width="116.5" height="16"/>
@@ -171,7 +173,7 @@
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="안녕하세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xkP-0z-i3j">
-                                        <rect key="frame" x="0.0" y="21" width="109" height="30"/>
+                                        <rect key="frame" x="0.0" y="21" width="334" height="31.5"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -182,10 +184,11 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="bR6-Ik-Buh" secondAttribute="trailing" id="X5L-Bp-kwc"/>
+                                    <constraint firstAttribute="trailing" secondItem="xkP-0z-i3j" secondAttribute="trailing" id="qi3-Kp-8uA"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="xkj-Sc-Qlr">
-                                <rect key="frame" x="40" y="420" width="334" height="51"/>
+                                <rect key="frame" x="40" y="421.5" width="334" height="52.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="키(cm)를 설정해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7s-cR-no7">
                                         <rect key="frame" x="0.0" y="0.0" width="122" height="16"/>
@@ -200,7 +203,7 @@
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="160" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FkD-bA-BfV">
-                                        <rect key="frame" x="0.0" y="21" width="43" height="30"/>
+                                        <rect key="frame" x="0.0" y="21" width="334" height="31.5"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -211,10 +214,11 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="YLS-yU-FUs" secondAttribute="trailing" id="d5t-57-bRS"/>
+                                    <constraint firstAttribute="trailing" secondItem="FkD-bA-BfV" secondAttribute="trailing" id="gd1-Ow-PGS"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="8J9-jH-qIF">
-                                <rect key="frame" x="40" y="491" width="334" height="51"/>
+                                <rect key="frame" x="40" y="494" width="334" height="52.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="몸무게(kg)를 설정해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ng-la-q1a">
                                         <rect key="frame" x="0.0" y="0.0" width="140.5" height="16"/>
@@ -229,7 +233,7 @@
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="50" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1L5-ZL-h9n">
-                                        <rect key="frame" x="0.0" y="21" width="31" height="30"/>
+                                        <rect key="frame" x="0.0" y="21" width="334" height="31.5"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -240,6 +244,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="MSF-28-zW4" secondAttribute="trailing" id="cvU-Jt-yUn"/>
+                                    <constraint firstAttribute="trailing" secondItem="1L5-ZL-h9n" secondAttribute="trailing" id="qR9-2Z-IIu"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -308,6 +313,7 @@
             <point key="canvasLocation" x="-17.39130434782609" y="96.428571428571431"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="1-1" width="152" height="151"/>
         <image name="1-3" width="152" height="151"/>

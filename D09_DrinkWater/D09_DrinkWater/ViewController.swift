@@ -11,6 +11,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var resetTodayWaterButton: UIBarButtonItem!
     @IBOutlet weak var showProfileViewButton: UIBarButtonItem!
     
+    @IBOutlet weak var label1: UILabel!
+    @IBOutlet weak var label2: UILabel!
     @IBOutlet weak var todayTotalLabel: UILabel!
     @IBOutlet weak var todayPercentLabel: UILabel!
     @IBOutlet weak var stageImage: UIImageView!
@@ -21,23 +23,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var drinkButton: UIButton!
     
     var allowance: Int  { return UserDefaults.standard.integer(forKey: "allowance") }
-    var todayPercent: Int { return  allowance == 0 ? 0 : todayTotal * 100 / allowance }
+    var todayPercent: Int {
+        let percent = allowance == 0 ? 0 : todayTotal * 100 / allowance
+        if percent >= 100 {highlightColorLabel() }
+        else { defualtColorLabel() }
+        return percent
+    }
     var todayTotal: Int { return UserDefaults.standard.integer(forKey: "total") }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.standardAppearance.shadowColor = .black
-        self.view.backgroundColor = UIColor(named: "contentDefault")
-        resetTodayWaterButton.tintColor = .white
-        showProfileViewButton.tintColor = .white
-        self.title = "물 마시기"
-        
-        // font size : 20, 20, 30, 13
-        todayTotalLabel.textColor = .white
-        todayTotalLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold)
-        todayPercentLabel.textColor = .white
-        
-        userInputWaterLabel.keyboardType = .numbersAndPunctuation
+        setUI()
     }
     
     // View가 보여질 때 마다 해줘야 할 것은 따로 정의
@@ -65,6 +61,21 @@ class ViewController: UIViewController {
 }
 
 extension ViewController {
+    func setUI() {
+        self.navigationController?.navigationBar.standardAppearance.shadowColor = .black
+        self.view.backgroundColor = UIColor(named: "contentDefault")
+        resetTodayWaterButton.tintColor = .white
+        showProfileViewButton.tintColor = .white
+        self.title = "물 마시기"
+        
+        // font size : 20, 20, 30, 13
+        
+        defualtColorLabel()
+        todayTotalLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+        
+        userInputWaterLabel.keyboardType = .numbersAndPunctuation
+    }
+    
     func update() {
         setTodayLabel()
         setAlloanceLabel()
@@ -83,7 +94,7 @@ extension ViewController {
         update()
     }
     
-    // MARK: 라벨에 적용
+    // MARK: UI 요소 속성 변경
     func setTodayLabel() {
         todayTotalLabel.text = "\(todayTotal)ml"
         todayPercentLabel.text = "목표의 \(todayPercent)%"
@@ -97,6 +108,24 @@ extension ViewController {
     
     func setStageImage() {
         stageImage.image = getStageImage(todayPercent: self.todayPercent)
+    }
+    
+    func highlightColorLabel() {
+        let highlightColor = UIColor(named: "highlight")
+        
+        label1.textColor = highlightColor
+        label2.textColor = highlightColor
+        todayTotalLabel.textColor = highlightColor
+        todayPercentLabel.textColor = highlightColor
+    }
+    
+    func defualtColorLabel() {
+        let defaultColor = UIColor.white
+        
+        label1.textColor = defaultColor
+        label2.textColor = defaultColor
+        todayTotalLabel.textColor = defaultColor
+        todayPercentLabel.textColor = defaultColor
     }
 }
 
