@@ -38,8 +38,7 @@ Archive assignment for SeSAC_iOS
   - [x] 사용자 정보 입력받고 권장량 계산
       - [x] ProfileViewController에 구현하고 Navigation Controller로 연결
   - [x] 권장량 < 마신 물의 양일 경우 왼쪽상단 레이블 색상 변경
-  
-  * Addition
-    - [ ] AlertClass생성 후 각 Controller에 Delegate -> 각 controller마다 원하는 기능 구현가능하게
-    - [ ] userInput 작성시 키보드 높이에 따라 textField위치 조절
-    - [ ] log 저장
+
+### SeSAC_03Week
+* <img width="756" alt="2021-10-13_02-59-19" src="https://user-images.githubusercontent.com/46219689/137006188-6df56786-2943-44cc-8d64-95e769ac3fb4.png">
+- [x] 왼쪽 레이아웃은 Storyboard로, 오른쪽 레이아웃은 Code로 구현
