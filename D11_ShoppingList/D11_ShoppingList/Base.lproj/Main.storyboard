@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oDT-w7-Igh">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Shopping List Table View Controller-->
+        <scene sceneID="wi4-Cc-bFe">
+            <objects>
+                <tableViewController id="oDT-w7-Igh" customClass="ShoppingListTableViewController" customModule="D11_ShoppingList" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="tt6-E2-USx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="XMl-qg-chT">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="152"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k4w-ef-jsT">
+                                    <rect key="frame" x="8" y="72" width="398" height="60"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="무엇을 구매하실 건가요?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qco-XB-0Fg">
+                                            <rect key="frame" x="20" y="21" width="292" height="19"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BRp-O4-hlK">
+                                            <rect key="frame" x="329" y="14.5" width="49" height="31"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="gray" title="추가">
+                                                <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </buttonConfiguration>
+                                            <connections>
+                                                <action selector="addItemButtonClicked:" destination="oDT-w7-Igh" eventType="touchUpInside" id="Gjy-EK-0dK"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                    <constraints>
+                                        <constraint firstItem="BRp-O4-hlK" firstAttribute="centerY" secondItem="k4w-ef-jsT" secondAttribute="centerY" id="6wj-SS-jgs"/>
+                                        <constraint firstItem="Qco-XB-0Fg" firstAttribute="centerY" secondItem="k4w-ef-jsT" secondAttribute="centerY" id="Gox-xp-Uho"/>
+                                        <constraint firstItem="Qco-XB-0Fg" firstAttribute="leading" secondItem="k4w-ef-jsT" secondAttribute="leading" constant="20" id="Odx-03-oPM"/>
+                                        <constraint firstAttribute="height" constant="60" id="iBp-Qj-JuO"/>
+                                        <constraint firstAttribute="trailing" secondItem="BRp-O4-hlK" secondAttribute="trailing" constant="20" id="s83-Ac-ba0"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쇼핑" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjP-ys-Sxh">
+                                    <rect key="frame" x="187.5" y="0.0" width="39" height="32"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="k4w-ef-jsT" secondAttribute="trailing" constant="8" id="31q-Xv-51k"/>
+                                <constraint firstItem="k4w-ef-jsT" firstAttribute="top" secondItem="ZjP-ys-Sxh" secondAttribute="bottom" constant="40" id="Z2L-DA-ngp"/>
+                                <constraint firstAttribute="bottom" secondItem="k4w-ef-jsT" secondAttribute="bottom" constant="20" id="gy4-Sd-avq"/>
+                                <constraint firstItem="k4w-ef-jsT" firstAttribute="leading" secondItem="XMl-qg-chT" secondAttribute="leading" constant="8" id="ipa-Y3-C1x"/>
+                                <constraint firstItem="ZjP-ys-Sxh" firstAttribute="top" secondItem="XMl-qg-chT" secondAttribute="top" id="p5o-uP-jbJ"/>
+                                <constraint firstItem="ZjP-ys-Sxh" firstAttribute="centerX" secondItem="XMl-qg-chT" secondAttribute="centerX" id="tR7-yl-Zsz"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShoppingListCell" id="Uwd-qV-CUd" customClass="ShoppingListTableViewCell" customModule="D11_ShoppingList" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="196.5" width="414" height="38.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Uwd-qV-CUd" id="Z89-T2-CTa">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="38.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpN-x3-NcW">
+                                            <rect key="frame" x="20" y="8.5" width="22" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="qZM-hf-6Gf"/>
+                                                <constraint firstAttribute="width" constant="22" id="xNS-zS-2ra"/>
+                                            </constraints>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal">
+                                                <imageReference key="image" image="checkmark.square" catalog="system" renderingMode="hierarchical-single">
+                                                    <hierarchicalColors>
+                                                        <color systemColor="labelColor"/>
+                                                        <color systemColor="secondaryLabelColor"/>
+                                                        <color systemColor="tertiaryLabelColor"/>
+                                                    </hierarchicalColors>
+                                                </imageReference>
+                                            </state>
+                                            <state key="selected">
+                                                <imageReference key="image" image="checkmark.square.fill" catalog="system" renderingMode="hierarchical-single">
+                                                    <hierarchicalColors>
+                                                        <color systemColor="systemGreenColor"/>
+                                                        <color systemColor="secondaryLabelColor"/>
+                                                        <color systemColor="tertiaryLabelColor"/>
+                                                    </hierarchicalColors>
+                                                </imageReference>
+                                            </state>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아이패드 케이스 최저가 알아보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ax-mu-itO">
+                                            <rect key="frame" x="62" y="11.5" width="168.5" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="orI-s4-fNb">
+                                            <rect key="frame" x="371" y="8" width="35" height="32"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal">
+                                                <imageReference key="image" image="star" catalog="system" renderingMode="hierarchical-single">
+                                                    <hierarchicalColors>
+                                                        <color systemColor="labelColor"/>
+                                                        <color systemColor="secondaryLabelColor"/>
+                                                        <color systemColor="tertiaryLabelColor"/>
+                                                    </hierarchicalColors>
+                                                </imageReference>
+                                            </state>
+                                            <state key="selected">
+                                                <imageReference key="image" image="star.fill" catalog="system" renderingMode="hierarchical-single">
+                                                    <hierarchicalColors>
+                                                        <color systemColor="systemYellowColor"/>
+                                                        <color systemColor="secondaryLabelColor"/>
+                                                        <color systemColor="tertiaryLabelColor"/>
+                                                    </hierarchicalColors>
+                                                </imageReference>
+                                            </state>
+                                            <connections>
+                                                <action selector="starButtonClicked:" destination="Uwd-qV-CUd" eventType="touchUpInside" id="FTJ-ds-dYc"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="0Ax-mu-itO" firstAttribute="centerY" secondItem="Z89-T2-CTa" secondAttribute="centerY" id="9BO-ec-W8u"/>
+                                        <constraint firstItem="orI-s4-fNb" firstAttribute="leading" secondItem="0Ax-mu-itO" secondAttribute="trailing" constant="20" id="TIb-st-4E1"/>
+                                        <constraint firstItem="0Ax-mu-itO" firstAttribute="leading" secondItem="kpN-x3-NcW" secondAttribute="trailing" constant="20" id="jfW-2M-hNh"/>
+                                        <constraint firstItem="orI-s4-fNb" firstAttribute="centerY" secondItem="Z89-T2-CTa" secondAttribute="centerY" id="kGZ-v4-QfS"/>
+                                        <constraint firstItem="orI-s4-fNb" firstAttribute="top" secondItem="Z89-T2-CTa" secondAttribute="top" constant="8" id="nym-p2-kyB"/>
+                                        <constraint firstItem="kpN-x3-NcW" firstAttribute="centerY" secondItem="Z89-T2-CTa" secondAttribute="centerY" id="rLN-YZ-DTb"/>
+                                        <constraint firstAttribute="trailing" secondItem="orI-s4-fNb" secondAttribute="trailing" constant="8" id="tHr-j7-AuG"/>
+                                        <constraint firstAttribute="bottom" secondItem="orI-s4-fNb" secondAttribute="bottom" constant="8" id="xef-MK-sDa"/>
+                                        <constraint firstItem="kpN-x3-NcW" firstAttribute="leading" secondItem="Z89-T2-CTa" secondAttribute="leading" constant="20" id="y0G-q1-gVw"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <connections>
+                                    <outlet property="checkButton" destination="kpN-x3-NcW" id="frm-dR-7nf"/>
+                                    <outlet property="shoppinListLabel" destination="0Ax-mu-itO" id="TTg-5h-CeD"/>
+                                    <outlet property="starButton" destination="orI-s4-fNb" id="Vyo-Pi-KL8"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="oDT-w7-Igh" id="HDM-mh-hRd"/>
+                            <outlet property="delegate" destination="oDT-w7-Igh" id="Plv-sR-yak"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="userInputTextField" destination="Qco-XB-0Fg" id="p4U-oE-5kE"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oEe-tk-qhw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1357.9710144927537" y="113.16964285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="checkmark.square" catalog="system" width="128" height="114"/>
+        <image name="checkmark.square.fill" catalog="system" width="128" height="114"/>
+        <image name="star" catalog="system" width="128" height="116"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
