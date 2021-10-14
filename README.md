@@ -42,3 +42,15 @@ Archive assignment for SeSAC_iOS
 ### SeSAC_03Week
 * <img width="756" alt="2021-10-13_02-59-19" src="https://user-images.githubusercontent.com/46219689/137006188-6df56786-2943-44cc-8d64-95e769ac3fb4.png">
 - [x] 왼쪽 레이아웃은 Storyboard로, 오른쪽 레이아웃은 Code로 구현
+
+### D11_ShoppingList
+* Assignment
+- [x] CustomTableViewCell 구현
+- [x] 체크박스, 즐겨찾기 버튼 on/off 구현
+  * 셀을 누르면 체크박스가 선택/선택해제 되도록 구현
+  * 즐겨찾기 버튼의 hitBox를 사용자가 편하게 누를 수 있도록 넓게 구현
+- [x] 텍스트필드의 내용을 추가버튼을 통해서 리스트에 내용을 저장.
+- [x] 스와이프를 통해서 내용을 삭제
+- [ ] UserDefaults를 통해서 내용을 기기에 저장
+* 실행화면
+  ![D11_ShoppingList](https://user-images.githubusercontent.com/46219689/137351223-d8d2f509-9370-4b4c-a5be-4801af1543d9.gif) 

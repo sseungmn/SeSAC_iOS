@@ -15,6 +15,9 @@
 		FDB9BAEA27150B2000DCC040 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDB9BAE827150B2000DCC040 /* LaunchScreen.storyboard */; };
 		FDB9BAF22715198100DCC040 /* MemoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB9BAF12715198100DCC040 /* MemoTableViewController.swift */; };
 		FDCC99502715FDDA002FB318 /* settingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCC994F2715FDDA002FB318 /* settingTableViewController.swift */; };
+		FDCC99722718111F002FB318 /* BoxOfficeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCC99712718111F002FB318 /* BoxOfficeTableViewCell.swift */; };
+		FDCC99742718115C002FB318 /* BoxOfficeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCC99732718115C002FB318 /* BoxOfficeTableViewController.swift */; };
+		FDCC997627182318002FB318 /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCC997527182318002FB318 /* Sample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		FDB9BAEB27150B2000DCC040 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDB9BAF12715198100DCC040 /* MemoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoTableViewController.swift; sourceTree = "<group>"; };
 		FDCC994F2715FDDA002FB318 /* settingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingTableViewController.swift; sourceTree = "<group>"; };
+		FDCC99712718111F002FB318 /* BoxOfficeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeTableViewCell.swift; sourceTree = "<group>"; };
+		FDCC99732718115C002FB318 /* BoxOfficeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeTableViewController.swift; sourceTree = "<group>"; };
+		FDCC997527182318002FB318 /* Sample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +66,15 @@
 		FDB9BADC27150B1B00DCC040 /* SeSAC_03Week */ = {
 			isa = PBXGroup;
 			children = (
+				FDCC997527182318002FB318 /* Sample.swift */,
 				FDCC994F2715FDDA002FB318 /* settingTableViewController.swift */,
 				FDB9BAF12715198100DCC040 /* MemoTableViewController.swift */,
 				FDB9BADD27150B1B00DCC040 /* AppDelegate.swift */,
 				FDB9BADF27150B1B00DCC040 /* SceneDelegate.swift */,
 				FDB9BAE127150B1B00DCC040 /* ViewController.swift */,
 				FDB9BAE327150B1B00DCC040 /* Main.storyboard */,
+				FDCC99712718111F002FB318 /* BoxOfficeTableViewCell.swift */,
+				FDCC99732718115C002FB318 /* BoxOfficeTableViewController.swift */,
 				FDB9BAE627150B2000DCC040 /* Assets.xcassets */,
 				FDB9BAE827150B2000DCC040 /* LaunchScreen.storyboard */,
 				FDB9BAEB27150B2000DCC040 /* Info.plist */,
@@ -145,9 +154,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDB9BAE227150B1B00DCC040 /* ViewController.swift in Sources */,
+				FDCC997627182318002FB318 /* Sample.swift in Sources */,
 				FDCC99502715FDDA002FB318 /* settingTableViewController.swift in Sources */,
 				FDB9BAF22715198100DCC040 /* MemoTableViewController.swift in Sources */,
+				FDCC99722718111F002FB318 /* BoxOfficeTableViewCell.swift in Sources */,
 				FDB9BADE27150B1B00DCC040 /* AppDelegate.swift in Sources */,
+				FDCC99742718115C002FB318 /* BoxOfficeTableViewController.swift in Sources */,
 				FDB9BAE027150B1B00DCC040 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
