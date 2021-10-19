@@ -9,19 +9,15 @@ import UIKit
 
 class ShoppingListTableViewController: UITableViewController {
 
-    var shoppingList = ["1번", "2번"]
+    var shoppingList = [Item]()
     @IBOutlet weak var userInputTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     @IBAction func addItemButtonClicked(_ sender: UIButton) {
-        guard let item = userInputTextField.text else { return }
+        guard let title = userInputTextField.text else { return }
+        let item = Item(title: title)
+        
         userInputTextField.text = ""
         shoppingList.append(item)
         tableView.reloadData()
@@ -30,12 +26,10 @@ class ShoppingListTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1;
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return shoppingList.count
     }
 
@@ -43,8 +37,10 @@ class ShoppingListTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ShoppingListTableViewCell.identifier, for: indexPath) as? ShoppingListTableViewCell else {
             return UITableViewCell()
         }
-        cell.shoppinListLabel.text = shoppingList[indexPath.row]
-
+        let item = shoppingList[indexPath.row]
+        cell.boughtCheckButton.isSelected = item.didBought
+        cell.shoppinListLabel.text = item.title
+        cell.bookmarkCheckButton.isSelected = item.didBookmark
         return cell
     }
     

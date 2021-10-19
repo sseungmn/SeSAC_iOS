@@ -11,27 +11,27 @@ class ShoppingListTableViewCell: UITableViewCell {
 
     static let identifier = "ShoppingListCell"
     
-    @IBOutlet weak var starButton: UIButton!
+    @IBOutlet weak var boughtCheckButton: UIButton!
     @IBOutlet weak var shoppinListLabel: UILabel!
-    @IBOutlet weak var checkButton: UIButton!
+    @IBOutlet weak var bookmarkCheckButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         NSLayoutConstraint.activate([
-            starButton.widthAnchor.constraint(equalTo: self.heightAnchor, constant: -16)
+            bookmarkCheckButton.widthAnchor.constraint(equalTo: self.heightAnchor, constant: -16)
         ])
     }
     
 
     @IBAction func starButtonClicked(_ sender: UIButton) {
-        self.starButton.isSelected = self.starButton.isSelected ? false : true
+        self.bookmarkCheckButton.isSelected = self.bookmarkCheckButton.isSelected ? false : true
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         if selected {
-            self.checkButton.isSelected = self.checkButton.isSelected ? false : true
+            self.boughtCheckButton.isSelected = self.boughtCheckButton.isSelected ? false : true
         }
     }
 

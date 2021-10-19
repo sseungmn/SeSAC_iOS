@@ -145,9 +145,9 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <connections>
-                                    <outlet property="checkButton" destination="kpN-x3-NcW" id="frm-dR-7nf"/>
+                                    <outlet property="bookmarkCheckButton" destination="orI-s4-fNb" id="Vyo-Pi-KL8"/>
+                                    <outlet property="boughtCheckButton" destination="kpN-x3-NcW" id="frm-dR-7nf"/>
                                     <outlet property="shoppinListLabel" destination="0Ax-mu-itO" id="TTg-5h-CeD"/>
-                                    <outlet property="starButton" destination="orI-s4-fNb" id="Vyo-Pi-KL8"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
