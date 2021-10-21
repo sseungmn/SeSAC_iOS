@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD2F9CE627216C8700795553 /* MediaPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2F9CE527216C8700795553 /* MediaPreviewCell.swift */; };
 		FDCC8DC1271EF19600EFF4B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCC8DC0271EF19600EFF4B9 /* AppDelegate.swift */; };
 		FDCC8DC3271EF19600EFF4B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCC8DC2271EF19600EFF4B9 /* SceneDelegate.swift */; };
 		FDCC8DC5271EF19600EFF4B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCC8DC4271EF19600EFF4B9 /* ViewController.swift */; };
 		FDCC8DC8271EF19600EFF4B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDCC8DC6271EF19600EFF4B9 /* Main.storyboard */; };
 		FDCC8DCA271EF19B00EFF4B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDCC8DC9271EF19B00EFF4B9 /* Assets.xcassets */; };
 		FDCC8DCD271EF19B00EFF4B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDCC8DCB271EF19B00EFF4B9 /* LaunchScreen.storyboard */; };
+		FDCC8DD5271EF29600EFF4B9 /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCC8DD4271EF29600EFF4B9 /* Sample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD2F9CE527216C8700795553 /* MediaPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPreviewCell.swift; sourceTree = "<group>"; };
 		FDCC8DBD271EF19600EFF4B9 /* D13_TrendMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = D13_TrendMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDCC8DC0271EF19600EFF4B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDCC8DC2271EF19600EFF4B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +27,7 @@
 		FDCC8DC9271EF19B00EFF4B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FDCC8DCC271EF19B00EFF4B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FDCC8DCE271EF19B00EFF4B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDCC8DD4271EF29600EFF4B9 /* Sample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,11 +60,13 @@
 		FDCC8DBF271EF19600EFF4B9 /* D13_TrendMedia */ = {
 			isa = PBXGroup;
 			children = (
+				FD2F9CE527216C8700795553 /* MediaPreviewCell.swift */,
 				FDCC8DC0271EF19600EFF4B9 /* AppDelegate.swift */,
 				FDCC8DC2271EF19600EFF4B9 /* SceneDelegate.swift */,
 				FDCC8DC4271EF19600EFF4B9 /* ViewController.swift */,
 				FDCC8DC6271EF19600EFF4B9 /* Main.storyboard */,
 				FDCC8DC9271EF19B00EFF4B9 /* Assets.xcassets */,
+				FDCC8DD4271EF29600EFF4B9 /* Sample.swift */,
 				FDCC8DCB271EF19B00EFF4B9 /* LaunchScreen.storyboard */,
 				FDCC8DCE271EF19B00EFF4B9 /* Info.plist */,
 			);
@@ -139,7 +145,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDCC8DC5271EF19600EFF4B9 /* ViewController.swift in Sources */,
+				FDCC8DD5271EF29600EFF4B9 /* Sample.swift in Sources */,
 				FDCC8DC1271EF19600EFF4B9 /* AppDelegate.swift in Sources */,
+				FD2F9CE627216C8700795553 /* MediaPreviewCell.swift in Sources */,
 				FDCC8DC3271EF19600EFF4B9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,7 +314,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -334,7 +342,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
