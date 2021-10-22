@@ -12,7 +12,11 @@ class MediaPreviewCell: UITableViewCell {
     static let identifier = "MediaPreviewCell"
     @IBOutlet weak var outerPreviewContainer: UIView!
     @IBOutlet weak var previewContainer: UIView!
-    @IBOutlet weak var previewImage: UIImageView!
+    @IBOutlet weak var contentGenreLabel: UILabel!
+    @IBOutlet weak var contentTitleLabel: UILabel!
+    @IBOutlet weak var contentStarringLabel: UILabel!
+    @IBOutlet weak var contentReleaseDateLabel: UILabel!
+    @IBOutlet var previewImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

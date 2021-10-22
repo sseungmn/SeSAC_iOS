@@ -56,3 +56,18 @@ Archive assignment for SeSAC_iOS
 		- 추후 JSON을 통한 변환 공부 후 다시 구현
 * 실행화면
   ![D11_ShoppingList](https://user-images.githubusercontent.com/46219689/137351223-d8d2f509-9370-4b4c-a5be-4801af1543d9.gif) 
+
+### D13_TrendMedia
+* Assignment
+- [x] MainView UI 구현
+  * CustomTableViewCell UI 구현
+  * Shadow, Radius 충돌 처리
+  * Image는 URL을 통해 불러오는 방식으로 구현
+    * DispatchQueue를 이용해 비동기적으로 동작
+- [x] SearchViewController와 MainView간의 화면전환
+  * present, dismiss 방식으로 구현
+  * 화면 전환 style은 fullScreen으로 구현
+- [x] SearchView UI 구현
+  * CustomTableViewCell UI 구현
+  * Image는 URL을 통해 불러오는 방식으로 구현
+    * DispatchQueue를 이용해 비동기적으로 동작

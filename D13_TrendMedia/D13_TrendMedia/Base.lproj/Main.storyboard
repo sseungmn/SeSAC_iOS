@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -60,8 +61,8 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="베놈 2: 렛 데어 비 카니지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8i-P9-sve">
-                                                                    <rect key="frame" x="20" y="267.5" width="196.5" height="24"/>
-                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                                    <rect key="frame" x="20" y="267.5" width="159.5" height="24"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -129,6 +130,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="contentGenreLabel" destination="OnU-1O-6aB" id="aMY-bg-qoM"/>
+                                            <outlet property="contentReleaseDateLabel" destination="kSo-5G-AI5" id="2fD-rg-yBt"/>
+                                            <outlet property="contentStarringLabel" destination="q8i-P9-sve" id="j64-FO-OLJ"/>
+                                            <outlet property="contentTitleLabel" destination="sIW-Se-EEv" id="iHP-FJ-u4g"/>
                                             <outlet property="outerPreviewContainer" destination="msN-2Y-cqP" id="FGM-yQ-9WU"/>
                                             <outlet property="previewContainer" destination="67I-49-nWY" id="jr3-E6-QBN"/>
                                             <outlet property="previewImage" destination="hNh-6V-hvZ" id="I56-Ue-woB"/>
@@ -235,6 +240,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="TREND MEDIA" id="TvZ-kf-Hw5">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="list.dash" catalog="system" id="3xG-Uv-BUn"/>
+                        <barButtonItem key="rightBarButtonItem" id="qFI-N5-sYm">
+                            <imageReference key="image" image="magnifyingglass" catalog="system" renderingMode="original"/>
+                            <connections>
+                                <action selector="searchButtonClicked:" destination="BYZ-38-t0r" id="MIK-w5-xHE"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mediaTypeContainer" destination="2wI-sh-Tdc" id="Uc2-U1-YHb"/>
@@ -242,7 +253,134 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042.0289855072465" y="109.82142857142857"/>
+            <point key="canvasLocation" x="358" y="110"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="Ggb-6D-yFw">
+            <objects>
+                <viewController storyboardIdentifier="SearchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0f0-VH-Io5" customClass="SearchViewController" customModule="D13_TrendMedia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="z5i-hm-1jf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fij-q9-it2">
+                                <rect key="frame" x="20" y="44" width="374" height="51"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwx-Xy-tU5">
+                                        <rect key="frame" x="0.0" y="0.0" width="35" height="51"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
+                                            <imageReference key="image" image="xmark.circle.fill" catalog="system" renderingMode="hierarchical-single">
+                                                <hierarchicalColors>
+                                                    <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color systemColor="secondaryLabelColor"/>
+                                                    <color systemColor="tertiaryLabelColor"/>
+                                                </hierarchicalColors>
+                                            </imageReference>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="exitButtonClicked:" destination="0f0-VH-Io5" eventType="touchUpInside" id="NmH-Uq-zKQ"/>
+                                        </connections>
+                                    </button>
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" showsCancelButton="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xb5-QX-zWL">
+                                        <rect key="frame" x="35" y="0.0" width="339" height="51"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <scopeButtonTitles>
+                                            <string>Title</string>
+                                            <string>Title</string>
+                                            <string>Title</string>
+                                        </scopeButtonTitles>
+                                    </searchBar>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="paz-tX-rLY">
+                                <rect key="frame" x="20" y="103" width="374" height="759"/>
+                                <color key="backgroundColor" name="serachViewBackground"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchTableViewCell" rowHeight="91" id="BDu-RQ-r5U" customClass="SearchTableViewCell" customModule="D13_TrendMedia" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="91"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BDu-RQ-r5U" id="rpP-El-WlV">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="91"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hello" translatesAutoresizingMaskIntoConstraints="NO" id="8ZR-1B-D4H">
+                                                    <rect key="frame" x="0.0" y="0.0" width="68.5" height="91"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="8ZR-1B-D4H" secondAttribute="height" multiplier="3:4" id="3zO-QY-n9E"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="HCP-ze-QBm">
+                                                    <rect key="frame" x="76.5" y="5" width="297.5" height="81"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해리 포터와 죽음의 성물 1(Harray Potter and the Deathly Water 1)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHn-JY-sNG">
+                                                            <rect key="frame" x="0.0" y="0.0" width="297.5" height="14.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2010-10-17 | EN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wQ-cB-oge">
+                                                            <rect key="frame" x="0.0" y="14.5" width="297.5" height="14"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="덤블도어 교장의 죽음 이후 , 마법부는 죽음을 먹는 자들에게 점령당하고 호그와트는 위기에 빠진다. 성년이 되며 해리를 지켜주는 수호 마법은 사라지고 해리와 론, 헤르미온느는 볼드모트의 영혼의 조각을 먹는데.." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVW-5b-nLZ">
+                                                            <rect key="frame" x="0.0" y="28.5" width="297.5" height="52.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="52.5" id="ti4-wd-gfd"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                            <color key="textColor" systemColor="systemGrayColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="HCP-ze-QBm" firstAttribute="leading" secondItem="8ZR-1B-D4H" secondAttribute="trailing" constant="8" id="4uE-69-S5H"/>
+                                                <constraint firstAttribute="trailing" secondItem="HCP-ze-QBm" secondAttribute="trailing" id="B2y-Bz-06w"/>
+                                                <constraint firstItem="8ZR-1B-D4H" firstAttribute="top" secondItem="rpP-El-WlV" secondAttribute="top" id="BUd-Uc-cF5"/>
+                                                <constraint firstItem="8ZR-1B-D4H" firstAttribute="leading" secondItem="rpP-El-WlV" secondAttribute="leading" id="OjK-M1-LMA"/>
+                                                <constraint firstItem="8ZR-1B-D4H" firstAttribute="bottom" secondItem="HCP-ze-QBm" secondAttribute="bottom" constant="5" id="Z1J-kf-Og3"/>
+                                                <constraint firstAttribute="bottom" secondItem="8ZR-1B-D4H" secondAttribute="bottom" id="emh-9H-Fnj"/>
+                                                <constraint firstItem="HCP-ze-QBm" firstAttribute="top" secondItem="8ZR-1B-D4H" secondAttribute="top" constant="5" id="gFx-q1-aRd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="serachViewBackground"/>
+                                        <connections>
+                                            <outlet property="detailLabel" destination="1wQ-cB-oge" id="6jw-XF-lne"/>
+                                            <outlet property="overviewLabel" destination="vVW-5b-nLZ" id="EoZ-yM-Igu"/>
+                                            <outlet property="previewImageView" destination="8ZR-1B-D4H" id="Adc-FQ-fex"/>
+                                            <outlet property="titleLabel" destination="YHn-JY-sNG" id="l5h-oW-PJT"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="0f0-VH-Io5" id="1JC-ub-Dmr"/>
+                                    <outlet property="delegate" destination="0f0-VH-Io5" id="apf-LY-oDz"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iGg-O8-sv0"/>
+                        <color key="backgroundColor" red="0.076768226920000002" green="0.076862581070000005" blue="0.076782830060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fij-q9-it2" firstAttribute="top" secondItem="iGg-O8-sv0" secondAttribute="top" id="8HN-1a-Up6"/>
+                            <constraint firstItem="iGg-O8-sv0" firstAttribute="trailing" secondItem="paz-tX-rLY" secondAttribute="trailing" constant="20" id="HTu-xt-qqb"/>
+                            <constraint firstItem="paz-tX-rLY" firstAttribute="bottom" secondItem="iGg-O8-sv0" secondAttribute="bottom" id="T9G-eB-Kkd"/>
+                            <constraint firstItem="paz-tX-rLY" firstAttribute="leading" secondItem="iGg-O8-sv0" secondAttribute="leading" constant="20" id="agA-Qn-A2q"/>
+                            <constraint firstItem="paz-tX-rLY" firstAttribute="top" secondItem="fij-q9-it2" secondAttribute="bottom" constant="8" symbolic="YES" id="eBZ-5X-fGg"/>
+                            <constraint firstItem="fij-q9-it2" firstAttribute="top" secondItem="iGg-O8-sv0" secondAttribute="top" id="f1P-Ty-0Os"/>
+                            <constraint firstAttribute="trailing" secondItem="fij-q9-it2" secondAttribute="trailing" constant="20" id="oAo-Hb-iSg"/>
+                            <constraint firstItem="fij-q9-it2" firstAttribute="leading" secondItem="iGg-O8-sv0" secondAttribute="leading" constant="20" id="zlN-hc-OV1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="eGw-zt-uJS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="okL-8y-JM6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1066.6666666666667" y="109.82142857142857"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zUn-LV-ATl">
@@ -267,10 +405,16 @@
         <image name="book.closed" catalog="system" width="115" height="128"/>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="film" catalog="system" width="128" height="93"/>
+        <image name="hello" width="2048" height="1152"/>
         <image name="list.dash" catalog="system" width="128" height="85"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="squid_game" width="350" height="515"/>
         <image name="titleBackground" width="610" height="610"/>
         <image name="tv" catalog="system" width="128" height="97"/>
+        <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
+        <namedColor name="serachViewBackground">
+            <color red="0.076768226920000002" green="0.076862581070000005" blue="0.076782830060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
@@ -279,6 +423,9 @@
         </systemColor>
         <systemColor name="systemGray3Color">
             <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
