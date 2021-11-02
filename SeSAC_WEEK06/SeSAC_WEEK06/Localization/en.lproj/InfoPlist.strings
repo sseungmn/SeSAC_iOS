@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  SeSAC_WEEK06
+
+  Created by OHSEUNGMIN on 2021/11/01.
+  
+*/
+CFBundleDisplayName  = "My Diary";
+NSCameraUsageDescription  = "Please Access Camera";

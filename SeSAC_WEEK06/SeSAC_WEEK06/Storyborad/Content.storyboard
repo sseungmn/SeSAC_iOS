@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="y9D-uk-RdU">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add View Controller-->
+        <scene sceneID="3CL-4S-pxD">
+            <objects>
+                <viewController storyboardIdentifier="AddViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="y9D-uk-RdU" customClass="AddViewController" customModule="SeSAC_WEEK06" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4jY-1r-ixh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="landscape" translatesAutoresizingMaskIntoConstraints="NO" id="Uig-52-fFB">
+                                <rect key="frame" x="0.0" y="44" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Uig-52-fFB" secondAttribute="height" id="IHh-Gq-bNM"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="제목을 입력해주세요" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="meC-6J-Wt3">
+                                <rect key="frame" x="20" y="478" width="374" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="W2V-lw-ptS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D51-YJ-jlP">
+                                <rect key="frame" x="20" y="548" width="374" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3MK-f0-fK7"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="2021년 11월 01일"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="일기 내용" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Lae-nM-sXQ">
+                                <rect key="frame" x="20" y="618" width="374" height="244"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NVQ-kA-BLg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="D51-YJ-jlP" firstAttribute="leading" secondItem="NVQ-kA-BLg" secondAttribute="leading" constant="20" id="172-2S-cTC"/>
+                            <constraint firstItem="D51-YJ-jlP" firstAttribute="top" secondItem="meC-6J-Wt3" secondAttribute="bottom" constant="20" id="31i-l3-A70"/>
+                            <constraint firstItem="Uig-52-fFB" firstAttribute="top" secondItem="NVQ-kA-BLg" secondAttribute="top" id="9Cx-tb-ZJv"/>
+                            <constraint firstItem="meC-6J-Wt3" firstAttribute="top" secondItem="Uig-52-fFB" secondAttribute="bottom" constant="20" id="CCq-c6-HG9"/>
+                            <constraint firstItem="NVQ-kA-BLg" firstAttribute="bottom" secondItem="Lae-nM-sXQ" secondAttribute="bottom" id="Es3-sD-SEm"/>
+                            <constraint firstItem="NVQ-kA-BLg" firstAttribute="trailing" secondItem="Lae-nM-sXQ" secondAttribute="trailing" constant="20" id="HId-eg-Asf"/>
+                            <constraint firstItem="Uig-52-fFB" firstAttribute="leading" secondItem="NVQ-kA-BLg" secondAttribute="leading" id="HLw-Ju-Ync"/>
+                            <constraint firstItem="NVQ-kA-BLg" firstAttribute="trailing" secondItem="meC-6J-Wt3" secondAttribute="trailing" constant="20" id="Mry-iu-6jP"/>
+                            <constraint firstItem="meC-6J-Wt3" firstAttribute="leading" secondItem="NVQ-kA-BLg" secondAttribute="leading" constant="20" id="YES-gU-fjd"/>
+                            <constraint firstItem="NVQ-kA-BLg" firstAttribute="trailing" secondItem="D51-YJ-jlP" secondAttribute="trailing" constant="20" id="aEr-rU-Htb"/>
+                            <constraint firstItem="Uig-52-fFB" firstAttribute="trailing" secondItem="NVQ-kA-BLg" secondAttribute="trailing" id="exg-6m-iFo"/>
+                            <constraint firstItem="Lae-nM-sXQ" firstAttribute="leading" secondItem="NVQ-kA-BLg" secondAttribute="leading" constant="20" id="guT-8X-T3i"/>
+                            <constraint firstItem="Lae-nM-sXQ" firstAttribute="top" secondItem="D51-YJ-jlP" secondAttribute="bottom" constant="20" id="vRx-Z4-sVW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentTextView" destination="Lae-nM-sXQ" id="h0q-QE-vHi"/>
+                        <outlet property="dateButton" destination="D51-YJ-jlP" id="mcR-0d-0CL"/>
+                        <outlet property="titleTextField" destination="meC-6J-Wt3" id="HZf-q5-14a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I69-yH-tmX" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1234.7826086956522" y="49.553571428571423"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="landscape" width="3000" height="2000"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
