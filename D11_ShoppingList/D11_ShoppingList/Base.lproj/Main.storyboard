@@ -126,9 +126,6 @@
                                                     </hierarchicalColors>
                                                 </imageReference>
                                             </state>
-                                            <connections>
-                                                <action selector="starButtonClicked:" destination="Uwd-qV-CUd" eventType="touchUpInside" id="FTJ-ds-dYc"/>
-                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -145,8 +142,8 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <connections>
-                                    <outlet property="bookmarkCheckButton" destination="orI-s4-fNb" id="Vyo-Pi-KL8"/>
-                                    <outlet property="boughtCheckButton" destination="kpN-x3-NcW" id="frm-dR-7nf"/>
+                                    <outlet property="bookmarkButton" destination="orI-s4-fNb" id="Vyo-Pi-KL8"/>
+                                    <outlet property="boughtButton" destination="kpN-x3-NcW" id="frm-dR-7nf"/>
                                     <outlet property="shoppinListLabel" destination="0Ax-mu-itO" id="TTg-5h-CeD"/>
                                 </connections>
                             </tableViewCell>

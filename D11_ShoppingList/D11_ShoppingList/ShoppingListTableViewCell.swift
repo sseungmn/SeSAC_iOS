@@ -11,27 +11,38 @@ class ShoppingListTableViewCell: UITableViewCell {
 
     static let identifier = "ShoppingListCell"
     
-    @IBOutlet weak var boughtCheckButton: UIButton!
+    @IBOutlet weak var boughtButton: UIButton!
     @IBOutlet weak var shoppinListLabel: UILabel!
-    @IBOutlet weak var bookmarkCheckButton: UIButton!
+    @IBOutlet weak var bookmarkButton: UIButton!
+    
+    var bookmarkButtonAction: (() -> ())?
+    var boughtButtonAction: (() -> ())?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         NSLayoutConstraint.activate([
-            bookmarkCheckButton.widthAnchor.constraint(equalTo: self.heightAnchor, constant: -16)
+            bookmarkButton.widthAnchor.constraint(equalTo: self.heightAnchor, constant: -16)
         ])
+        boughtButton.addTarget(self, action: #selector(self.boughtButtonClicked(_:)), for: .touchUpInside)
+        bookmarkButton.addTarget(self, action: #selector(self.bookmarkButtonClicked(_:)), for: .touchUpInside)
     }
     
+    
+    @IBAction func bookmarkButtonClicked(_ sender: UIButton) {
+        bookmarkButtonAction?()
+//        self.bookmarkButton.isSelected = self.bookmarkButton.isSelected ? false : true
+    }
 
-    @IBAction func starButtonClicked(_ sender: UIButton) {
-        self.bookmarkCheckButton.isSelected = self.bookmarkCheckButton.isSelected ? false : true
+
+    @IBAction func boughtButtonClicked(_ sender: UIButton) {
+        boughtButtonAction?()
     }
-    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         if selected {
-            self.boughtCheckButton.isSelected = self.boughtCheckButton.isSelected ? false : true
+            boughtButtonAction!()
+//            self.boughtButton.isSelected = self.boughtButton.isSelected ? false : true
         }
     }
 
