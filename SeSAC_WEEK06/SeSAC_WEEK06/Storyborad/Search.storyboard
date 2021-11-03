@@ -72,6 +72,7 @@
                                         <connections>
                                             <outlet property="contentLabel" destination="WbC-6O-PsN" id="gJI-ZZ-73G"/>
                                             <outlet property="dateLabel" destination="fB4-sH-yT0" id="SYm-Bv-M7W"/>
+                                            <outlet property="img" destination="QdG-9J-bxp" id="8q5-r6-SlH"/>
                                             <outlet property="titleLabel" destination="AUD-iU-5zV" id="EWx-Pr-skk"/>
                                         </connections>
                                     </tableViewCell>

@@ -11,6 +11,7 @@ class SearchTableViewCell: UITableViewCell {
     
     static let identifier = "SearchTableViewCell"
 
+    @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!

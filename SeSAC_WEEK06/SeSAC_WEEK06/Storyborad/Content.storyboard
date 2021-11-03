@@ -67,6 +67,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="contentImageView" destination="Uig-52-fFB" id="h8a-NH-qZy"/>
                         <outlet property="contentTextView" destination="Lae-nM-sXQ" id="h0q-QE-vHi"/>
                         <outlet property="dateButton" destination="D51-YJ-jlP" id="mcR-0d-0CL"/>
                         <outlet property="titleTextField" destination="meC-6J-Wt3" id="HZf-q5-14a"/>
