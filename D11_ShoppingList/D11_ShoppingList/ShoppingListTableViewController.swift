@@ -10,9 +10,13 @@ import RealmSwift
 
 class ShoppingListTableViewController: UITableViewController {
 
-//    var shoppingList = [Item]()
+    //    var shoppingList = [Item]()
     let localRealm = try! Realm()
-    var tasks: Results<Item>!
+    var tasks: Results<Item>! {
+        didSet(oldValue) {
+            self.tableView.reloadData()
+        }
+    }
     
     @IBOutlet weak var userInputTextField: UITextField!
     
@@ -22,6 +26,7 @@ class ShoppingListTableViewController: UITableViewController {
         
         tasks = localRealm.objects(Item.self).sorted(byKeyPath: "title", ascending: false)
     }
+    
     @IBAction func addItemButtonClicked(_ sender: UIButton) {
         guard let title = userInputTextField.text else { return }
         let row = Item(title: title)
@@ -34,7 +39,6 @@ class ShoppingListTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1;
     }
@@ -63,12 +67,7 @@ class ShoppingListTableViewController: UITableViewController {
                 item.bought = cell.boughtButton.isSelected
             }
         }
-        
         return cell
-    }
-    
-    @objc func setBoughtButton() {
-        
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -87,5 +86,29 @@ class ShoppingListTableViewController: UITableViewController {
             }
             tableView.reloadData()
         }
+    }
+    
+}
+
+// MARK: Sorting
+extension ShoppingListTableViewController {
+    @IBAction func sortButtonClicked(_ sender: UIButton) {
+        
+        let optionMenu = UIAlertController(title: "Sorting", message: "Choose Option", preferredStyle: .actionSheet)
+        
+        let sortByTitle = UIAlertAction(title: "Title", style: .default, handler: { _ in
+            self.tasks = self.localRealm.objects(Item.self).sorted(byKeyPath: "title")
+        })
+        let filterByBookmark = UIAlertAction(title: "Bookmark", style: .default, handler:  { _ in
+            self.tasks = self.localRealm.objects(Item.self).filter("bookmarked == true")
+        })
+        let filterByBought = UIAlertAction(title: "Bought", style: .default, handler: { _ in
+            self.tasks = self.localRealm.objects(Item.self).filter("bought == true")
+        })
+        
+        optionMenu.addAction(sortByTitle)
+        optionMenu.addAction(filterByBought)
+        optionMenu.addAction(filterByBookmark)
+        self.present(optionMenu, animated: true, completion: nil)
     }
 }

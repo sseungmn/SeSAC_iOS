@@ -20,8 +20,25 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="152"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쇼핑" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjP-ys-Sxh">
+                                    <rect key="frame" x="187.5" y="0.0" width="39" height="26"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnu-TS-KxG">
+                                    <rect key="frame" x="8" y="114" width="398" height="31"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="31" id="b69-mi-ZZB"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="정렬"/>
+                                    <connections>
+                                        <action selector="sortButtonClicked:" destination="oDT-w7-Igh" eventType="touchUpInside" id="5rd-Gz-llU"/>
+                                    </connections>
+                                </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k4w-ef-jsT">
-                                    <rect key="frame" x="8" y="72" width="398" height="60"/>
+                                    <rect key="frame" x="8" y="46" width="398" height="60"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="무엇을 구매하실 건가요?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qco-XB-0Fg">
                                             <rect key="frame" x="20" y="21" width="292" height="19"/>
@@ -48,18 +65,15 @@
                                         <constraint firstAttribute="trailing" secondItem="BRp-O4-hlK" secondAttribute="trailing" constant="20" id="s83-Ac-ba0"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쇼핑" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZjP-ys-Sxh">
-                                    <rect key="frame" x="187.5" y="0.0" width="39" height="32"/>
-                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="k4w-ef-jsT" secondAttribute="trailing" constant="8" id="31q-Xv-51k"/>
-                                <constraint firstItem="k4w-ef-jsT" firstAttribute="top" secondItem="ZjP-ys-Sxh" secondAttribute="bottom" constant="40" id="Z2L-DA-ngp"/>
-                                <constraint firstAttribute="bottom" secondItem="k4w-ef-jsT" secondAttribute="bottom" constant="20" id="gy4-Sd-avq"/>
+                                <constraint firstItem="fnu-TS-KxG" firstAttribute="top" secondItem="k4w-ef-jsT" secondAttribute="bottom" constant="8" symbolic="YES" id="CI5-Kg-hmE"/>
+                                <constraint firstAttribute="bottom" secondItem="fnu-TS-KxG" secondAttribute="bottom" constant="7" id="GjI-Tn-dj4"/>
+                                <constraint firstItem="fnu-TS-KxG" firstAttribute="leading" secondItem="XMl-qg-chT" secondAttribute="leading" constant="8" id="Hb9-YM-2AG"/>
+                                <constraint firstAttribute="trailing" secondItem="fnu-TS-KxG" secondAttribute="trailing" constant="8" id="R9Z-Bt-yv6"/>
+                                <constraint firstItem="k4w-ef-jsT" firstAttribute="top" secondItem="ZjP-ys-Sxh" secondAttribute="bottom" constant="20" id="Z2L-DA-ngp"/>
                                 <constraint firstItem="k4w-ef-jsT" firstAttribute="leading" secondItem="XMl-qg-chT" secondAttribute="leading" constant="8" id="ipa-Y3-C1x"/>
                                 <constraint firstItem="ZjP-ys-Sxh" firstAttribute="top" secondItem="XMl-qg-chT" secondAttribute="top" id="p5o-uP-jbJ"/>
                                 <constraint firstItem="ZjP-ys-Sxh" firstAttribute="centerX" secondItem="XMl-qg-chT" secondAttribute="centerX" id="tR7-yl-Zsz"/>
@@ -159,7 +173,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oEe-tk-qhw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1357.9710144927537" y="113.16964285714285"/>
+            <point key="canvasLocation" x="1164" y="106"/>
         </scene>
     </scenes>
     <resources>
