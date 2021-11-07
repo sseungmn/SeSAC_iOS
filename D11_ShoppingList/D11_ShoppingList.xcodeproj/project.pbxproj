@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD1BAC2927384D45003B9693 /* Backup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD1BAC2827384D45003B9693 /* Backup.storyboard */; };
+		FD1BAC2B27384D60003B9693 /* BackupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1BAC2A27384D60003B9693 /* BackupViewController.swift */; };
+		FD1BAC2E27385098003B9693 /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = FD1BAC2D27385097003B9693 /* MBProgressHUD */; };
 		FD22F47D27317E4800E1D08E /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = FD22F47C27317E4800E1D08E /* Realm */; };
 		FD22F47F27317E4800E1D08E /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FD22F47E27317E4800E1D08E /* RealmSwift */; };
+		FD22F4872733BF2100E1D08E /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = FD22F4862733BF2100E1D08E /* SideMenu */; };
+		FD6353DF273432550022C58A /* Backup&Restore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6353DE273432550022C58A /* Backup&Restore.swift */; };
+		FD6353E2273432970022C58A /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = FD6353E1273432970022C58A /* Zip */; };
 		FDCC995E27181037002FB318 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCC995D27181037002FB318 /* AppDelegate.swift */; };
 		FDCC996027181037002FB318 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCC995F27181037002FB318 /* SceneDelegate.swift */; };
 		FDCC996527181037002FB318 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDCC996327181037002FB318 /* Main.storyboard */; };
@@ -20,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD1BAC2827384D45003B9693 /* Backup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Backup.storyboard; sourceTree = "<group>"; };
+		FD1BAC2A27384D60003B9693 /* BackupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupViewController.swift; sourceTree = "<group>"; };
+		FD6353DE273432550022C58A /* Backup&Restore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Backup&Restore.swift"; sourceTree = "<group>"; };
 		FDCC995A27181037002FB318 /* D11_ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = D11_ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDCC995D27181037002FB318 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDCC995F27181037002FB318 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +47,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD22F47F27317E4800E1D08E /* RealmSwift in Frameworks */,
+				FD22F4872733BF2100E1D08E /* SideMenu in Frameworks */,
+				FD1BAC2E27385098003B9693 /* MBProgressHUD in Frameworks */,
+				FD6353E2273432970022C58A /* Zip in Frameworks */,
 				FD22F47D27317E4800E1D08E /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,6 +57,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD6353DA27341EEE0022C58A /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				FDCC996327181037002FB318 /* Main.storyboard */,
+				FD1BAC2827384D45003B9693 /* Backup.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		FD6353DD2734216C0022C58A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FDCC997727186DA9002FB318 /* ShoppingListTableViewCell.swift */,
+				FDCC997B27187393002FB318 /* ShoppingListTableViewController.swift */,
+				FD6353DE273432550022C58A /* Backup&Restore.swift */,
+				FD1BAC2A27384D60003B9693 /* BackupViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		FDCC995127181037002FB318 = {
 			isa = PBXGroup;
 			children = (
@@ -64,12 +96,11 @@
 		FDCC995C27181037002FB318 /* D11_ShoppingList */ = {
 			isa = PBXGroup;
 			children = (
+				FD6353DD2734216C0022C58A /* ViewController */,
+				FD6353DA27341EEE0022C58A /* Storyboard */,
 				FDCC995D27181037002FB318 /* AppDelegate.swift */,
 				FDCC995F27181037002FB318 /* SceneDelegate.swift */,
 				FDCC997927186F17002FB318 /* Data.swift */,
-				FDCC996327181037002FB318 /* Main.storyboard */,
-				FDCC997727186DA9002FB318 /* ShoppingListTableViewCell.swift */,
-				FDCC997B27187393002FB318 /* ShoppingListTableViewController.swift */,
 				FDCC99662718103B002FB318 /* Assets.xcassets */,
 				FDCC99682718103B002FB318 /* LaunchScreen.storyboard */,
 				FDCC996B2718103B002FB318 /* Info.plist */,
@@ -96,6 +127,9 @@
 			packageProductDependencies = (
 				FD22F47C27317E4800E1D08E /* Realm */,
 				FD22F47E27317E4800E1D08E /* RealmSwift */,
+				FD22F4862733BF2100E1D08E /* SideMenu */,
+				FD6353E1273432970022C58A /* Zip */,
+				FD1BAC2D27385097003B9693 /* MBProgressHUD */,
 			);
 			productName = D11_ShoppingList;
 			productReference = FDCC995A27181037002FB318 /* D11_ShoppingList.app */;
@@ -127,6 +161,9 @@
 			mainGroup = FDCC995127181037002FB318;
 			packageReferences = (
 				FD22F47B27317E4800E1D08E /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				FD22F4852733BF2000E1D08E /* XCRemoteSwiftPackageReference "SideMenu" */,
+				FD6353E0273432970022C58A /* XCRemoteSwiftPackageReference "Zip" */,
+				FD1BAC2C27385097003B9693 /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
 			);
 			productRefGroup = FDCC995B27181037002FB318 /* Products */;
 			projectDirPath = "";
@@ -144,6 +181,7 @@
 			files = (
 				FDCC996A2718103B002FB318 /* LaunchScreen.storyboard in Resources */,
 				FDCC99672718103B002FB318 /* Assets.xcassets in Resources */,
+				FD1BAC2927384D45003B9693 /* Backup.storyboard in Resources */,
 				FDCC996527181037002FB318 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,9 +194,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDCC997A27186F17002FB318 /* Data.swift in Sources */,
+				FD1BAC2B27384D60003B9693 /* BackupViewController.swift in Sources */,
 				FDCC997827186DA9002FB318 /* ShoppingListTableViewCell.swift in Sources */,
 				FDCC995E27181037002FB318 /* AppDelegate.swift in Sources */,
 				FDCC996027181037002FB318 /* SceneDelegate.swift in Sources */,
+				FD6353DF273432550022C58A /* Backup&Restore.swift in Sources */,
 				FDCC997C27187393002FB318 /* ShoppingListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,6 +421,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FD1BAC2C27385097003B9693 /* XCRemoteSwiftPackageReference "MBProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jdg/MBProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		FD22F47B27317E4800E1D08E /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-cocoa.git";
@@ -389,9 +437,30 @@
 				version = 10.18.0;
 			};
 		};
+		FD22F4852733BF2000E1D08E /* XCRemoteSwiftPackageReference "SideMenu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		FD6353E0273432970022C58A /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FD1BAC2D27385097003B9693 /* MBProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FD1BAC2C27385097003B9693 /* XCRemoteSwiftPackageReference "MBProgressHUD" */;
+			productName = MBProgressHUD;
+		};
 		FD22F47C27317E4800E1D08E /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FD22F47B27317E4800E1D08E /* XCRemoteSwiftPackageReference "realm-cocoa" */;
@@ -401,6 +470,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FD22F47B27317E4800E1D08E /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = RealmSwift;
+		};
+		FD22F4862733BF2100E1D08E /* SideMenu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FD22F4852733BF2000E1D08E /* XCRemoteSwiftPackageReference "SideMenu" */;
+			productName = SideMenu;
+		};
+		FD6353E1273432970022C58A /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FD6353E0273432970022C58A /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

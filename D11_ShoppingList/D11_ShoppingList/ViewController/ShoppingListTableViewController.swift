@@ -13,8 +13,9 @@ class ShoppingListTableViewController: UITableViewController {
     //    var shoppingList = [Item]()
     let localRealm = try! Realm()
     var tasks: Results<Item>! {
-        didSet(oldValue) {
-            self.tableView.reloadData()
+        didSet {
+            print("Tasks set")
+            tableView.reloadData()
         }
     }
     
@@ -91,8 +92,7 @@ class ShoppingListTableViewController: UITableViewController {
 
 // MARK: Sorting
 extension ShoppingListTableViewController {
-    @IBAction func sortButtonClicked(_ sender: UIButton) {
-        
+    @IBAction func sortButtonClicked(_ sender: UIBarButtonItem) {
         let optionMenu = UIAlertController(title: "Sorting", message: "Choose Option", preferredStyle: .actionSheet)
         
         let sortByTitle = UIAlertAction(title: "Title", style: .default, handler: { _ in
