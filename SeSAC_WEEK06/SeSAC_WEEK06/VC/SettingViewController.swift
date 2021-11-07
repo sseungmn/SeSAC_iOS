@@ -99,6 +99,7 @@ class SettingViewController: UIViewController {
        // 복구 1. 파일앱 열기 + 확장자
         // import MobileCoreServices
         let documentPicker = UIDocumentPickerViewController(documentTypes: [kUTTypeArchive as String], in: .import)
+//        let documentPicker = UIDocumentPickerViewController.init(forOpeningContentTypes: [UTType.archive], asCopy: true)
         documentPicker.delegate = self
         documentPicker.allowsMultipleSelection = false
         self.present(documentPicker, animated: true, completion: nil)

@@ -19,7 +19,7 @@ extension String {
 }
 
 extension Date {
-    func toString() -> String {
+    func toCustomFormattedString() -> String {
         let dateFormat = DateFormatter()
         dateFormat.dateFormat = "yyyy년 MM월 dd일"
         return dateFormat.string(from: self)

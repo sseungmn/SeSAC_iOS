@@ -18,6 +18,7 @@ class SearchViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         tasks = localRealm.objects(UserDiary.self)
+        print("Realm is located at : \n", localRealm.configuration.fileURL)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -40,9 +41,10 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         let task = tasks[indexPath.row]
-        cell.img.image = loadImageFromDocumentDirectory(imageName: "\(task._id).jpg")
+//        cell.img.image = loadImageFromDocumentDirectory(imageName: "\(task._id).jpg")
+//        cell.img.image = loadImageFromDocumentDirectory(imageName: "\(task._id).jpg")
         cell.titleLabel.text = task.diaryTitle
-        cell.dateLabel.text = task.writeDate.toString()
+        cell.dateLabel.text = task.writeDate.toCustomFormattedString()
         cell.contentLabel.text = task.content
         return cell
     }
