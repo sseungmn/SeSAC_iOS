@@ -16,6 +16,12 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     
+    func configureCell(row: UserDiary) {
+        titleLabel.text = row.diaryTitle
+        dateLabel.text = row.writeDate.toCustomFormattedString()
+        contentLabel.text = row.content
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.setupUI()

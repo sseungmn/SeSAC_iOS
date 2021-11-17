@@ -9,8 +9,22 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    let array = [
+        Array(repeating: "a", count: 20),
+        Array(repeating: "b", count: 10),
+        Array(repeating: "c", count: 15),
+        Array(repeating: "d", count: 13),
+        Array(repeating: "e", count: 18),
+        Array(repeating: "f", count: 8),
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         
         if let downcastStrings = self.tabBarController?.tabBar.items {
             downcastStrings[0].title = "Home"
@@ -39,3 +53,26 @@ class HomeViewController: UIViewController {
         present(nav, animated: true, completion: nil)
     }
 }
+
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return array.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.identifier, for: indexPath) as? HomeTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        cell.data = array[indexPath.row] // cell에 array data를 넘겨준다.
+        cell.collectionView.tag = indexPath.row
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return indexPath.row == 1 ? 300 : 170
+    }
+    
+}
+

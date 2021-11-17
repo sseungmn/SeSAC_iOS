@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  SeSAC_WEEK06
+//  SeSAC_WEEK07
 //
-//  Created by OHSEUNGMIN on 2021/11/01.
+//  Created by OHSEUNGMIN on 2021/11/10.
 //
 
 import UIKit
@@ -13,17 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // 설정한 모든 객체들의 기초 값이 바뀐다.
-        
-        UILabel.appearance().textColor = .darkGray
-        UILabel.appearance().font = .boldSystemFont(ofSize: 20)
-        UILabel.appearance().textAlignment = .center
-        
-        UITableView.appearance().backgroundColor = .clear
-        UITableViewCell.appearance().backgroundColor = .clear
-        
-        UICollectionView.appearance().backgroundColor = .clear
-        
+        // Override point for customization after application launch.
         return true
     }
 

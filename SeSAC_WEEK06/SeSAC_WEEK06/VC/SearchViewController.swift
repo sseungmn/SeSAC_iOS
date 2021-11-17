@@ -37,15 +37,13 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier, for: indexPath) as? SearchTableViewCell else {
-            print("Failed")
             return UITableViewCell()
         }
         let task = tasks[indexPath.row]
+        cell.configureCell(row: tasks[indexPath.row])
+        
 //        cell.img.image = loadImageFromDocumentDirectory(imageName: "\(task._id).jpg")
 //        cell.img.image = loadImageFromDocumentDirectory(imageName: "\(task._id).jpg")
-        cell.titleLabel.text = task.diaryTitle
-        cell.dateLabel.text = task.writeDate.toCustomFormattedString()
-        cell.contentLabel.text = task.content
         return cell
     }
     

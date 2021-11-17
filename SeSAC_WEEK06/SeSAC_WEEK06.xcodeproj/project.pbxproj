@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD1BAC342738ABB2003B9693 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1BAC332738ABB2003B9693 /* HomeTableViewCell.swift */; };
+		FD1BAC382738B2D0003B9693 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1BAC372738B2D0003B9693 /* HomeCollectionViewCell.swift */; };
 		FD1CAD52272FC62200E4ED9D /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD1CAD51272FC62200E4ED9D /* Home.storyboard */; };
 		FD1CAD54272FC62B00E4ED9D /* Content.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD1CAD53272FC62B00E4ED9D /* Content.storyboard */; };
 		FD1CAD56272FC63200E4ED9D /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD1CAD55272FC63200E4ED9D /* Calendar.storyboard */; };
@@ -46,6 +48,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD1BAC332738ABB2003B9693 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		FD1BAC372738B2D0003B9693 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		FD1CAD51272FC62200E4ED9D /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		FD1CAD53272FC62B00E4ED9D /* Content.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Content.storyboard; sourceTree = "<group>"; };
 		FD1CAD55272FC63200E4ED9D /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 				FD22F473273139A500E1D08E /* SettingViewController.swift */,
 				FD22F47527313A4600E1D08E /* SearchTableViewCell.swift */,
 				FD6353E32734B8200022C58A /* DatePickerViewController.swift */,
+				FD1BAC372738B2D0003B9693 /* HomeCollectionViewCell.swift */,
+				FD1BAC332738ABB2003B9693 /* HomeTableViewCell.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -310,6 +316,7 @@
 				FD6353ED2736A2670022C58A /* AddViewController.swift in Sources */,
 				FD6353E927368C7A0022C58A /* RealmQuery.swift in Sources */,
 				FD22F474273139A500E1D08E /* SettingViewController.swift in Sources */,
+				FD1BAC382738B2D0003B9693 /* HomeCollectionViewCell.swift in Sources */,
 				FD8AA3B4272F73B400A7C2AC /* UIFont + Extension.swift in Sources */,
 				FD1CAD6D2730CC5C00E4ED9D /* RealmModel.swift in Sources */,
 				FD8AA3CC272F8BBF00A7C2AC /* LocalizableString.swift in Sources */,
@@ -320,6 +327,7 @@
 				FD6353E42734B8200022C58A /* DatePickerViewController.swift in Sources */,
 				FD8AA3CA272F88FA00A7C2AC /* String+Extension.swift in Sources */,
 				FD8AA39A272F71AC00A7C2AC /* SceneDelegate.swift in Sources */,
+				FD1BAC342738ABB2003B9693 /* HomeTableViewCell.swift in Sources */,
 				FD22F47627313A4600E1D08E /* SearchTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
