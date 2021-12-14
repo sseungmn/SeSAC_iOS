@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SeSAC_WEEK12" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="plV-y1-LXE" customClass="SquareBoxView" customModule="SeSAC_WEEK12" customModuleProvider="target">
+                                <rect key="frame" x="16" y="64" width="116.5" height="70"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="plV-y1-LXE" secondAttribute="height" multiplier="5:3" id="niB-Sa-uyr"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BQ7-f0-IqT" customClass="SquareBoxView" customModule="SeSAC_WEEK12" customModuleProvider="target">
+                                <rect key="frame" x="148.5" y="64" width="117" height="70"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="BQ7-f0-IqT" secondAttribute="height" multiplier="5:3" id="L27-Ye-F09"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hCH-Jt-Cke" customClass="SquareBoxView" customModule="SeSAC_WEEK12" customModuleProvider="target">
+                                <rect key="frame" x="281.5" y="64" width="116.5" height="70"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hCH-Jt-Cke" secondAttribute="height" multiplier="5:3" id="Bii-gU-syS"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OxP-MC-rjW">
+                                <rect key="frame" x="16" y="160" width="215" height="104"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="presentButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5oT-SM-lHc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQJ-3q-3AT" customClass="MainActivitiButton" customModule="SeSAC_WEEK12" customModuleProvider="target">
+                                <rect key="frame" x="98" y="643" width="195" height="129"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="systemOrangeColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hCH-Jt-Cke" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="1Pu-jY-dDP"/>
+                            <constraint firstItem="BQ7-f0-IqT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="2ta-U0-WNr"/>
+                            <constraint firstItem="BQ7-f0-IqT" firstAttribute="width" secondItem="plV-y1-LXE" secondAttribute="width" id="8VR-nX-eIR"/>
+                            <constraint firstItem="plV-y1-LXE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="GBg-LN-jfs"/>
+                            <constraint firstItem="BQ7-f0-IqT" firstAttribute="leading" secondItem="plV-y1-LXE" secondAttribute="trailing" constant="16" id="HH8-B1-n4j"/>
+                            <constraint firstItem="plV-y1-LXE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="MYV-ez-8Bx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hCH-Jt-Cke" secondAttribute="trailing" constant="16" id="ho8-Mt-NTW"/>
+                            <constraint firstItem="hCH-Jt-Cke" firstAttribute="leading" secondItem="BQ7-f0-IqT" secondAttribute="trailing" constant="16" id="k2m-ej-dJR"/>
+                            <constraint firstItem="hCH-Jt-Cke" firstAttribute="width" secondItem="plV-y1-LXE" secondAttribute="width" id="ppR-nW-aQA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="favoriteMenuView" destination="plV-y1-LXE" id="HMI-XR-an6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="128.57142857142856"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="zQJ-3q-3AT">
+            <size key="intrinsicContentSize" width="67" height="31"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
