@@ -30,7 +30,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        let vc = SnapDetailViewController()
 //        let nav = UINavigationController(rootViewController: vc)
         
-        window?.rootViewController = TabBarController()
+        window?.rootViewController = KakaoTalkViewController()
         window?.makeKeyAndVisible()
     }
 

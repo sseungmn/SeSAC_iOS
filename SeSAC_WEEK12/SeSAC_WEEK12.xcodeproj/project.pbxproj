@@ -27,6 +27,7 @@
 		B56C9149276979690005658D /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B56C9148276979690005658D /* SettingViewController.xib */; };
 		B56C914B27697EE90005658D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56C914A27697EE90005658D /* TabBarController.swift */; };
 		B56C914D2769C0F20005658D /* KakaoTalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56C914C2769C0F20005658D /* KakaoTalk.swift */; };
+		B56C91512769E0E00005658D /* KakaoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56C91502769E0E00005658D /* KakaoButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		B56C9148276979690005658D /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		B56C914A27697EE90005658D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = /Users/seuoh/Documents/workspace/SeSAC/Project/Assignment/SeSAC_WEEK12/SeSAC_WEEK12/Class/TabBarController.swift; sourceTree = "<absolute>"; };
 		B56C914C2769C0F20005658D /* KakaoTalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoTalk.swift; sourceTree = "<group>"; };
+		B56C91502769E0E00005658D /* KakaoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				B56C914C2769C0F20005658D /* KakaoTalk.swift */,
+				B56C91502769E0E00005658D /* KakaoButton.swift */,
 			);
 			path = KakaoTalk;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				B53C94842766DD8D003421A1 /* BannerView.swift in Sources */,
 				B56C9147276979350005658D /* SettingViewController.swift in Sources */,
 				B56C914B27697EE90005658D /* TabBarController.swift in Sources */,
+				B56C91512769E0E00005658D /* KakaoButton.swift in Sources */,
 				B53C946C2766CCCA003421A1 /* ViewController.swift in Sources */,
 				B53C94882766E575003421A1 /* MainActivitiButton.swift in Sources */,
 				B53C94682766CCCA003421A1 /* AppDelegate.swift in Sources */,
@@ -482,6 +486,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -510,6 +515,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
