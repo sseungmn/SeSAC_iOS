@@ -22,9 +22,11 @@
 		B53C948A276733F3003421A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B53C9489276733F3003421A1 /* GoogleService-Info.plist */; };
 		B553545027682EC600416A66 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B553544F27682EC600416A66 /* SnapKit */; };
 		B55354522768315F00416A66 /* SnapDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55354512768315F00416A66 /* SnapDetailViewController.swift */; };
-		B56C91412768852B0005658D /* Melon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B56C91402768852B0005658D /* Melon.storyboard */; };
 		B56C9143276885340005658D /* Melon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56C9142276885340005658D /* Melon.swift */; };
-		B56C9145276889E40005658D /* MelonView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56C9144276889E40005658D /* MelonView + Extension.swift */; };
+		B56C9147276979350005658D /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56C9146276979350005658D /* SettingViewController.swift */; };
+		B56C9149276979690005658D /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B56C9148276979690005658D /* SettingViewController.xib */; };
+		B56C914B27697EE90005658D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56C914A27697EE90005658D /* TabBarController.swift */; };
+		B56C914D2769C0F20005658D /* KakaoTalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56C914C2769C0F20005658D /* KakaoTalk.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,9 +48,11 @@
 		B53C94872766E575003421A1 /* MainActivitiButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainActivitiButton.swift; sourceTree = "<group>"; };
 		B53C9489276733F3003421A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B55354512768315F00416A66 /* SnapDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SnapDetailViewController.swift; path = /Users/seuoh/Documents/workspace/SeSAC/Project/Assignment/SeSAC_WEEK12/SeSAC_WEEK12/SnapDetailViewController.swift; sourceTree = "<absolute>"; };
-		B56C91402768852B0005658D /* Melon.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Melon.storyboard; sourceTree = "<group>"; };
 		B56C9142276885340005658D /* Melon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Melon.swift; sourceTree = "<group>"; };
-		B56C9144276889E40005658D /* MelonView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MelonView + Extension.swift"; sourceTree = "<group>"; };
+		B56C9146276979350005658D /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		B56C9148276979690005658D /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		B56C914A27697EE90005658D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = /Users/seuoh/Documents/workspace/SeSAC/Project/Assignment/SeSAC_WEEK12/SeSAC_WEEK12/Class/TabBarController.swift; sourceTree = "<absolute>"; };
+		B56C914C2769C0F20005658D /* KakaoTalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoTalk.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,9 @@
 				B53C94872766E575003421A1 /* MainActivitiButton.swift */,
 				B53C947F2766CF34003421A1 /* SquareBoxView.xib */,
 				B53C947D2766CCFF003421A1 /* SquareBoxView.swift */,
+				B56C9146276979350005658D /* SettingViewController.swift */,
+				B56C9148276979690005658D /* SettingViewController.xib */,
+				B56C914A27697EE90005658D /* TabBarController.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -134,9 +141,7 @@
 		B56C913D276885080005658D /* Melon */ = {
 			isa = PBXGroup;
 			children = (
-				B56C91402768852B0005658D /* Melon.storyboard */,
 				B56C9142276885340005658D /* Melon.swift */,
-				B56C9144276889E40005658D /* MelonView + Extension.swift */,
 			);
 			path = Melon;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 		B56C913E2768850E0005658D /* KakaoTalk */ = {
 			isa = PBXGroup;
 			children = (
+				B56C914C2769C0F20005658D /* KakaoTalk.swift */,
 			);
 			path = KakaoTalk;
 			sourceTree = "<group>";
@@ -230,9 +236,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B56C9149276979690005658D /* SettingViewController.xib in Resources */,
 				B53C94802766CF34003421A1 /* SquareBoxView.xib in Resources */,
 				B53C94742766CCCC003421A1 /* LaunchScreen.storyboard in Resources */,
-				B56C91412768852B0005658D /* Melon.storyboard in Resources */,
 				B53C948A276733F3003421A1 /* GoogleService-Info.plist in Resources */,
 				B53C94712766CCCC003421A1 /* Assets.xcassets in Resources */,
 				B53C946F2766CCCA003421A1 /* Main.storyboard in Resources */,
@@ -308,12 +314,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B53C94842766DD8D003421A1 /* BannerView.swift in Sources */,
+				B56C9147276979350005658D /* SettingViewController.swift in Sources */,
+				B56C914B27697EE90005658D /* TabBarController.swift in Sources */,
 				B53C946C2766CCCA003421A1 /* ViewController.swift in Sources */,
 				B53C94882766E575003421A1 /* MainActivitiButton.swift in Sources */,
 				B53C94682766CCCA003421A1 /* AppDelegate.swift in Sources */,
+				B56C914D2769C0F20005658D /* KakaoTalk.swift in Sources */,
 				B53C94862766E070003421A1 /* DetailViewController.swift in Sources */,
 				B53C946A2766CCCA003421A1 /* SceneDelegate.swift in Sources */,
-				B56C9145276889E40005658D /* MelonView + Extension.swift in Sources */,
 				B56C9143276885340005658D /* Melon.swift in Sources */,
 				B55354522768315F00416A66 /* SnapDetailViewController.swift in Sources */,
 				B53C947E2766CCFF003421A1 /* SquareBoxView.swift in Sources */,
