@@ -10,7 +10,7 @@ import UIKit
 class SearchAPI {
     private let key = Bundle.main.tmdb
     
-    let baseURLString = "https://api.themoviedb.org/3/search/tv"
+    private let baseURLString = "https://api.themoviedb.org/3/search/tv"
     
     func requestTVShow(query: String, completion: @escaping (TVShow?) -> Void) {
         let params: [String: Any] = [

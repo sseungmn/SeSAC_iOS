@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let searchAPI = SearchAPI()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
