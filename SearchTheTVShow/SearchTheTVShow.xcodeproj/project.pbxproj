@@ -11,6 +11,9 @@
 		B5A5F64D277241C400DC9DFD /* APIKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5A5F64A277241C400DC9DFD /* APIKeys.plist */; };
 		B5A5F64E277241C400DC9DFD /* TVShowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5F64B277241C400DC9DFD /* TVShowModel.swift */; };
 		B5A5F650277241D600DC9DFD /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5F64F277241D600DC9DFD /* Bundle+Extension.swift */; };
+		B5A5F6592772457700DC9DFD /* CollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5F6582772457700DC9DFD /* CollectionViewCell+Extension.swift */; };
+		B5A5F65C2772478200DC9DFD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B5A5F65B2772478200DC9DFD /* SnapKit */; };
+		B5A5F65E2772492700DC9DFD /* TVShowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5F65D2772492700DC9DFD /* TVShowCollectionViewCell.swift */; };
 		B5B2DE9B2771E2FA0041CDA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B2DE9A2771E2FA0041CDA3 /* AppDelegate.swift */; };
 		B5B2DE9D2771E2FA0041CDA3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B2DE9C2771E2FA0041CDA3 /* SceneDelegate.swift */; };
 		B5B2DE9F2771E2FA0041CDA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B2DE9E2771E2FA0041CDA3 /* ViewController.swift */; };
@@ -23,6 +26,8 @@
 		B5A5F64A277241C400DC9DFD /* APIKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = APIKeys.plist; sourceTree = "<group>"; };
 		B5A5F64B277241C400DC9DFD /* TVShowModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVShowModel.swift; sourceTree = "<group>"; };
 		B5A5F64F277241D600DC9DFD /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		B5A5F6582772457700DC9DFD /* CollectionViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
+		B5A5F65D2772492700DC9DFD /* TVShowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowCollectionViewCell.swift; sourceTree = "<group>"; };
 		B5B2DE972771E2FA0041CDA3 /* SearchTheTVShow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchTheTVShow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5B2DE9A2771E2FA0041CDA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5B2DE9C2771E2FA0041CDA3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5A5F65C2772478200DC9DFD /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				B5A5F64F277241D600DC9DFD /* Bundle+Extension.swift */,
+				B5A5F6582772457700DC9DFD /* CollectionViewCell+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -112,6 +119,7 @@
 				B5A5F6522772421D00DC9DFD /* Extension */,
 				B5A5F6512772420100DC9DFD /* Project */,
 				B5A5F649277241C400DC9DFD /* SearchAPI.swift */,
+				B5A5F65D2772492700DC9DFD /* TVShowCollectionViewCell.swift */,
 			);
 			path = SearchTheTVShow;
 			sourceTree = "<group>";
@@ -132,6 +140,9 @@
 			dependencies = (
 			);
 			name = SearchTheTVShow;
+			packageProductDependencies = (
+				B5A5F65B2772478200DC9DFD /* SnapKit */,
+			);
 			productName = SearchTheTVShow;
 			productReference = B5B2DE972771E2FA0041CDA3 /* SearchTheTVShow.app */;
 			productType = "com.apple.product-type.application";
@@ -160,6 +171,9 @@
 				Base,
 			);
 			mainGroup = B5B2DE8E2771E2FA0041CDA3;
+			packageReferences = (
+				B5A5F65A2772478200DC9DFD /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = B5B2DE982771E2FA0041CDA3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -190,8 +204,10 @@
 				B5B2DE9F2771E2FA0041CDA3 /* ViewController.swift in Sources */,
 				B5A5F650277241D600DC9DFD /* Bundle+Extension.swift in Sources */,
 				B5B2DE9B2771E2FA0041CDA3 /* AppDelegate.swift in Sources */,
+				B5A5F65E2772492700DC9DFD /* TVShowCollectionViewCell.swift in Sources */,
 				B5A5F64C277241C400DC9DFD /* SearchAPI.swift in Sources */,
 				B5B2DE9D2771E2FA0041CDA3 /* SceneDelegate.swift in Sources */,
+				B5A5F6592772457700DC9DFD /* CollectionViewCell+Extension.swift in Sources */,
 				B5A5F64E277241C400DC9DFD /* TVShowModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -402,6 +418,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B5A5F65A2772478200DC9DFD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B5A5F65B2772478200DC9DFD /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5A5F65A2772478200DC9DFD /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B5B2DE8F2771E2FA0041CDA3 /* Project object */;
 }
