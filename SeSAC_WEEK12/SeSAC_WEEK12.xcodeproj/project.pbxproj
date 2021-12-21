@@ -22,6 +22,7 @@
 		B53C948A276733F3003421A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B53C9489276733F3003421A1 /* GoogleService-Info.plist */; };
 		B553545027682EC600416A66 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B553544F27682EC600416A66 /* SnapKit */; };
 		B55354522768315F00416A66 /* SnapDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55354512768315F00416A66 /* SnapDetailViewController.swift */; };
+		B55D2B662770C41700120535 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55D2B652770C41700120535 /* TabBarController.swift */; };
 		B56C9143276885340005658D /* Melon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56C9142276885340005658D /* Melon.swift */; };
 		B56C9147276979350005658D /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56C9146276979350005658D /* SettingViewController.swift */; };
 		B56C9149276979690005658D /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B56C9148276979690005658D /* SettingViewController.xib */; };
@@ -49,6 +50,9 @@
 		B53C94872766E575003421A1 /* MainActivitiButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainActivitiButton.swift; sourceTree = "<group>"; };
 		B53C9489276733F3003421A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B55354512768315F00416A66 /* SnapDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SnapDetailViewController.swift; path = /Users/seuoh/Documents/workspace/SeSAC/Project/Assignment/SeSAC_WEEK12/SeSAC_WEEK12/SnapDetailViewController.swift; sourceTree = "<absolute>"; };
+		B55D2B652770C41700120535 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = /Users/seuoh/Documents/workspace/SeSAC/Project/Assignment/SeSAC_WEEK12/SeSAC_WEEK12/Class/TabBarController.swift; sourceTree = "<absolute>"; };
+		B55D2B672770C44600120535 /* SeSAC_WEEK12.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SeSAC_WEEK12.entitlements; sourceTree = "<group>"; };
+		B55D2B682770C47700120535 /* SeSAC_WEEK12Release.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SeSAC_WEEK12Release.entitlements; sourceTree = "<group>"; };
 		B56C9142276885340005658D /* Melon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Melon.swift; sourceTree = "<group>"; };
 		B56C9146276979350005658D /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		B56C9148276979690005658D /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 		B53C94662766CCCA003421A1 /* SeSAC_WEEK12 */ = {
 			isa = PBXGroup;
 			children = (
+				B55D2B682770C47700120535 /* SeSAC_WEEK12Release.entitlements */,
+				B55D2B672770C44600120535 /* SeSAC_WEEK12.entitlements */,
 				B56C913C276884F10005658D /* AutoLayoutPractice */,
 				B56C913B276884920005658D /* Class */,
 				B53C9489276733F3003421A1 /* GoogleService-Info.plist */,
@@ -115,6 +121,7 @@
 		B56C913B276884920005658D /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				B55D2B652770C41700120535 /* TabBarController.swift */,
 				B53C946D2766CCCA003421A1 /* Main.storyboard */,
 				B53C946B2766CCCA003421A1 /* ViewController.swift */,
 				B55354512768315F00416A66 /* SnapDetailViewController.swift */,
@@ -327,6 +334,7 @@
 				B53C94862766E070003421A1 /* DetailViewController.swift in Sources */,
 				B53C946A2766CCCA003421A1 /* SceneDelegate.swift in Sources */,
 				B56C9143276885340005658D /* Melon.swift in Sources */,
+				B55D2B662770C41700120535 /* TabBarController.swift in Sources */,
 				B55354522768315F00416A66 /* SnapDetailViewController.swift in Sources */,
 				B53C947E2766CCFF003421A1 /* SquareBoxView.swift in Sources */,
 			);
@@ -476,6 +484,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SeSAC_WEEK12/SeSAC_WEEK12.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -506,6 +515,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SeSAC_WEEK12/SeSAC_WEEK12Release.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AVZ9493N69;
