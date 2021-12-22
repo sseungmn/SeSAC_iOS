@@ -14,6 +14,11 @@
 		B55D2B82277155BC00120535 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55D2B80277155BC00120535 /* LaunchScreen.storyboard */; };
 		B55D2B8B277155D400120535 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B55D2B8A277155D400120535 /* SnapKit */; };
 		B55D2B8D27715BD700120535 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55D2B8C27715BD700120535 /* APIService.swift */; };
+		B5A5F6742773817400DC9DFD /* SignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5F6712773817400DC9DFD /* SignView.swift */; };
+		B5A5F6752773817400DC9DFD /* SignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5F6722773817400DC9DFD /* SignViewController.swift */; };
+		B5A5F6762773817400DC9DFD /* SignViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5F6732773817400DC9DFD /* SignViewModel.swift */; };
+		B5A5F6782773818300DC9DFD /* NASAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5F6772773818300DC9DFD /* NASAViewController.swift */; };
+		B5A5F67E2773828A00DC9DFD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5F67D2773828A00DC9DFD /* BaseViewController.swift */; };
 		B5E63952277167560090904A /* Cast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E63951277167560090904A /* Cast.swift */; };
 		B5E63954277174710090904A /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E63953277174710090904A /* UITableViewCell+Extension.swift */; };
 		B5E639562771763C0090904A /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E639552771763C0090904A /* DummyViewController.swift */; };
@@ -30,6 +35,11 @@
 		B55D2B81277155BC00120535 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B55D2B83277155BC00120535 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B55D2B8C27715BD700120535 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		B5A5F6712773817400DC9DFD /* SignView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignView.swift; sourceTree = "<group>"; };
+		B5A5F6722773817400DC9DFD /* SignViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignViewController.swift; sourceTree = "<group>"; };
+		B5A5F6732773817400DC9DFD /* SignViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignViewModel.swift; sourceTree = "<group>"; };
+		B5A5F6772773818300DC9DFD /* NASAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NASAViewController.swift; sourceTree = "<group>"; };
+		B5A5F67D2773828A00DC9DFD /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B5E63951277167560090904A /* Cast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cast.swift; sourceTree = "<group>"; };
 		B5E63953277174710090904A /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		B5E639552771763C0090904A /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +78,9 @@
 		B55D2B74277155BA00120535 /* SeSAC_WEEK13 */ = {
 			isa = PBXGroup;
 			children = (
+				B5A5F67D2773828A00DC9DFD /* BaseViewController.swift */,
+				B5A5F67A277381F100DC9DFD /* NASA */,
+				B5A5F6792773818F00DC9DFD /* Sign */,
 				B5E6395A2771779A0090904A /* URLSession */,
 				B5E639592771772B0090904A /* MVVM */,
 				B55D2B75277155BA00120535 /* AppDelegate.swift */,
@@ -77,6 +90,24 @@
 				B55D2B83277155BC00120535 /* Info.plist */,
 			);
 			path = SeSAC_WEEK13;
+			sourceTree = "<group>";
+		};
+		B5A5F6792773818F00DC9DFD /* Sign */ = {
+			isa = PBXGroup;
+			children = (
+				B5A5F6712773817400DC9DFD /* SignView.swift */,
+				B5A5F6722773817400DC9DFD /* SignViewController.swift */,
+				B5A5F6732773817400DC9DFD /* SignViewModel.swift */,
+			);
+			path = Sign;
+			sourceTree = "<group>";
+		};
+		B5A5F67A277381F100DC9DFD /* NASA */ = {
+			isa = PBXGroup;
+			children = (
+				B5A5F6772773818300DC9DFD /* NASAViewController.swift */,
+			);
+			path = NASA;
 			sourceTree = "<group>";
 		};
 		B5E639592771772B0090904A /* MVVM */ = {
@@ -177,7 +208,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5E639562771763C0090904A /* DummyViewController.swift in Sources */,
+				B5A5F6782773818300DC9DFD /* NASAViewController.swift in Sources */,
+				B5A5F6742773817400DC9DFD /* SignView.swift in Sources */,
 				B5E6395C277178BA0090904A /* TableViewCellRepresentable.swift in Sources */,
+				B5A5F6762773817400DC9DFD /* SignViewModel.swift in Sources */,
+				B5A5F67E2773828A00DC9DFD /* BaseViewController.swift in Sources */,
+				B5A5F6752773817400DC9DFD /* SignViewController.swift in Sources */,
 				B55D2B7A277155BA00120535 /* ViewController.swift in Sources */,
 				B5E63954277174710090904A /* UITableViewCell+Extension.swift in Sources */,
 				B55D2B76277155BA00120535 /* AppDelegate.swift in Sources */,
