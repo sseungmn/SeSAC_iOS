@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import SnapKit
 
 class TVShowCollectionViewCell: UICollectionViewCell {
     private var posterImage = UIImageView()
+    let cornerRadius: CGFloat = 5.0
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -16,6 +18,8 @@ class TVShowCollectionViewCell: UICollectionViewCell {
         posterImage.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        posterImage.layer.cornerRadius = cornerRadius
+        posterImage.layer.masksToBounds = true
     }
     
     required init?(coder: NSCoder) {
@@ -32,5 +36,13 @@ class TVShowCollectionViewCell: UICollectionViewCell {
                 self?.posterImage.image = image
             }
         }.resume()
+    }
+    
+    func flash() {
+        contentView.alpha = 0.5
+      setNeedsDisplay()
+      UIView.animate(withDuration: 0.5, animations: { [weak self] in
+        self?.contentView.alpha = 1
+      })
     }
 }
