@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75258DAE985CDA770C89A5E2 /* Pods_SearchTheTVShow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9697F6034061B9850920FBF2 /* Pods_SearchTheTVShow.framework */; };
+		B50208EC27743B2D0098A420 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = B50208EB27743B2D0098A420 /* .swiftlint.yml */; };
 		B5A5F64C277241C400DC9DFD /* tmdbAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5F649277241C400DC9DFD /* tmdbAPI.swift */; };
 		B5A5F64D277241C400DC9DFD /* APIKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5A5F64A277241C400DC9DFD /* APIKeys.plist */; };
 		B5A5F64E277241C400DC9DFD /* TVShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A5F64B277241C400DC9DFD /* TVShow.swift */; };
@@ -25,6 +27,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E24FD7810DD7D2EE4B81F61 /* Pods-SearchTheTVShow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchTheTVShow.release.xcconfig"; path = "Target Support Files/Pods-SearchTheTVShow/Pods-SearchTheTVShow.release.xcconfig"; sourceTree = "<group>"; };
+		9697F6034061B9850920FBF2 /* Pods_SearchTheTVShow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SearchTheTVShow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9F077FE1CF61434847AE18F /* Pods-SearchTheTVShow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SearchTheTVShow.debug.xcconfig"; path = "Target Support Files/Pods-SearchTheTVShow/Pods-SearchTheTVShow.debug.xcconfig"; sourceTree = "<group>"; };
+		B50208EB27743B2D0098A420 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		B5A5F649277241C400DC9DFD /* tmdbAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tmdbAPI.swift; sourceTree = "<group>"; };
 		B5A5F64A277241C400DC9DFD /* APIKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = APIKeys.plist; sourceTree = "<group>"; };
 		B5A5F64B277241C400DC9DFD /* TVShow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVShow.swift; sourceTree = "<group>"; };
@@ -49,6 +55,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5A5F65C2772478200DC9DFD /* SnapKit in Frameworks */,
+				75258DAE985CDA770C89A5E2 /* Pods_SearchTheTVShow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,8 +115,11 @@
 		B5B2DE8E2771E2FA0041CDA3 = {
 			isa = PBXGroup;
 			children = (
+				B50208EB27743B2D0098A420 /* .swiftlint.yml */,
 				B5B2DE992771E2FA0041CDA3 /* SearchTheTVShow */,
 				B5B2DE982771E2FA0041CDA3 /* Products */,
+				BC782D978B45B7111F55467A /* Pods */,
+				FF1DBF21C131587223484D25 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,6 +143,23 @@
 			path = SearchTheTVShow;
 			sourceTree = "<group>";
 		};
+		BC782D978B45B7111F55467A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A9F077FE1CF61434847AE18F /* Pods-SearchTheTVShow.debug.xcconfig */,
+				7E24FD7810DD7D2EE4B81F61 /* Pods-SearchTheTVShow.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FF1DBF21C131587223484D25 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9697F6034061B9850920FBF2 /* Pods_SearchTheTVShow.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,6 +167,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5B2DEAB2771E2FB0041CDA3 /* Build configuration list for PBXNativeTarget "SearchTheTVShow" */;
 			buildPhases = (
+				013F4BF0A0223553BCB408EE /* [CP] Check Pods Manifest.lock */,
+				B5431BC4277435D1008FDCC5 /* ShellScript */,
 				B5B2DE932771E2FA0041CDA3 /* Sources */,
 				B5B2DE942771E2FA0041CDA3 /* Frameworks */,
 				B5B2DE952771E2FA0041CDA3 /* Resources */,
@@ -197,6 +226,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B50208EC27743B2D0098A420 /* .swiftlint.yml in Resources */,
 				B5A5F64D277241C400DC9DFD /* APIKeys.plist in Resources */,
 				B5B2DEA72771E2FB0041CDA3 /* LaunchScreen.storyboard in Resources */,
 				B5B2DEA42771E2FB0041CDA3 /* Assets.xcassets in Resources */,
@@ -204,6 +234,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		013F4BF0A0223553BCB408EE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SearchTheTVShow-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5431BC4277435D1008FDCC5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B5B2DE932771E2FA0041CDA3 /* Sources */ = {
@@ -356,6 +428,7 @@
 		};
 		B5B2DEAC2771E2FB0041CDA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9F077FE1CF61434847AE18F /* Pods-SearchTheTVShow.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -383,6 +456,7 @@
 		};
 		B5B2DEAD2771E2FB0041CDA3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E24FD7810DD7D2EE4B81F61 /* Pods-SearchTheTVShow.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
