@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		AE07597B2082F0C6C9725CC6 /* Pods_RecommendTheBeer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96373BDAD39BEA6737FAB957 /* Pods_RecommendTheBeer.framework */; };
 		B547109C2774885F00DA514D /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = B547109B2774885F00DA514D /* .swiftlint.yml */; };
+		B54710C32774AADE00DA514D /* BeerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54710C22774AADE00DA514D /* BeerInfo.swift */; };
+		B54710C62774D64700DA514D /* BeerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54710C52774D64700DA514D /* BeerAPI.swift */; };
 		B5F442F827747EF0009C5284 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F442F727747EF0009C5284 /* AppDelegate.swift */; };
 		B5F442FA27747EF0009C5284 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F442F927747EF0009C5284 /* SceneDelegate.swift */; };
 		B5F442FC27747EF0009C5284 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F442FB27747EF0009C5284 /* ViewController.swift */; };
@@ -21,6 +23,9 @@
 		1EA58B24903FCF91B448B861 /* Pods-RecommendTheBeer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecommendTheBeer.debug.xcconfig"; path = "Target Support Files/Pods-RecommendTheBeer/Pods-RecommendTheBeer.debug.xcconfig"; sourceTree = "<group>"; };
 		96373BDAD39BEA6737FAB957 /* Pods_RecommendTheBeer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecommendTheBeer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B547109B2774885F00DA514D /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		B54710C02774AA2500DA514D /* beers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beers.json; sourceTree = "<group>"; };
+		B54710C22774AADE00DA514D /* BeerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerInfo.swift; sourceTree = "<group>"; };
+		B54710C52774D64700DA514D /* BeerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerAPI.swift; sourceTree = "<group>"; };
 		B5F442F427747EF0009C5284 /* RecommendTheBeer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecommendTheBeer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F442F727747EF0009C5284 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5F442F927747EF0009C5284 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,10 +70,27 @@
 				B5F442F727747EF0009C5284 /* AppDelegate.swift */,
 				B5F442F927747EF0009C5284 /* SceneDelegate.swift */,
 				B5F4430027747EF0009C5284 /* Assets.xcassets */,
+				B54710C02774AA2500DA514D /* beers.json */,
 				B5F4430227747EF0009C5284 /* LaunchScreen.storyboard */,
 				B5F4430527747EF0009C5284 /* Info.plist */,
 			);
 			path = Project;
+			sourceTree = "<group>";
+		};
+		B54710C12774AAC900DA514D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B54710C22774AADE00DA514D /* BeerInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B54710C42774D62F00DA514D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B54710C52774D64700DA514D /* BeerAPI.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		B5F442EB27747EF0009C5284 = {
@@ -93,6 +115,8 @@
 		B5F442F627747EF0009C5284 /* RecommendTheBeer */ = {
 			isa = PBXGroup;
 			children = (
+				B54710C42774D62F00DA514D /* ViewModel */,
+				B54710C12774AAC900DA514D /* Model */,
 				B547109D2774888900DA514D /* Project */,
 				B5F442FB27747EF0009C5284 /* ViewController.swift */,
 			);
@@ -233,8 +257,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5F442FC27747EF0009C5284 /* ViewController.swift in Sources */,
+				B54710C62774D64700DA514D /* BeerAPI.swift in Sources */,
 				B5F442F827747EF0009C5284 /* AppDelegate.swift in Sources */,
 				B5F442FA27747EF0009C5284 /* SceneDelegate.swift in Sources */,
+				B54710C32774AADE00DA514D /* BeerInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
