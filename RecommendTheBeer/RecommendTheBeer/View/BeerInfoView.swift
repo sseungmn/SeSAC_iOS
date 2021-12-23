@@ -15,7 +15,7 @@ class BeerInfoView: BaseView {
   private var descriptionLabel = UILabel()
   private let moreClickableLabel = UILabel()
   
-  private let cornerRadius: CGFloat = 5.0
+  private let cornerRadius: CGFloat = 8.0
   private let fillColor: UIColor = .white
   
   override init(frame: CGRect) {
@@ -32,16 +32,16 @@ class BeerInfoView: BaseView {
     
     vstackView.axis = .vertical
     vstackView.distribution = .fill
-    vstackView.spacing = 8
+    vstackView.spacing = 10
     
     descriptionLabel.setContentCompressionResistancePriority(.sceneSizeStayPut, for: .vertical)
     
-    nameLabel.font = .boldSystemFont(ofSize: 20)
+    nameLabel.font = .systemFont(ofSize: 23, weight: .bold)
     taglineLabel.font = .systemFont(ofSize: 15)
     descriptionLabel.font = .systemFont(ofSize: 15)
     descriptionLabel.numberOfLines = 0
     moreClickableLabel.text = "more"
-    moreClickableLabel.font = .boldSystemFont(ofSize: 13)
+    moreClickableLabel.font = .systemFont(ofSize: 13, weight: .heavy)
     
     [nameLabel, taglineLabel, descriptionLabel, moreClickableLabel].forEach { label in
       label.textAlignment = .center
@@ -65,16 +65,17 @@ class BeerInfoView: BaseView {
   
   override func setContraints() {
     self.addSubview(moreClickableLabel)
-    moreClickableLabel.sizeToFit()
     moreClickableLabel.snp.makeConstraints { make in
-      make.bottom.equalToSuperview().inset(10)
+      make.bottom.equalToSuperview().inset(20)
       make.centerX.equalToSuperview()
+      make.height.equalTo(10)
     }
     
     self.addSubview(vstackView)
     vstackView.snp.makeConstraints { make in
-      make.top.left.right.equalToSuperview().inset(20)
-      make.bottom.equalTo(moreClickableLabel.snp.top).inset(-10)
+      make.top.equalToSuperview().inset(25)
+      make.left.right.equalToSuperview().inset(20)
+      make.bottom.equalTo(moreClickableLabel.snp.top).inset(-20)
     }
     
     vstackView.addArrangedSubview(nameLabel)
@@ -97,7 +98,7 @@ class BeerInfoView: BaseView {
     shadowLayer.shadowColor = UIColor.black.cgColor
     shadowLayer.shadowPath = shadowLayer.path
     shadowLayer.shadowOffset = .zero
-    shadowLayer.shadowOpacity = 0.8
+    shadowLayer.shadowOpacity = 0.3
     shadowLayer.shadowRadius = 10
     
     layer.insertSublayer(shadowLayer, at: 0)

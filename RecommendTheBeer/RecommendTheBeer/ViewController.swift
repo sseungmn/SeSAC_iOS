@@ -21,13 +21,13 @@ class ViewController: UIViewController {
     view.addSubview(beerImageView)
     beerImageView.snp.makeConstraints { make in
       make.top.left.right.equalTo(view.safeAreaLayoutGuide)
-      make.height.equalTo(200)
+      make.height.equalTo(220)
     }
     view.addSubview(beerInfoView)
     beerInfoView.snp.makeConstraints { make in
       make.left.right.equalToSuperview().inset(20)
-      make.top.equalTo(view.safeAreaLayoutGuide).inset(150)
-      make.height.equalTo(200)
+      make.top.equalTo(view.safeAreaLayoutGuide).inset(170)
+      make.height.equalTo(220)
     }
     
     viewModel.requestRandomBeer { [weak self] beer in

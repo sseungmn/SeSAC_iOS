@@ -34,22 +34,22 @@ class BeerAPIViewModel {
   func requestBeerImage(beer: Beer, completion: @escaping (UIImage?) -> Void) {
     guard let imageURLString = beer.imageURL,
        let imageURL = URL(string: imageURLString) else {
-         print("URL Error")
+         print("Image URL Error")
          return
     }
     
     AF.request(imageURL).response { response in
       if let error = response.error {
-        print("Request Error : ", error)
+        print("Image Request Error : ", error)
         return
       }
       guard let data = response.data else {
-        print("Data Error")
+        print("Image Data Error")
         completion(nil)
         return
       }
       guard let image = UIImage(data: data) else {
-        print("Image Error")
+        print("Data convert to Image Error")
         completion(nil)
         return
       }
