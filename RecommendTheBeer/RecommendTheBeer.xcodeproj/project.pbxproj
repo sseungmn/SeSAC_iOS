@@ -11,6 +11,9 @@
 		B547109C2774885F00DA514D /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = B547109B2774885F00DA514D /* .swiftlint.yml */; };
 		B54710C32774AADE00DA514D /* BeerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54710C22774AADE00DA514D /* BeerInfo.swift */; };
 		B54710C62774D64700DA514D /* BeerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54710C52774D64700DA514D /* BeerAPI.swift */; };
+		B54710C82774DBDD00DA514D /* BeerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54710C72774DBDD00DA514D /* BeerImageView.swift */; };
+		B54710CB2774E12000DA514D /* BeerInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54710CA2774E12000DA514D /* BeerInfoView.swift */; };
+		B54710CD2774E16D00DA514D /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54710CC2774E16D00DA514D /* BaseView.swift */; };
 		B5F442F827747EF0009C5284 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F442F727747EF0009C5284 /* AppDelegate.swift */; };
 		B5F442FA27747EF0009C5284 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F442F927747EF0009C5284 /* SceneDelegate.swift */; };
 		B5F442FC27747EF0009C5284 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F442FB27747EF0009C5284 /* ViewController.swift */; };
@@ -26,6 +29,9 @@
 		B54710C02774AA2500DA514D /* beers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beers.json; sourceTree = "<group>"; };
 		B54710C22774AADE00DA514D /* BeerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerInfo.swift; sourceTree = "<group>"; };
 		B54710C52774D64700DA514D /* BeerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerAPI.swift; sourceTree = "<group>"; };
+		B54710C72774DBDD00DA514D /* BeerImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerImageView.swift; sourceTree = "<group>"; };
+		B54710CA2774E12000DA514D /* BeerInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerInfoView.swift; sourceTree = "<group>"; };
+		B54710CC2774E16D00DA514D /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		B5F442F427747EF0009C5284 /* RecommendTheBeer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecommendTheBeer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F442F727747EF0009C5284 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5F442F927747EF0009C5284 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +99,16 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		B54710C92774E0FF00DA514D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B54710C72774DBDD00DA514D /* BeerImageView.swift */,
+				B54710CA2774E12000DA514D /* BeerInfoView.swift */,
+				B54710CC2774E16D00DA514D /* BaseView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B5F442EB27747EF0009C5284 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +135,7 @@
 				B54710C12774AAC900DA514D /* Model */,
 				B547109D2774888900DA514D /* Project */,
 				B5F442FB27747EF0009C5284 /* ViewController.swift */,
+				B54710C92774E0FF00DA514D /* View */,
 			);
 			path = RecommendTheBeer;
 			sourceTree = "<group>";
@@ -258,9 +275,12 @@
 			files = (
 				B5F442FC27747EF0009C5284 /* ViewController.swift in Sources */,
 				B54710C62774D64700DA514D /* BeerAPI.swift in Sources */,
+				B54710C82774DBDD00DA514D /* BeerImageView.swift in Sources */,
+				B54710CB2774E12000DA514D /* BeerInfoView.swift in Sources */,
 				B5F442F827747EF0009C5284 /* AppDelegate.swift in Sources */,
 				B5F442FA27747EF0009C5284 /* SceneDelegate.swift in Sources */,
 				B54710C32774AADE00DA514D /* BeerInfo.swift in Sources */,
+				B54710CD2774E16D00DA514D /* BaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,10 +7,10 @@
 
 import Foundation
 
-typealias Beer = [BeerInfo]
+typealias BeerArray = [Beer]
 
 // MARK: - BeerInfo
-struct BeerInfo: Codable {
+struct Beer: Codable {
   let id: Int
   let name, tagline: String
   let beerDescription: String

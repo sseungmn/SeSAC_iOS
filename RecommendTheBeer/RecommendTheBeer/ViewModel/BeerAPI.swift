@@ -10,28 +10,35 @@ import Alamofire
 
 class BeerAPIViewModel {
   
-  func requestRandomBeer(completion: @escaping (UIImage?) -> Void) {
+  func requestRandomBeer(completion: @escaping (Beer?) -> Void) {
     let baseURL = URL(string: "https://api.punkapi.com/v2/beers/random")!
-    AF.request(baseURL).response { [weak self] response in
+    AF.request(baseURL).response { response in
+      if let error = response.error {
+        print("Request Error : ", error)
+        return
+      }
       guard let data = response.data else {
         print("Data Error")
         return
       }
-      guard let decodedData = try? JSONDecoder().decode(Beer.self, from: data) else {
+      guard let decodedData = try? JSONDecoder().decode(BeerArray.self, from: data) else {
         print("Decode Error")
         return
       }
       guard let beer = decodedData.first else { return }
       
-      if let imageURLString = beer.imageURL,
-         let imageURL = URL(string: imageURLString) {
-        self?.requestBeerImage(url: imageURL, completion: completion)
-      }
+      completion(beer)
     }
   }
   
-  func requestBeerImage(url: URL, completion: @escaping (UIImage?) -> Void) {
-    AF.request(url).response { response in
+  func requestBeerImage(beer: Beer, completion: @escaping (UIImage?) -> Void) {
+    guard let imageURLString = beer.imageURL,
+       let imageURL = URL(string: imageURLString) else {
+         print("URL Error")
+         return
+    }
+    
+    AF.request(imageURL).response { response in
       if let error = response.error {
         print("Request Error : ", error)
         return

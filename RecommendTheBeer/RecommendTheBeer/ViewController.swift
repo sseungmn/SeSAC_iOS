@@ -12,25 +12,38 @@ class ViewController: UIViewController {
   
   let viewModel = BeerAPIViewModel()
 
-  let imageView: UIImageView = {
-    let imageView = UIImageView()
-    imageView.contentMode = .scaleAspectFill
-    return imageView
-  }()
+  let beerImageView = BeerImageView()
+  let beerInfoView = BeerInfoView()
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
-    view.addSubview(imageView)
-    imageView.snp.makeConstraints { make in
-      make.edges.equalToSuperview()
+    
+    view.addSubview(beerImageView)
+    beerImageView.snp.makeConstraints { make in
+      make.top.left.right.equalTo(view.safeAreaLayoutGuide)
+      make.height.equalTo(200)
+    }
+    view.addSubview(beerInfoView)
+    beerInfoView.snp.makeConstraints { make in
+      make.left.right.equalToSuperview().inset(20)
+      make.top.equalTo(view.safeAreaLayoutGuide).inset(150)
+      make.height.equalTo(200)
     }
     
-    viewModel.requestRandomBeer { [weak self] image in
-      guard let image = image else { return }
+    viewModel.requestRandomBeer { [weak self] beer in
+      guard let beer = beer else { return }
+      // Set Info
       DispatchQueue.main.async {
-        self?.imageView.image = image
+        self?.beerInfoView.setInformation(beer)
       }
+      
+      // Set Image
+      self?.viewModel.requestBeerImage(beer: beer, completion: { image in
+        guard let image = image else { return }
+        DispatchQueue.main.async {
+          self?.beerImageView.setImage(image)
+        }
+      })
     }
   }
 }
