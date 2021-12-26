@@ -26,8 +26,6 @@ class BeerInfoView: BaseView {
   
   private let shadowLayer = CAShapeLayer()
   
-  //  private let shadowLayer = CAShapeLayer()
-  
   override init(frame: CGRect) {
     super.init(frame: frame)
     debug("        InfoView", #function)
@@ -103,11 +101,11 @@ class BeerInfoView: BaseView {
     debug("        InfoView", #function)
     shadowLayer.fillColor = fillColor.cgColor
     
-    shadowLayer.shadowColor = UIColor.red.cgColor
+    shadowLayer.shadowColor = UIColor.black.cgColor
     shadowLayer.shadowPath = shadowLayer.path
     shadowLayer.shadowOffset = .zero
     shadowLayer.shadowOpacity = 0.3
-    shadowLayer.shadowRadius = 10
+    shadowLayer.shadowRadius = 5
   }
   public func setInformation(_ beer: Beer) {
     debug("        InfoView", #function)
@@ -121,6 +119,8 @@ class BeerInfoView: BaseView {
 //    }
   }
 }
+
+// MARK: DescriptionLabel
 class DescriptionLabel: UILabel {
   override var bounds: CGRect {
     didSet {

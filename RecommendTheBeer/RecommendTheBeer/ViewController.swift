@@ -11,9 +11,16 @@ import SnapKit
 class ViewController: UIViewController {
   
   let viewModel = BeerAPIViewModel()
+  var beer: Beer?
 
   let beerImageView = BeerImageView()
   let beerInfoView = BeerInfoView()
+  let tableView: UITableView = {
+    let tableView = UITableView()
+    tableView.contentOffset = .zero
+    tableView.contentInset = .zero
+    return tableView
+  }()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -23,13 +30,19 @@ class ViewController: UIViewController {
   }
   
   func configuration() {
-    view.backgroundColor = .darkGray
-    beerInfoView.setMoreAction { [weak self] action in
+    view.backgroundColor = .white
+    beerInfoView.setMoreAction { [weak self] _ in
       self?.beerImageView.snp.updateConstraints { make in
         make.height.equalTo(350)
       }
       self?.beerInfoView.moreAction()
     }
+    
+    tableView.dataSource = self
+    tableView.delegate = self
+    tableView.register(BeerTableViewCell.self, forCellReuseIdentifier: BeerTableViewCell.reuseIdentifier)
+    tableView.backgroundColor = nil
+    tableView.separatorStyle = .none
   }
   
   func setConstraints() {
@@ -43,14 +56,21 @@ class ViewController: UIViewController {
       make.left.right.equalToSuperview().inset(20)
       make.top.equalTo(beerImageView.snp.bottom).offset(-50)
     }
-    
+    view.addSubview(tableView)
+    tableView.snp.makeConstraints { make in
+      make.top.equalTo(beerInfoView.snp.bottom)
+      make.left.right.equalToSuperview().inset(20)
+      make.bottom.equalTo(view.safeAreaLayoutGuide)
+    }
   }
   
   func fetchBeerInfo() {
     viewModel.requestRandomBeer { [weak self] beer in
       guard let beer = beer else { return }
+      self?.beer = beer
       // Set Info
       DispatchQueue.main.async {
+        self?.tableView.reloadData()
         self?.beerInfoView.setInformation(beer)
       }
       
@@ -63,5 +83,44 @@ class ViewController: UIViewController {
       })
     }
   }
+}
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return self.beer?.foodPairing.count ?? 0
+  }
   
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    guard let cell = tableView.dequeueReusableCell(
+      withIdentifier: BeerTableViewCell.reuseIdentifier)
+            as? BeerTableViewCell else { return UITableViewCell() }
+    cell.title.text = self.beer?.foodPairing[indexPath.row]
+    return cell
+  }
+  
+  func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    let titleLabel: UILabel = {
+      let label = UILabel()
+      label.textColor = .black
+      label.font = .boldSystemFont(ofSize: 23)
+      label.text = "Food - Paring"
+      return label
+    }()
+    let headerView: UIView = {
+      let view = UIView()
+      view.backgroundColor = nil
+      return view
+    }()
+    
+    headerView.addSubview(titleLabel)
+    titleLabel.snp.makeConstraints { make in
+      make.edges.equalToSuperview()
+    }
+    
+    return headerView
+  }
+  
+  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return 50
+  }
 }
