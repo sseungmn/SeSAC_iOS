@@ -7,19 +7,30 @@
 
 import UIKit
 
+public func debug(_ items: Any..., separator: String = " ", terminator: String = "\n") {
+  var output = "Debug : "
+  output += items.map { "\($0)" }.joined(separator: separator)
+  Swift.print(output, terminator: terminator)
+}
+
 class BeerInfoView: BaseView {
   
   private let vstackView = UIStackView()
   private var nameLabel = UILabel()
   private var taglineLabel = UILabel()
-  private var descriptionLabel = UILabel()
-  private let moreClickableLabel = UILabel()
+  var descriptionLabel = DescriptionLabel()
+  private let moreButton = UIButton(type: .custom)
   
   private let cornerRadius: CGFloat = 8.0
   private let fillColor: UIColor = .white
   
+  private let shadowLayer = CAShapeLayer()
+  
+  //  private let shadowLayer = CAShapeLayer()
+  
   override init(frame: CGRect) {
     super.init(frame: frame)
+    debug("        InfoView", #function)
   }
   
   required init?(coder: NSCoder) {
@@ -29,6 +40,7 @@ class BeerInfoView: BaseView {
   override func configuration() {
     backgroundColor = fillColor
     layer.cornerRadius = cornerRadius
+    layer.insertSublayer(shadowLayer, at: 0)
     
     vstackView.axis = .vertical
     vstackView.distribution = .fill
@@ -39,43 +51,37 @@ class BeerInfoView: BaseView {
     nameLabel.font = .systemFont(ofSize: 23, weight: .bold)
     taglineLabel.font = .systemFont(ofSize: 15)
     descriptionLabel.font = .systemFont(ofSize: 15)
-    descriptionLabel.numberOfLines = 0
-    moreClickableLabel.text = "more"
-    moreClickableLabel.font = .systemFont(ofSize: 13, weight: .heavy)
+    descriptionLabel.numberOfLines = 4
+    moreButton.setTitle("more", for: .normal)
+    moreButton.titleLabel?.font = .systemFont(ofSize: 13, weight: .heavy)
     
-    [nameLabel, taglineLabel, descriptionLabel, moreClickableLabel].forEach { label in
+    moreButton.setTitleColor(.black, for: .normal)
+    moreButton.titleLabel?.textAlignment = .center
+    [nameLabel, taglineLabel, descriptionLabel].forEach { label in
       label.textAlignment = .center
       label.textColor = .black
     }
     descriptionLabel.textAlignment = .justified
-    
-    addTarget(moreClickableLabel, action: #selector(showMore))
   }
   
-  // MARK: Make Label Clickable
-  func addTarget(_ label: UILabel, action: Selector) {
-    let tap = UITapGestureRecognizer(target: self, action: action)
-    label.isUserInteractionEnabled = true
-    label.addGestureRecognizer(tap)
-  }
-  
-  @objc func showMore(_ sender: UILabel) {
-    print("showMore")
+  // MARK: more Button
+  func setMoreAction(handler: @escaping (UIAction) -> Void) {
+    moreButton.addAction(UIAction(handler: handler), for: .touchUpInside)
   }
   
   override func setContraints() {
-    self.addSubview(moreClickableLabel)
-    moreClickableLabel.snp.makeConstraints { make in
-      make.bottom.equalToSuperview().inset(20)
+    self.addSubview(moreButton)
+    moreButton.snp.makeConstraints { make in
+      make.bottom.equalToSuperview().inset(10)
       make.centerX.equalToSuperview()
-      make.height.equalTo(10)
+      make.height.equalTo(20)
     }
     
     self.addSubview(vstackView)
     vstackView.snp.makeConstraints { make in
       make.top.equalToSuperview().inset(25)
       make.left.right.equalToSuperview().inset(20)
-      make.bottom.equalTo(moreClickableLabel.snp.top).inset(-20)
+      make.bottom.equalTo(moreButton.snp.top).inset(-10)
     }
     
     vstackView.addArrangedSubview(nameLabel)
@@ -83,30 +89,64 @@ class BeerInfoView: BaseView {
     vstackView.addArrangedSubview(descriptionLabel)
   }
   
-  // MARK: Shadow
-  override func layoutSubviews() {
-    super.layoutSubviews()
-    setShadow()
+  func moreAction() {
+    debug("        InfoView", #function)
+    self.descriptionLabel.numberOfLines = 0
+//    DispatchQueue.main.async {
+//      self.updateShadow()
+//    }
   }
-  
-  private func setShadow() {
-    let shadowLayer = CAShapeLayer()
-    
+
+  // MARK: Shadow
+  func updateShadow() {
     shadowLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius).cgPath
+    debug("        InfoView", #function)
     shadowLayer.fillColor = fillColor.cgColor
     
-    shadowLayer.shadowColor = UIColor.black.cgColor
+    shadowLayer.shadowColor = UIColor.red.cgColor
     shadowLayer.shadowPath = shadowLayer.path
     shadowLayer.shadowOffset = .zero
     shadowLayer.shadowOpacity = 0.3
     shadowLayer.shadowRadius = 10
-    
-    layer.insertSublayer(shadowLayer, at: 0)
   }
-  
   public func setInformation(_ beer: Beer) {
+    debug("        InfoView", #function)
+    // 1
     self.nameLabel.text = beer.name
     self.taglineLabel.text = beer.tagline
     self.descriptionLabel.text = beer.beerDescription
+    // 2
+//    DispatchQueue.main.async {
+//      self.updateShadow()
+//    }
+  }
+}
+class DescriptionLabel: UILabel {
+  override var bounds: CGRect {
+    didSet {
+      debug("DescriptionLabel", "height : ", bounds.height)
+    }
+  }
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+  }
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
+  override func updateConstraints() {
+    super.updateConstraints()
+    debug("DescriptionLabel", #function)
+  }
+
+  override func draw(_ rect: CGRect) {
+    super.draw(rect)
+    debug("DescriptionLabel", #function)
+    guard let stackView = superview as? UIStackView,
+    let superView = stackView.superview as? BeerInfoView else { return }
+    DispatchQueue.main.async {
+      superView.updateShadow()
+    }
   }
 }
