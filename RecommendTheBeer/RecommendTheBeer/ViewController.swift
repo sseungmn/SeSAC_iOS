@@ -21,7 +21,9 @@ class ViewController: UIViewController {
     tableView.contentInset = .zero
     return tableView
   }()
-
+  
+  let bottomView = BottomView()
+ 
   override func viewDidLoad() {
     super.viewDidLoad()
     setConstraints()
@@ -31,6 +33,17 @@ class ViewController: UIViewController {
   
   func configuration() {
     view.backgroundColor = .white
+    
+    tableView.dataSource = self
+    tableView.delegate = self
+    tableView.register(BeerTableViewCell.self, forCellReuseIdentifier: BeerTableViewCell.reuseIdentifier)
+    tableView.backgroundColor = nil
+    tableView.separatorStyle = .none
+    
+    setActions()
+  }
+  
+  func setActions() {
     beerInfoView.setMoreAction { [weak self] _ in
       self?.beerImageView.snp.updateConstraints { make in
         make.height.equalTo(350)
@@ -38,11 +51,9 @@ class ViewController: UIViewController {
       self?.beerInfoView.moreAction()
     }
     
-    tableView.dataSource = self
-    tableView.delegate = self
-    tableView.register(BeerTableViewCell.self, forCellReuseIdentifier: BeerTableViewCell.reuseIdentifier)
-    tableView.backgroundColor = nil
-    tableView.separatorStyle = .none
+    bottomView.setResetButtonAction { [weak self] _ in
+      self?.fetchBeerInfo()
+    }
   }
   
   func setConstraints() {
@@ -56,12 +67,28 @@ class ViewController: UIViewController {
       make.left.right.equalToSuperview().inset(20)
       make.top.equalTo(beerImageView.snp.bottom).offset(-50)
     }
+    
+    view.addSubview(bottomView)
+    bottomView.snp.makeConstraints { make in
+      make.left.right.equalToSuperview()
+      make.bottom.equalTo(view.safeAreaLayoutGuide)
+      make.height.equalTo(60)
+    }
+    
     view.addSubview(tableView)
     tableView.snp.makeConstraints { make in
       make.top.equalTo(beerInfoView.snp.bottom)
       make.left.right.equalToSuperview().inset(20)
-      make.bottom.equalTo(view.safeAreaLayoutGuide)
+      make.bottom.equalTo(bottomView.snp.top)
     }
+    
+    func resetContraints() {
+      beerImageView.snp.updateConstraints { make in
+        make.height.equalTo(220)
+      }
+      self.beerInfoView.moreAction()
+    }
+    
   }
   
   func fetchBeerInfo() {
@@ -83,6 +110,7 @@ class ViewController: UIViewController {
       })
     }
   }
+  
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {

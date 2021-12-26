@@ -14,11 +14,13 @@ public func debug(_ items: Any..., separator: String = " ", terminator: String =
 }
 
 class BeerInfoView: BaseView {
+  var isShrinked: Bool = true
   
+  // MARK: private variable
   private let vstackView = UIStackView()
   private var nameLabel = UILabel()
   private var taglineLabel = UILabel()
-  var descriptionLabel = DescriptionLabel()
+  private var descriptionLabel = DescriptionLabel()
   private let moreButton = UIButton(type: .custom)
   
   private let cornerRadius: CGFloat = 8.0
@@ -62,11 +64,6 @@ class BeerInfoView: BaseView {
     descriptionLabel.textAlignment = .justified
   }
   
-  // MARK: more Button
-  func setMoreAction(handler: @escaping (UIAction) -> Void) {
-    moreButton.addAction(UIAction(handler: handler), for: .touchUpInside)
-  }
-  
   override func setContraints() {
     self.addSubview(moreButton)
     moreButton.snp.makeConstraints { make in
@@ -87,14 +84,26 @@ class BeerInfoView: BaseView {
     vstackView.addArrangedSubview(descriptionLabel)
   }
   
+  // MARK: more Button
+  func setMoreAction(handler: @escaping (UIAction) -> Void) {
+    moreButton.addAction(UIAction(handler: handler), for: .touchUpInside)
+  }
+  
   func moreAction() {
     debug("        InfoView", #function)
-    self.descriptionLabel.numberOfLines = 0
+    if isShrinked {
+      self.descriptionLabel.numberOfLines = 0
+    } else {
+      self.descriptionLabel.numberOfLines = 4
+    }
+    isShrinked.toggle()
 //    DispatchQueue.main.async {
 //      self.updateShadow()
 //    }
   }
+}
 
+extension BeerInfoView {
   // MARK: Shadow
   func updateShadow() {
     shadowLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius).cgPath
