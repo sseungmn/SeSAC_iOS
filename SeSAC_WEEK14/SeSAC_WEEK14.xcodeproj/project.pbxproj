@@ -19,6 +19,8 @@
 		B582ECF6277A287100617D45 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582ECF5277A287100617D45 /* MainViewController.swift */; };
 		B582ECF8277A2C2600617D45 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582ECF7277A2C2600617D45 /* SignInViewModel.swift */; };
 		B582ECFB277A2CBA00617D45 /* Obervable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582ECFA277A2CBA00617D45 /* Obervable.swift */; };
+		B582ECFF277A35B600617D45 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582ECFE277A35B600617D45 /* SignUpView.swift */; };
+		B582ED01277A361700617D45 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582ED00277A361700617D45 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		B582ECF5277A287100617D45 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B582ECF7277A2C2600617D45 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		B582ECFA277A2CBA00617D45 /* Obervable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obervable.swift; sourceTree = "<group>"; };
+		B582ECFE277A35B600617D45 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		B582ED00277A361700617D45 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				B582ECF9277A2C5200617D45 /* Project */,
+				B582ECFD277A35A500617D45 /* SignUp */,
 				B582ECFC277A329900617D45 /* SignIn */,
 				B582ECF5277A287100617D45 /* MainViewController.swift */,
 				B582ECF1277A18E000617D45 /* APIService.swift */,
@@ -98,6 +103,15 @@
 				B547112A277A153B00DA514D /* SignInView.swift */,
 			);
 			path = SignIn;
+			sourceTree = "<group>";
+		};
+		B582ECFD277A35A500617D45 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				B582ECFE277A35B600617D45 /* SignUpView.swift */,
+				B582ED00277A361700617D45 /* SignUpViewController.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,12 +190,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B582ED01277A361700617D45 /* SignUpViewController.swift in Sources */,
 				B582ECF6277A287100617D45 /* MainViewController.swift in Sources */,
 				B54711182779484C00DA514D /* SignInViewController.swift in Sources */,
 				B582ECF2277A18E000617D45 /* APIService.swift in Sources */,
 				B582ECF4277A23CC00617D45 /* User.swift in Sources */,
 				B582ECF8277A2C2600617D45 /* SignInViewModel.swift in Sources */,
 				B54711142779484C00DA514D /* AppDelegate.swift in Sources */,
+				B582ECFF277A35B600617D45 /* SignUpView.swift in Sources */,
 				B582ECFB277A2CBA00617D45 /* Obervable.swift in Sources */,
 				B547112B277A153B00DA514D /* SignInView.swift in Sources */,
 				B54711162779484C00DA514D /* SceneDelegate.swift in Sources */,
