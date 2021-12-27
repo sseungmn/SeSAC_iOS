@@ -12,18 +12,17 @@ class ViewController: UIViewController {
   
   let viewModel = BeerAPIViewModel()
   var beer: Beer?
-
+  
   let beerImageView = BeerImageView()
   let beerInfoView = BeerInfoView()
   let tableView: UITableView = {
     let tableView = UITableView()
-    tableView.contentOffset = .zero
-    tableView.contentInset = .zero
+    tableView.contentOffset = CGPoint(x: 0, y: 50)
     return tableView
   }()
   
   let bottomView = BottomView()
- 
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     setConstraints()
@@ -53,6 +52,9 @@ class ViewController: UIViewController {
     
     bottomView.setResetButtonAction { [weak self] _ in
       self?.fetchBeerInfo()
+      self?.resetContraints()
+      self?.beerInfoView.defaultDescription()
+      
     }
   }
   
@@ -82,13 +84,13 @@ class ViewController: UIViewController {
       make.bottom.equalTo(bottomView.snp.top)
     }
     
-    func resetContraints() {
-      beerImageView.snp.updateConstraints { make in
-        make.height.equalTo(220)
-      }
-      self.beerInfoView.moreAction()
-    }
     
+  }
+  func resetContraints() {
+    beerImageView.snp.updateConstraints { make in
+      make.height.equalTo(220)
+    }
+    self.beerInfoView.moreAction()
   }
   
   func fetchBeerInfo() {

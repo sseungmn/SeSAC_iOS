@@ -40,6 +40,8 @@ class BottomView: BaseView {
     shareButton.backgroundColor = .themeColor
     shareButton.setTitle("Share BEER", for: .normal)
     shareButton.titleLabel?.font = .boldSystemFont(ofSize: pointSize)
+    shareButton.titleLabel?.font = shareButton.titleLabel?.font.withSize(15)
+    shareButton.titleLabel?.font = .systemFont(ofSize: 15)
     shareButton.setTitleColor(.black, for: .normal)
   }
   

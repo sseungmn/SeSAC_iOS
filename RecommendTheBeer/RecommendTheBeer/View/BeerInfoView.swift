@@ -92,14 +92,22 @@ class BeerInfoView: BaseView {
   func moreAction() {
     debug("        InfoView", #function)
     if isShrinked {
-      self.descriptionLabel.numberOfLines = 0
+      moreDescription()
     } else {
-      self.descriptionLabel.numberOfLines = 4
+      defaultDescription()
     }
-    isShrinked.toggle()
 //    DispatchQueue.main.async {
 //      self.updateShadow()
 //    }
+  }
+  
+  func moreDescription() {
+    self.descriptionLabel.numberOfLines = 0
+    isShrinked = false
+  }
+  func defaultDescription() {
+    self.descriptionLabel.numberOfLines = 4
+    isShrinked = true
   }
 }
 
