@@ -87,6 +87,44 @@ class APIService {
     }.resume()
   }
   
+  static func board(token: String, completion: @escaping (Board?, APIError?) -> Void) {
+    let url = URL(string: "http://test.monocoding.com/boards")!
+    
+    var request = URLRequest(url: url)
+    request.httpMethod = "GET"
+    // String -> Data, dictionary -> JsonSerialization / Codable
+    request.setValue("bearer \(token)", forHTTPHeaderField: "authorization")
+    
+    URLSession.shared.dataTask(with: request) { data, response, error in
+      guard error == nil else {
+        completion(nil, .failed)
+        return
+      }
+      
+      guard let data = data else {
+        completion(nil, .noData)
+        return
+      }
+      
+      guard let response = response as? HTTPURLResponse else {
+        completion(nil, .invalidResponse)
+        return
+      }
+      
+      guard response.statusCode == 200 else {
+        completion(nil, .failed)
+        return
+      }
+      
+      do {
+        let userData = try JSONDecoder().decode(Board.self, from: data)
+        completion(userData, nil)
+      } catch {
+        completion(nil, .invalidData)
+      }
+    }.resume()
+  }
+  
   static func lotto(_ number: Int, completion: @escaping (Lotto?, APIError?) -> Void) {
     let url = URL(string: "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=\(number)")!
     
@@ -141,8 +179,6 @@ class APIService {
       URLQueryItem(name: "page", value: "\(page)"),
       URLQueryItem(name: "language", value: language)
     ]
-    
-    print(component.url)
     
     URLSession.shared.dataTask(with: component.url!) { data, response, error in
       DispatchQueue.main.async {

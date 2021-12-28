@@ -11,7 +11,7 @@ class SignInViewModel {
   var userName: Observable<String> = Observable("minios")
   var password: Observable<String> = Observable("")
   
-  func postUserLogin(completion: @escaping() -> Void) {
+  func postUserLogin(completion: @escaping(String) -> Void) {
     APIService.login(identifier: userName.value,
                      password: password.value) { userData, error in
       guard let userData = userData else {
@@ -23,7 +23,7 @@ class SignInViewModel {
       UserDefaults.standard.set(userData.user.id, forKey: "id")
       UserDefaults.standard.set(userData.user.email, forKey: "email")
       
-      completion()
+      completion(userData.jwt)
     }
   }
 }

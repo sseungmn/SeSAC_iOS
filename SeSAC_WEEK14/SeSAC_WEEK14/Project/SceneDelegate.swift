@@ -14,13 +14,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     guard let windowScene = (scene as? UIWindowScene) else { return }
     window = UIWindow(windowScene: windowScene)
-    let vc = PersonViewController()
-//    var vc: UIViewController
-//    if UserDefaults.standard.string(forKey: "token") == nil {
-//      vc = SignUpViewController()
-//    } else {
-//      vc = SignInViewController()
-//    }
+    var vc: UIViewController
+    if UserDefaults.standard.string(forKey: "token") == nil {
+      vc = SignUpViewController()
+    } else {
+      vc = SignInViewController()
+    }
     window?.rootViewController = vc
     window?.makeKeyAndVisible()
   }

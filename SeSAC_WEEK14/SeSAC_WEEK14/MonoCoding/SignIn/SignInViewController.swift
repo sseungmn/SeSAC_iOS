@@ -42,10 +42,10 @@ class SignInViewController: UIViewController {
   }
   
   @objc func signInButtonClicked() {
-    viewModel.postUserLogin {
+    viewModel.postUserLogin { token in
       DispatchQueue.main.async {
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
-        windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: MainViewController())
+        windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: BoardViewController(token: token))
         windowScene.windows.first?.makeKeyAndVisible()
       }
       
