@@ -26,10 +26,13 @@ class SignUpView: UIView, ViewRepresentable {
   func setupView() {
     addSubview(usernameTextField)
     usernameTextField.backgroundColor = .white
+    usernameTextField.placeholder = "username"
     addSubview(emailTextField)
     emailTextField.backgroundColor = .white
+    emailTextField.placeholder = "email"
     addSubview(passwordTextField)
     passwordTextField.backgroundColor = .white
+    passwordTextField.placeholder = "password"
     addSubview(signInButton)
     signInButton.backgroundColor = .orange
   }
