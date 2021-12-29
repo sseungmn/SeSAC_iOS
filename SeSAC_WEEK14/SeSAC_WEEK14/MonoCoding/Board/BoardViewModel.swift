@@ -10,7 +10,12 @@ import Foundation
 class BoardViewModel {
   let board: Observable<Board> = Observable([])
   
-  func fetchBoard(_ token: String) {
+  func fetchBoard() {
+    guard let token = UserDefaults.standard.string(forKey: "token") else {
+      print("토큰이 존재하지 않습니다.")
+      return
+    }
+    
     APIService.board(token: token) { board, error in
       guard let board = board else {
         return

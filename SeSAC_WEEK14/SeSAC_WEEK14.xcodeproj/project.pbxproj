@@ -31,6 +31,7 @@
 		B582ED4B277B881900617D45 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582ED4A277B881900617D45 /* Board.swift */; };
 		B582ED4D277B8B7100617D45 /* BoardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582ED4C277B8B7100617D45 /* BoardTableViewCell.swift */; };
 		B582ED4F277B91E900617D45 /* BoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B582ED4E277B91E900617D45 /* BoardViewModel.swift */; };
+		B5A9B97A277BF2AC004B7BBC /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A9B979277BF2AC004B7BBC /* Endpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		B582ED4A277B881900617D45 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		B582ED4C277B8B7100617D45 /* BoardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTableViewCell.swift; sourceTree = "<group>"; };
 		B582ED4E277B91E900617D45 /* BoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewModel.swift; sourceTree = "<group>"; };
+		B5A9B979277BF2AC004B7BBC /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				B582ECF1277A18E000617D45 /* APIService.swift */,
 				B582ECF3277A23CC00617D45 /* User.swift */,
 				B582ECFA277A2CBA00617D45 /* Obervable.swift */,
+				B5A9B979277BF2AC004B7BBC /* Endpoint.swift */,
 			);
 			path = SeSAC_WEEK14;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				B54711162779484C00DA514D /* SceneDelegate.swift in Sources */,
 				B582ED4B277B881900617D45 /* Board.swift in Sources */,
 				B582ED49277B880C00617D45 /* BoardViewController.swift in Sources */,
+				B5A9B97A277BF2AC004B7BBC /* Endpoint.swift in Sources */,
 				B582ED4F277B91E900617D45 /* BoardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

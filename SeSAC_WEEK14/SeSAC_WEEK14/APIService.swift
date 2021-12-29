@@ -13,116 +13,31 @@ enum APIError: Error {
 
 class APIService {
   static func register(username: String, email: String, password: String, completion: @escaping (User?, APIError?) -> Void) {
-    let url = URL(string: "http://test.monocoding.com/auth/local/register")!
     
-    var request = URLRequest(url: url)
+    var request = URLRequest(url: Endpoint.signup.url)
     request.httpMethod = "POST"
     request.httpBody = "username=\(username)&email=\(email)&password=\(password)".data(using: .utf8, allowLossyConversion: false)
     
-    URLSession.shared.dataTask(with: request) { data, response, error in
-      guard error == nil else {
-        completion(nil, .failed)
-        return
-      }
-      
-      guard let response = response as? HTTPURLResponse else {
-        completion(nil, .invalidResponse)
-        return
-      }
-      
-      guard let data = data else {
-        completion(nil, .noData)
-        return
-      }
-      
-      guard response.statusCode == 200 else {
-        completion(nil, .failed)
-        return
-      }
-      
-      do {
-        let userData = try JSONDecoder().decode(User.self, from: data)
-        completion(userData, nil)
-      } catch {
-        completion(nil, .invalidData)
-      }
-    }.resume()
+    URLSession.request(endpoint: request, completion: completion)
   }
   
   static func login(identifier: String, password: String, completion: @escaping (User?, APIError?) -> Void) {
-    let url = URL(string: "http://test.monocoding.com/auth/local")!
     
-    var request = URLRequest(url: url)
+    var request = URLRequest(url: Endpoint.login.url)
     request.httpMethod = "POST"
     // String -> Data, dictionary -> JsonSerialization / Codable
     request.httpBody = "identifier=\(identifier)&password=\(password)".data(using: .utf8, allowLossyConversion: false)
-    
-    URLSession.shared.dataTask(with: request) { data, response, error in
-      guard error == nil else {
-        completion(nil, .failed)
-        return
-      }
-      
-      guard let data = data else {
-        completion(nil, .noData)
-        return
-      }
-      
-      guard let response = response as? HTTPURLResponse else {
-        completion(nil, .invalidResponse)
-        return
-      }
-      
-      guard response.statusCode == 200 else {
-        completion(nil, .failed)
-        return
-      }
-      
-      do {
-        let userData = try JSONDecoder().decode(User.self, from: data)
-        completion(userData, nil)
-      } catch {
-        completion(nil, .invalidData)
-      }
-    }.resume()
+    URLSession.request(.shared, endpoint: request, completion: completion)
   }
   
   static func board(token: String, completion: @escaping (Board?, APIError?) -> Void) {
-    let url = URL(string: "http://test.monocoding.com/boards")!
     
-    var request = URLRequest(url: url)
+    var request = URLRequest(url: Endpoint.boards.url)
     request.httpMethod = "GET"
     // String -> Data, dictionary -> JsonSerialization / Codable
     request.setValue("bearer \(token)", forHTTPHeaderField: "authorization")
     
-    URLSession.shared.dataTask(with: request) { data, response, error in
-      guard error == nil else {
-        completion(nil, .failed)
-        return
-      }
-      
-      guard let data = data else {
-        completion(nil, .noData)
-        return
-      }
-      
-      guard let response = response as? HTTPURLResponse else {
-        completion(nil, .invalidResponse)
-        return
-      }
-      
-      guard response.statusCode == 200 else {
-        completion(nil, .failed)
-        return
-      }
-      
-      do {
-        let userData = try JSONDecoder().decode(Board.self, from: data)
-        completion(userData, nil)
-      } catch {
-        completion(nil, .invalidData)
-      }
-    }.resume()
+    URLSession.request(endpoint: request, completion: completion)
   }
   
   static func lotto(_ number: Int, completion: @escaping (Lotto?, APIError?) -> Void) {
@@ -179,36 +94,8 @@ class APIService {
       URLQueryItem(name: "page", value: "\(page)"),
       URLQueryItem(name: "language", value: language)
     ]
+    let request = URLRequest(url: component.url!)
     
-    URLSession.shared.dataTask(with: component.url!) { data, response, error in
-      DispatchQueue.main.async {
-        guard error == nil else {
-          completion(nil, .failed)
-          return
-        }
-        
-        guard let data = data else {
-          completion(nil, .noData)
-          return
-        }
-        
-        guard let response = response as? HTTPURLResponse else {
-          completion(nil, .invalidResponse)
-          return
-        }
-        
-        guard response.statusCode == 200 else {
-          completion(nil, .failed)
-          return
-        }
-        
-        do {
-          let userData = try JSONDecoder().decode(Person.self, from: data)
-          completion(userData, nil)
-        } catch {
-          completion(nil, .invalidData)
-        }
-      }
-    }.resume()
+    URLSession.request(endpoint: request, completion: completion)
   }
 }

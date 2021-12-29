@@ -8,11 +8,11 @@
 import Foundation
 
 class SignInViewModel {
-  var userName: Observable<String> = Observable("minios")
+  var username: Observable<String> = Observable("minios")
   var password: Observable<String> = Observable("")
   
   func postUserLogin(completion: @escaping(String) -> Void) {
-    APIService.login(identifier: userName.value,
+    APIService.login(identifier: username.value,
                      password: password.value) { userData, error in
       guard let userData = userData else {
         return
@@ -25,5 +25,9 @@ class SignInViewModel {
       
       completion(userData.jwt)
     }
+  }
+  
+  func fetchUsername() {
+    username.value = UserDefaults.standard.string(forKey: "nickname") ?? ""
   }
 }

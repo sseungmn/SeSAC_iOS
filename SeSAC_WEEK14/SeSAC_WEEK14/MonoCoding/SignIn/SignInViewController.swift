@@ -19,7 +19,7 @@ class SignInViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    viewModel.userName.bind { text in
+    viewModel.username.bind { text in
       self.mainView.usernameTextField.text = text
     }
     
@@ -31,10 +31,12 @@ class SignInViewController: UIViewController {
     mainView.passwordTextField.addTarget(self, action: #selector(passwordTextFieldDidChange), for: .editingChanged)
     
     mainView.signInButton.addTarget(self, action: #selector(signInButtonClicked), for: .touchUpInside)
+    
+    viewModel.fetchUsername()
   }
   
   @objc func userNameTextFieldDidChange(_ textField: UITextField) {
-    viewModel.userName.value = textField.text ?? ""
+    viewModel.username.value = textField.text ?? ""
   }
   
   @objc func passwordTextFieldDidChange(_ textField: UITextField) {
@@ -43,9 +45,12 @@ class SignInViewController: UIViewController {
   
   @objc func signInButtonClicked() {
     viewModel.postUserLogin { token in
+      
+      UserDefaults.standard.set(token, forKey: "token")
+      
       DispatchQueue.main.async {
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
-        windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: BoardViewController(token: token))
+        windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: BoardViewController())
         windowScene.windows.first?.makeKeyAndVisible()
       }
       

@@ -12,12 +12,6 @@ class BoardViewController: UIViewController {
   
   let tableView = UITableView()
   let viewModel = BoardViewModel()
-  private var token: String?
-  
-  convenience init(token: String) {
-    self.init()
-    self.token = token
-  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -29,7 +23,7 @@ class BoardViewController: UIViewController {
     tableView.delegate = self
     tableView.dataSource = self
     
-    viewModel.fetchBoard(token!)
+    viewModel.fetchBoard()
     viewModel.board.bind { Board in
       DispatchQueue.main.async {
         self.tableView.reloadData()
