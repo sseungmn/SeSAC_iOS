@@ -19,6 +19,8 @@
 		B54711032778E1D100DA514D /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54711022778E1D100DA514D /* BottomView.swift */; };
 		B54711052778E24400DA514D /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54711042778E24400DA514D /* UIColor+Extension.swift */; };
 		B576A7BB277D9E9E000E1D47 /* BeerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B576A7BA277D9E9E000E1D47 /* BeerTableView.swift */; };
+		B576A7BE277DA451000E1D47 /* BeerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B576A7BD277DA451000E1D47 /* BeerViewModel.swift */; };
+		B576A7C0277DA4DB000E1D47 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B576A7BF277DA4DB000E1D47 /* Observable.swift */; };
 		B5F442F827747EF0009C5284 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F442F727747EF0009C5284 /* AppDelegate.swift */; };
 		B5F442FA27747EF0009C5284 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F442F927747EF0009C5284 /* SceneDelegate.swift */; };
 		B5F442FC27747EF0009C5284 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F442FB27747EF0009C5284 /* ViewController.swift */; };
@@ -42,6 +44,8 @@
 		B54711022778E1D100DA514D /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
 		B54711042778E24400DA514D /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		B576A7BA277D9E9E000E1D47 /* BeerTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerTableView.swift; sourceTree = "<group>"; };
+		B576A7BD277DA451000E1D47 /* BeerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerViewModel.swift; sourceTree = "<group>"; };
+		B576A7BF277DA4DB000E1D47 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		B5F442F427747EF0009C5284 /* RecommendTheBeer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecommendTheBeer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F442F727747EF0009C5284 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5F442F927747EF0009C5284 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,7 +108,7 @@
 		B54710C42774D62F00DA514D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				B54710C52774D64700DA514D /* BeerAPI.swift */,
+				B576A7BD277DA451000E1D47 /* BeerViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -112,6 +116,7 @@
 		B54710C92774E0FF00DA514D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B5F442FB27747EF0009C5284 /* ViewController.swift */,
 				B54710C72774DBDD00DA514D /* BeerImageView.swift */,
 				B54710CA2774E12000DA514D /* BeerInfoView.swift */,
 				B54710CC2774E16D00DA514D /* BaseView.swift */,
@@ -129,6 +134,14 @@
 				B54711042778E24400DA514D /* UIColor+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		B576A7BC277DA43A000E1D47 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B54710C52774D64700DA514D /* BeerAPI.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		B5F442EB27747EF0009C5284 = {
@@ -153,12 +166,13 @@
 		B5F442F627747EF0009C5284 /* RecommendTheBeer */ = {
 			isa = PBXGroup;
 			children = (
+				B547109D2774888900DA514D /* Project */,
 				B54710FF2778D11900DA514D /* Extension */,
+				B576A7BC277DA43A000E1D47 /* Service */,
 				B54710C42774D62F00DA514D /* ViewModel */,
 				B54710C12774AAC900DA514D /* Model */,
-				B547109D2774888900DA514D /* Project */,
-				B5F442FB27747EF0009C5284 /* ViewController.swift */,
 				B54710C92774E0FF00DA514D /* View */,
+				B576A7BF277DA4DB000E1D47 /* Observable.swift */,
 			);
 			path = RecommendTheBeer;
 			sourceTree = "<group>";
@@ -296,6 +310,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B576A7BE277DA451000E1D47 /* BeerViewModel.swift in Sources */,
+				B576A7C0277DA4DB000E1D47 /* Observable.swift in Sources */,
 				B54710FB2778CE9F00DA514D /* CustomTableViewCell.swift in Sources */,
 				B54711012778D15100DA514D /* UITableViewCell+Extension.swift in Sources */,
 				B5F442FC27747EF0009C5284 /* ViewController.swift in Sources */,
