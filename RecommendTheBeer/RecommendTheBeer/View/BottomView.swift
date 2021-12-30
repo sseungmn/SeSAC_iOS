@@ -23,7 +23,7 @@ class BottomView: BaseView {
     fatalError("init(coder:) has not been implemented")
   }
   
-  override func configuration() {
+  override func setConfiguration() {
     backgroundColor = nil
     
     resetButton.layer.borderWidth = 3

@@ -37,7 +37,7 @@ class BeerInfoView: BaseView {
     fatalError("init(coder:) has not been implemented")
   }
   
-  override func configuration() {
+  override func setConfiguration() {
     backgroundColor = fillColor
     layer.cornerRadius = cornerRadius
     layer.insertSublayer(shadowLayer, at: 0)

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BeerTableView: UIView {
+class BeerTableView: BaseView {
   let headerView = UIView()
   let titleLabel: UILabel = {
     let label = UILabel()
@@ -42,11 +42,11 @@ class BeerTableView: UIView {
     tableView.dataSource = viewController
   }
   
-  private func setConfiguration() {
+  override func setConfiguration() {
     tableView.register(BeerTableViewCell.self, forCellReuseIdentifier: BeerTableViewCell.reuseIdentifier)
   }
   
-  private func setContraints() {
+  override func setContraints() {
     addSubview(headerView)
     headerView.snp.makeConstraints { make in
       make.top.left.right.equalToSuperview()

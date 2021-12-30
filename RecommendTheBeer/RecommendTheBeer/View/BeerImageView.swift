@@ -20,7 +20,7 @@ class BeerImageView: BaseView {
     super.init(frame: frame)
   }
   
-  override func configuration() {
+  override func setConfiguration() {
     backgroundImageView.contentMode = .scaleToFill
     blurFilterView.effect = UIBlurEffect(style: .light)
     beerImageView.contentMode = .scaleAspectFit

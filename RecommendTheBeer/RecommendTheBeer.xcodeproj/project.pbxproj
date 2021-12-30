@@ -117,12 +117,12 @@
 			isa = PBXGroup;
 			children = (
 				B5F442FB27747EF0009C5284 /* ViewController.swift */,
+				B54710CC2774E16D00DA514D /* BaseView.swift */,
 				B54710C72774DBDD00DA514D /* BeerImageView.swift */,
 				B54710CA2774E12000DA514D /* BeerInfoView.swift */,
-				B54710CC2774E16D00DA514D /* BaseView.swift */,
-				B54710FA2778CE9F00DA514D /* CustomTableViewCell.swift */,
 				B54711022778E1D100DA514D /* BottomView.swift */,
 				B576A7BA277D9E9E000E1D47 /* BeerTableView.swift */,
+				B54710FA2778CE9F00DA514D /* CustomTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
