@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 
 class BeerImageView: BaseView {
+  var isLarge: Bool = false
   
   // MARK: private property
   private let backgroundImageView = UIImageView()

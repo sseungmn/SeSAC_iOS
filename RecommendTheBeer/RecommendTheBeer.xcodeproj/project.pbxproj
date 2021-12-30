@@ -18,6 +18,7 @@
 		B54711012778D15100DA514D /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54711002778D15100DA514D /* UITableViewCell+Extension.swift */; };
 		B54711032778E1D100DA514D /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54711022778E1D100DA514D /* BottomView.swift */; };
 		B54711052778E24400DA514D /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54711042778E24400DA514D /* UIColor+Extension.swift */; };
+		B576A7BB277D9E9E000E1D47 /* BeerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B576A7BA277D9E9E000E1D47 /* BeerTableView.swift */; };
 		B5F442F827747EF0009C5284 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F442F727747EF0009C5284 /* AppDelegate.swift */; };
 		B5F442FA27747EF0009C5284 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F442F927747EF0009C5284 /* SceneDelegate.swift */; };
 		B5F442FC27747EF0009C5284 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F442FB27747EF0009C5284 /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 		B54711002778D15100DA514D /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		B54711022778E1D100DA514D /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
 		B54711042778E24400DA514D /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		B576A7BA277D9E9E000E1D47 /* BeerTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerTableView.swift; sourceTree = "<group>"; };
 		B5F442F427747EF0009C5284 /* RecommendTheBeer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecommendTheBeer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F442F727747EF0009C5284 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5F442F927747EF0009C5284 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				B54710CC2774E16D00DA514D /* BaseView.swift */,
 				B54710FA2778CE9F00DA514D /* CustomTableViewCell.swift */,
 				B54711022778E1D100DA514D /* BottomView.swift */,
+				B576A7BA277D9E9E000E1D47 /* BeerTableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				B54711012778D15100DA514D /* UITableViewCell+Extension.swift in Sources */,
 				B5F442FC27747EF0009C5284 /* ViewController.swift in Sources */,
 				B54711052778E24400DA514D /* UIColor+Extension.swift in Sources */,
+				B576A7BB277D9E9E000E1D47 /* BeerTableView.swift in Sources */,
 				B54710C62774D64700DA514D /* BeerAPI.swift in Sources */,
 				B54711032778E1D100DA514D /* BottomView.swift in Sources */,
 				B54710C82774DBDD00DA514D /* BeerImageView.swift in Sources */,

@@ -15,12 +15,8 @@ class ViewController: UIViewController {
   
   let beerImageView = BeerImageView()
   let beerInfoView = BeerInfoView()
-  let tableView: UITableView = {
-    let tableView = UITableView()
-    tableView.contentOffset = CGPoint(x: 0, y: 50)
-    return tableView
-  }()
   
+  let tableView = BeerTableView()
   let bottomView = BottomView()
   
   override func viewDidLoad() {
@@ -33,28 +29,30 @@ class ViewController: UIViewController {
   func configuration() {
     view.backgroundColor = .white
     
-    tableView.dataSource = self
-    tableView.delegate = self
-    tableView.register(BeerTableViewCell.self, forCellReuseIdentifier: BeerTableViewCell.reuseIdentifier)
-    tableView.backgroundColor = nil
-    tableView.separatorStyle = .none
-    
+    tableView.setDelegate(self)
     setActions()
   }
   
   func setActions() {
     beerInfoView.setMoreAction { [weak self] _ in
-      self?.beerImageView.snp.updateConstraints { make in
-        make.height.equalTo(350)
+      guard let beerImageView = self?.beerImageView else { return }
+      guard let beerInfoView = self?.beerInfoView else { return }
+      beerImageView.snp.updateConstraints { make in
+        if beerImageView.isLarge {
+          make.height.equalTo(220)
+        } else {
+          make.height.equalTo(300)
+        }
+        beerImageView.isLarge.toggle()
       }
-      self?.beerInfoView.moreAction()
+      beerInfoView.moreAction()
     }
     
     bottomView.setResetButtonAction { [weak self] _ in
       self?.fetchBeerInfo()
       self?.resetContraints()
       self?.beerInfoView.defaultDescription()
-      
+      self?.beerImageView.isLarge = false
     }
   }
   
@@ -83,7 +81,6 @@ class ViewController: UIViewController {
       make.left.right.equalToSuperview().inset(20)
       make.bottom.equalTo(bottomView.snp.top)
     }
-    
     
   }
   func resetContraints() {
@@ -126,31 +123,5 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             as? BeerTableViewCell else { return UITableViewCell() }
     cell.title.text = self.beer?.foodPairing[indexPath.row]
     return cell
-  }
-  
-  func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    let titleLabel: UILabel = {
-      let label = UILabel()
-      label.textColor = .black
-      label.font = .boldSystemFont(ofSize: 23)
-      label.text = "Food - Paring"
-      return label
-    }()
-    let headerView: UIView = {
-      let view = UIView()
-      view.backgroundColor = nil
-      return view
-    }()
-    
-    headerView.addSubview(titleLabel)
-    titleLabel.snp.makeConstraints { make in
-      make.edges.equalToSuperview()
-    }
-    
-    return headerView
-  }
-  
-  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    return 50
   }
 }
