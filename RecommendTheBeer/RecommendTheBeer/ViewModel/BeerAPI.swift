@@ -8,9 +8,9 @@
 import UIKit
 import Alamofire
 
-class BeerAPIViewModel {
+class BeerAPIService {
   
-  func requestRandomBeer(completion: @escaping (Beer?) -> Void) {
+  static func requestRandomBeer(completion: @escaping (Beer?) -> Void) {
     let baseURL = URL(string: "https://api.punkapi.com/v2/beers/random")!
     AF.request(baseURL).response { response in
       if let error = response.error {
@@ -31,7 +31,7 @@ class BeerAPIViewModel {
     }
   }
   
-  func requestBeerImage(beer: Beer, completion: @escaping (UIImage?) -> Void) {
+  static func requestBeerImage(beer: Beer, completion: @escaping (UIImage?) -> Void) {
     guard let imageURLString = beer.imageURL,
        let imageURL = URL(string: imageURLString) else {
          print("Image URL Error")

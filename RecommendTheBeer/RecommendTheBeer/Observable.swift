@@ -8,17 +8,21 @@
 import Foundation
 
 class Observable<Element> {
-  typealias Listener = ( (Element) -> Void )
+  typealias Listener = ( (Element?) -> Void )
   private var listener: Listener?
   
-  var value: Element {
-    didSet{
+  var value: Element? {
+    didSet {
       listener?(value)
     }
   }
   
   init(_ value: Element) {
     self.value = value
+  }
+  
+  init() {
+    self.value = nil
   }
   
   func bind(_ completion: @escaping Listener) {

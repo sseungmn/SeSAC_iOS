@@ -108,6 +108,7 @@
 		B54710C42774D62F00DA514D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B54710C52774D64700DA514D /* BeerAPI.swift */,
 				B576A7BD277DA451000E1D47 /* BeerViewModel.swift */,
 			);
 			path = ViewModel;
@@ -136,14 +137,6 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		B576A7BC277DA43A000E1D47 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				B54710C52774D64700DA514D /* BeerAPI.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
 		B5F442EB27747EF0009C5284 = {
 			isa = PBXGroup;
 			children = (
@@ -168,9 +161,8 @@
 			children = (
 				B547109D2774888900DA514D /* Project */,
 				B54710FF2778D11900DA514D /* Extension */,
-				B576A7BC277DA43A000E1D47 /* Service */,
-				B54710C42774D62F00DA514D /* ViewModel */,
 				B54710C12774AAC900DA514D /* Model */,
+				B54710C42774D62F00DA514D /* ViewModel */,
 				B54710C92774E0FF00DA514D /* View */,
 				B576A7BF277DA4DB000E1D47 /* Observable.swift */,
 			);

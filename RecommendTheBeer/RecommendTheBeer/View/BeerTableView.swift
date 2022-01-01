@@ -49,8 +49,9 @@ class BeerTableView: BaseView {
   override func setContraints() {
     addSubview(headerView)
     headerView.snp.makeConstraints { make in
-      make.top.left.right.equalToSuperview()
-      make.height.equalTo(50)
+      make.top.equalToSuperview().inset(10)
+      make.left.right.equalToSuperview()
+      make.height.equalTo(30)
     }
     headerView.addSubview(titleLabel)
     titleLabel.snp.makeConstraints { make in

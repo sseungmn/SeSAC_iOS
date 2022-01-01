@@ -10,8 +10,7 @@ import SnapKit
 
 class ViewController: UIViewController {
   
-  let viewModel = BeerAPIViewModel()
-  var beer: Beer?
+  let viewModel = BeerViewModel()
   
   let beerImageView = BeerImageView()
   let beerInfoView = BeerInfoView()
@@ -19,52 +18,36 @@ class ViewController: UIViewController {
   let tableView = BeerTableView()
   let bottomView = BottomView()
   
+  // layout constant
+  let horizontalInset = 20
+  let imageViewDefaultHeight = 220
+  let imageViewMoreHeight = 300
+  let bottomViewHeight = 60
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     setConstraints()
     configuration()
-    fetchBeerInfo()
+    viewModel.fetchBeerInfo()
   }
   
   func configuration() {
     view.backgroundColor = .white
     
+    bindObservable()
     tableView.setDelegate(self)
     setActions()
-  }
-  
-  func setActions() {
-    beerInfoView.setMoreAction { [weak self] _ in
-      guard let beerImageView = self?.beerImageView else { return }
-      guard let beerInfoView = self?.beerInfoView else { return }
-      beerImageView.snp.updateConstraints { make in
-        if beerImageView.isLarge {
-          make.height.equalTo(220)
-        } else {
-          make.height.equalTo(300)
-        }
-        beerImageView.isLarge.toggle()
-      }
-      beerInfoView.moreAction()
-    }
-    
-    bottomView.setResetButtonAction { [weak self] _ in
-      self?.fetchBeerInfo()
-      self?.resetContraints()
-      self?.beerInfoView.defaultDescription()
-      self?.beerImageView.isLarge = false
-    }
   }
   
   func setConstraints() {
     view.addSubview(beerImageView)
     beerImageView.snp.makeConstraints { make in
       make.top.left.right.equalTo(view.safeAreaLayoutGuide)
-      make.height.equalTo(220)
+      make.height.equalTo(self.imageViewDefaultHeight)
     }
     view.addSubview(beerInfoView)
     beerInfoView.snp.makeConstraints { make in
-      make.left.right.equalToSuperview().inset(20)
+      make.left.right.equalToSuperview().inset(self.horizontalInset)
       make.top.equalTo(beerImageView.snp.bottom).offset(-50)
     }
     
@@ -72,56 +55,73 @@ class ViewController: UIViewController {
     bottomView.snp.makeConstraints { make in
       make.left.right.equalToSuperview()
       make.bottom.equalTo(view.safeAreaLayoutGuide)
-      make.height.equalTo(60)
+      make.height.equalTo(self.bottomViewHeight)
     }
     
     view.addSubview(tableView)
     tableView.snp.makeConstraints { make in
       make.top.equalTo(beerInfoView.snp.bottom)
-      make.left.right.equalToSuperview().inset(20)
+      make.left.right.equalToSuperview().inset(self.horizontalInset)
       make.bottom.equalTo(bottomView.snp.top)
     }
     
   }
   func resetContraints() {
     beerImageView.snp.updateConstraints { make in
-      make.height.equalTo(220)
+      make.height.equalTo(self.imageViewDefaultHeight)
     }
     self.beerInfoView.moreAction()
   }
   
-  func fetchBeerInfo() {
-    viewModel.requestRandomBeer { [weak self] beer in
+  func bindObservable() {
+    viewModel.beer.bind({ [weak self] beer in
       guard let beer = beer else { return }
-      self?.beer = beer
-      // Set Info
       DispatchQueue.main.async {
-        self?.tableView.reloadData()
         self?.beerInfoView.setInformation(beer)
+        self?.tableView.reloadData()
       }
-      
-      // Set Image
-      self?.viewModel.requestBeerImage(beer: beer, completion: { image in
-        guard let image = image else { return }
-        DispatchQueue.main.async {
-          self?.beerImageView.setImage(image)
-        }
-      })
-    }
+    })
+    viewModel.beerImage.bind({ [weak self] image in
+      guard let image = image else { return }
+      DispatchQueue.main.async {
+        self?.beerImageView.setImage(image)
+      }
+    })
   }
   
+  func setActions() {
+    beerInfoView.setMoreAction { [weak self] _ in
+      guard let self = self else { return }
+      self.beerImageView.snp.updateConstraints { make in
+        if self.beerImageView.isLarge {
+          make.height.equalTo(self.imageViewDefaultHeight)
+        } else {
+          make.height.equalTo(self.imageViewMoreHeight)
+        }
+        self.beerImageView.isLarge.toggle()
+      }
+      self.beerInfoView.moreAction()
+    }
+    
+    bottomView.setRefreshButtonAction { [weak self] _ in
+      self?.viewModel.fetchBeerInfo()
+      self?.resetContraints()
+      self?.beerInfoView.defaultDescription()
+      self?.beerImageView.isLarge = false
+    }
+  }
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return self.beer?.foodPairing.count ?? 0
+    return viewModel.numberOfRowsInSection
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(
       withIdentifier: BeerTableViewCell.reuseIdentifier)
             as? BeerTableViewCell else { return UITableViewCell() }
-    cell.title.text = self.beer?.foodPairing[indexPath.row]
+    cell.title.text = viewModel.cellForRowAt(indexPath)
     return cell
   }
 }

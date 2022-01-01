@@ -48,9 +48,9 @@ class BeerInfoView: BaseView {
     
     descriptionLabel.setContentCompressionResistancePriority(.sceneSizeStayPut, for: .vertical)
     
-    nameLabel.font = .systemFont(ofSize: 23, weight: .bold)
-    taglineLabel.font = .systemFont(ofSize: 15)
-    descriptionLabel.font = .systemFont(ofSize: 15)
+    nameLabel.font = .systemFont(ofSize: 20, weight: .bold)
+    taglineLabel.font = .systemFont(ofSize: 13)
+    descriptionLabel.font = .systemFont(ofSize: 13)
     descriptionLabel.numberOfLines = 4
     moreButton.setTitle("more", for: .normal)
     moreButton.titleLabel?.font = .systemFont(ofSize: 13, weight: .heavy)
@@ -96,9 +96,6 @@ class BeerInfoView: BaseView {
     } else {
       defaultDescription()
     }
-//    DispatchQueue.main.async {
-//      self.updateShadow()
-//    }
   }
   
   func moreDescription() {
@@ -126,14 +123,9 @@ extension BeerInfoView {
   }
   public func setInformation(_ beer: Beer) {
     debug("        InfoView", #function)
-    // 1
     self.nameLabel.text = beer.name
     self.taglineLabel.text = beer.tagline
     self.descriptionLabel.text = beer.beerDescription
-    // 2
-//    DispatchQueue.main.async {
-//      self.updateShadow()
-//    }
   }
 }
 

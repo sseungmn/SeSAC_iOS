@@ -61,7 +61,7 @@ class BottomView: BaseView {
   }
   
   // MARK: set Actions
-  public func setResetButtonAction(handler: @escaping (UIAction) -> Void) {
+  public func setRefreshButtonAction(handler: @escaping (UIAction) -> Void) {
     resetButton.addAction(UIAction(handler: handler), for: .touchUpInside)
   }
   
