@@ -33,9 +33,13 @@ class SignInViewController: UIViewController {
         return
       }
       guard let userData = userData else { return }
+      print(userData)
       UserDefaults.standard.set(userData.jwt, forKey: "token")
       UserDefaults.standard.set(userData.user.id, forKey: "id")
       UserDefaults.standard.set(userData.user.username, forKey: "username")
+      DispatchQueue.main.async {
+        self.makeRootViewController(BoardViewController())
+      }
     }
   }
 

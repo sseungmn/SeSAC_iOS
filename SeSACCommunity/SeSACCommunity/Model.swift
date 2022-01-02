@@ -17,8 +17,6 @@ struct AccessInfo: Codable {
 struct User: Codable {
     let id: Int
     let username, email: String
-    let posts: [Post]
-    let comments: [Comment]
 }
 
 // MARK: - Board
@@ -28,7 +26,7 @@ typealias Board = [Post]
 struct Post: Codable {
     let id: Int
     let text: String
-    let user: AccessInfo
+    let user: User
     let createdAt, updatedAt: String
     let comments: [Comment]
 

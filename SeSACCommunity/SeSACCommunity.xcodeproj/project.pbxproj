@@ -17,6 +17,10 @@
 		B54DCC6B2781CB740065BF4D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54DCC6A2781CB740065BF4D /* Model.swift */; };
 		B54DCC6D2781CD680065BF4D /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54DCC6C2781CD680065BF4D /* SignInView.swift */; };
 		B54DCC6F2781CDCE0065BF4D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54DCC6E2781CDCE0065BF4D /* SignInViewController.swift */; };
+		B54DCC742781FB540065BF4D /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54DCC732781FB540065BF4D /* UIViewController+Extension.swift */; };
+		B54DCC77278203110065BF4D /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54DCC76278203110065BF4D /* BoardView.swift */; };
+		B54DCC79278203170065BF4D /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54DCC78278203170065BF4D /* PostView.swift */; };
+		B54DCC7B278206FC0065BF4D /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54DCC7A278206FC0065BF4D /* BoardViewController.swift */; };
 		B58200252780AE7C007DAC5E /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = B58200242780AE7C007DAC5E /* .swiftlint.yml */; };
 		B5820029278178A1007DAC5E /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5820028278178A1007DAC5E /* UIColor+Extension.swift */; };
 		B5ABA63827809C6F00E40C2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5ABA63727809C6F00E40C2A /* AppDelegate.swift */; };
@@ -41,6 +45,10 @@
 		B54DCC6A2781CB740065BF4D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		B54DCC6C2781CD680065BF4D /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		B54DCC6E2781CDCE0065BF4D /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		B54DCC732781FB540065BF4D /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		B54DCC76278203110065BF4D /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		B54DCC78278203170065BF4D /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		B54DCC7A278206FC0065BF4D /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 		B58200242780AE7C007DAC5E /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		B5820028278178A1007DAC5E /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		B5ABA63427809C6F00E40C2A /* SeSACCommunity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACCommunity.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,14 +112,22 @@
 			path = SignUp;
 			sourceTree = "<group>";
 		};
+		B54DCC75278202FF0065BF4D /* Board */ = {
+			isa = PBXGroup;
+			children = (
+				B54DCC76278203110065BF4D /* BoardView.swift */,
+				B54DCC78278203170065BF4D /* PostView.swift */,
+				B54DCC7A278206FC0065BF4D /* BoardViewController.swift */,
+			);
+			path = Board;
+			sourceTree = "<group>";
+		};
 		B5820026278175D2007DAC5E /* Auth */ = {
 			isa = PBXGroup;
 			children = (
 				B54DCC722781E8B00065BF4D /* SignUp */,
 				B54DCC712781E8A50065BF4D /* SignIn */,
 				B54DCC702781E8980065BF4D /* Welcome */,
-				B54DCC662781BD190065BF4D /* APIService.swift */,
-				B54DCC6A2781CB740065BF4D /* Model.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -122,6 +138,7 @@
 				B5820028278178A1007DAC5E /* UIColor+Extension.swift */,
 				B54DCC5E278189490065BF4D /* UITapGestureRecognizer+Extension.swift */,
 				B54DCC682781BD360065BF4D /* URLSession+Extension.swift */,
+				B54DCC732781FB540065BF4D /* UIViewController+Extension.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -150,10 +167,13 @@
 			children = (
 				B582002727817890007DAC5E /* Extention */,
 				B5820026278175D2007DAC5E /* Auth */,
+				B54DCC75278202FF0065BF4D /* Board */,
 				B5ABA64B27809C7A00E40C2A /* Project */,
 				B5ABA64C27809EDD00E40C2A /* Observable.swift */,
 				B5ABA6502780A02A00E40C2A /* BaseView.swift */,
 				B54DCC62278193B20065BF4D /* ReusableView.swift */,
+				B54DCC6A2781CB740065BF4D /* Model.swift */,
+				B54DCC662781BD190065BF4D /* APIService.swift */,
 			);
 			path = SeSACCommunity;
 			sourceTree = "<group>";
@@ -315,18 +335,22 @@
 				B5820029278178A1007DAC5E /* UIColor+Extension.swift in Sources */,
 				B5ABA64D27809EDD00E40C2A /* Observable.swift in Sources */,
 				B5ABA64F27809FFF00E40C2A /* WelcomeView.swift in Sources */,
+				B54DCC742781FB540065BF4D /* UIViewController+Extension.swift in Sources */,
 				B54DCC5F278189490065BF4D /* UITapGestureRecognizer+Extension.swift in Sources */,
 				B54DCC63278193B20065BF4D /* ReusableView.swift in Sources */,
 				B5ABA63C27809C6F00E40C2A /* WelcomeViewController.swift in Sources */,
 				B54DCC6B2781CB740065BF4D /* Model.swift in Sources */,
+				B54DCC79278203170065BF4D /* PostView.swift in Sources */,
 				B5ABA6512780A02A00E40C2A /* BaseView.swift in Sources */,
 				B54DCC6D2781CD680065BF4D /* SignInView.swift in Sources */,
 				B5ABA63827809C6F00E40C2A /* AppDelegate.swift in Sources */,
 				B54DCC61278191030065BF4D /* SignUpView.swift in Sources */,
 				B54DCC6F2781CDCE0065BF4D /* SignInViewController.swift in Sources */,
 				B54DCC692781BD360065BF4D /* URLSession+Extension.swift in Sources */,
+				B54DCC77278203110065BF4D /* BoardView.swift in Sources */,
 				B54DCC672781BD190065BF4D /* APIService.swift in Sources */,
 				B5ABA63A27809C6F00E40C2A /* SceneDelegate.swift in Sources */,
+				B54DCC7B278206FC0065BF4D /* BoardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,18 +17,22 @@ class WelcomeViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = .white
-    navigationItem.title = "새싹"
-    let right = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(nextVC))
-    right.image = UIImage(systemName: "arrow.right")
-    navigationItem.rightBarButtonItem = right
     let backButton = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     navigationItem.backBarButtonItem = backButton
+    mainView.startButton.addTarget(self, action: #selector(startButtonTapped), for: .touchUpInside)
+    mainView.fotterLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(loginLabelTapped)))
   }
-  @objc func nextVC() {
-    let vc = SignUpViewController()
-    navigationController?.pushViewController(vc, animated: true)
+  
+  @objc func startButtonTapped() {
+    makeRootViewController(SignUpViewController())
+  }
+  
+  @objc private func loginLabelTapped(_ sender: UITapGestureRecognizer) {
+    guard let text = mainView.fotterLabel.text else { return }
+    let loginRange = (text as NSString).range(of: "로그인")
     
+    if sender.didTapAttributedTextInLabel(label: mainView.fotterLabel, inRange: loginRange) {
+      makeRootViewController(SignInViewController())
+    }
   }
-
 }

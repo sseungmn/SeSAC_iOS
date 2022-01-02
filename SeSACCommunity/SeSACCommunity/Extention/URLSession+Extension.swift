@@ -45,6 +45,6 @@ extension URLSession {
         completion(nil, .invalidData)
       }
       
-    }
+    }.resume()
   }
 }

@@ -37,12 +37,12 @@ final class WelcomeView: BaseView {
     label.textColor = .darkGray
     return label
   }()
-  private var startButton: CustomButton = {
+  var startButton: CustomButton = {
     let button = CustomButton()
     button.setTitle("시작하기", for: .normal)
     return button
   }()
-  private var fotterLabel = UILabel()
+  var fotterLabel = UILabel()
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -116,16 +116,6 @@ final class WelcomeView: BaseView {
     )
     fotterLabel.attributedText = mutableString
     fotterLabel.isUserInteractionEnabled = true
-    fotterLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(loginLabelTapped)))
-  }
-  
-  @objc private func loginLabelTapped(_ sender: UITapGestureRecognizer) {
-    guard let text = fotterLabel.text else { return }
-    let loginRange = (text as NSString).range(of: "로그인")
-    
-    if sender.didTapAttributedTextInLabel(label: fotterLabel, inRange: loginRange) {
-      print("로그인 클릭")
-    }
   }
   
 }

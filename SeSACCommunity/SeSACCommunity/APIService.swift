@@ -20,9 +20,9 @@ enum APIRequest {
   case SignIn(identifier: String, password: String)
   case ChangePassword(currentPassword: String, newPassword: String, confirmNewPassword: String)
   //  case CreatePost(text: String, Authorization: String)
-  //  case ReadPost(Authorization: String)
+    case PostRead
   //  case UpdatePost(postId: String, text: String)
-  //  case DeletePost(postId: String, Authorization: String)
+  //  case DeletePost(postId: String)
   //  case CreateComment, ReadComment, UpdateComment, DeleteComment
   
   func URLReqeust() -> URLRequest {
@@ -36,7 +36,7 @@ enum APIRequest {
     case .SignIn(let identifier, let password):
       var request = URLRequest(url: url)
       request.httpMethod = Method.POST.rawValue
-      request.httpBody = "identifier=\(identifier)&password\(password)".data(using: .utf8, allowLossyConversion: false)
+      request.httpBody = "identifier=\(identifier)&password=\(password)".data(using: .utf8, allowLossyConversion: false)
       return request
       
     case .ChangePassword(let currentPassword, let newPassword, let confirmNewPassword):
@@ -48,8 +48,12 @@ enum APIRequest {
       
       //    case .CreatePost(let text, let Authorization):
       //      return URLReqeust()
-      //    case .ReadPost(let Authorization):
-      //      return URLReqeust()
+    case .PostRead:
+      var request = URLRequest(url: url)
+      request.httpMethod = Method.GET.rawValue
+      request.addValue(token, forHTTPHeaderField: "Authorization")
+      return request
+      
       //    case .UpdatePost(let postId, let text):
       //      return URLReqeust()
       //    case .DeletePost(let postId, let Authorization):
@@ -64,10 +68,12 @@ extension APIRequest {
     case .SignUp: return .endPoint("/auth/local/register")
     case .SignIn: return .endPoint("/auth/local")
     case .ChangePassword: return .endPoint("/custom/change-password")
+    case .PostRead: return .endPoint("/posts")
     }
   }
   var token: String {
-    return UserDefaults.standard.string(forKey: "token") ?? ""
+    let jwt = UserDefaults.standard.string(forKey: "token") ?? ""
+    return "Bearer \(jwt)"
   }
 }
 
@@ -82,5 +88,8 @@ extension URL {
 class APIService {
   static func requestSignIn(identifier: String, password: String, _ completion: @escaping (AccessInfo?, APIError?) -> Void) {
     URLSession.request(endpoint: APIRequest.SignIn(identifier: identifier, password: password).URLReqeust(), completion: completion)
+  }
+  static func requestPostRead(_ completion: @escaping (Board?, APIError?) -> Void) {
+    URLSession.request(endpoint: APIRequest.PostRead.URLReqeust(), completion: completion)
   }
 }
