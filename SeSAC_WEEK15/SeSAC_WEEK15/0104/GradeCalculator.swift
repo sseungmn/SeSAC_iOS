@@ -30,7 +30,8 @@ class GradeCalculator: UIViewController {
     .bind(to: resultLabel.rx.text)
     .disposed(by: disposeBag)
     
-    Observable.of(true)
+    Observable.of(true, false)
+      .do(onNext: { print("current : \($0)")} )
       .bind(to: mySwitch.rx.isOn)
       .disposed(by: disposeBag)
   }
